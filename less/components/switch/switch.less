@@ -1,0 +1,94 @@
+// ==============================================
+// Switch
+// ==============================================
+
+.@{namespace}-switch {
+	position: relative;
+	.inline-block();
+	height: @switch-innerHeight;
+	width: @switch-innerWidth;
+	border: @switch-borderWidth solid;
+	transition: backgrounColor 200ms,borderColor 200ms;
+
+	&:hover {
+		cursor: pointer;
+	}
+	> input {
+		display: none;
+	}
+}
+
+.@{namespace}-switch-inner {
+	overflow: hidden;
+}
+
+.@{namespace}-switch-inner-box {
+	height: @switch-innerHeight;
+	width: @switch-boxWidth;
+}
+
+.@{namespace}-switch-on {
+	display: block;
+	float: left;		
+	height: @switch-innerHeight;
+	width: @switch-onWidth;
+	text-indent: 13px;
+	line-height: @switch-height - @switch-borderWidth;
+	font-family: "BPreplay",sans-serif;
+	font-size: @switch-fontSize;
+	color: @switch-onColor;
+	background-color: transparent;
+	.user-select(none);
+}
+
+.@{namespace}-switch-off {
+	display: block;
+	float: left;
+	height: @switch-innerHeight;
+	width: @switch-offWidth;
+	text-indent: 24px;
+	line-height: @switch-height - @switch-borderWidth;
+	font-family: "BPreplay",sans-serif;
+	font-size: @switch-fontSize;
+	color: @switch-offColor;
+	background-color: transparent;
+	.user-select(none);
+}
+
+.@{namespace}-switch-handle {
+	position: absolute;
+	top: 0;
+	width: @switch-handleWidth;
+	height: @switch-innerHeight;
+	background-color: red;
+	&:hover {
+		cursor: pointer;
+		cursor: -moz-grab;
+	}
+}
+
+.@{namespace}-switch_on {
+	background-color: @switch_on-bgColor;
+	border-color: @switch_on-borderColor;
+	.@{namespace}-switch-inner-box {
+		margin-left: 0;
+	}
+
+	.@{namespace}-switch-handle {
+		left: @switch-innerHeight - @switch-handleWidth;
+		background-color: @switch_on-handle-bgColor;
+	}
+}
+
+.@{namespace}-switch_off {
+	background-color: @switch_off-bgColor;
+	border-color: @switch_off-borderColor;
+	.@{namespace}-switch-inner-box {
+		margin-left: @switch-handleWidth - @switch-innerWidth;
+	}
+
+	.@{namespace}-switch-handle {
+		left: 0;
+		background-color: @switch_off-handle-bgColor;
+	}
+}

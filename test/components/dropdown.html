@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/wp-admin.css">
+    <link rel="stylesheet" href="../css/highlighting/github.css">
+    <link rel="stylesheet" type="text/css" href="../css/adaptGrid.css">
+    <link rel="stylesheet" type="text/css" href="../../css/amazing-plugin-ui-min.css">
+    <style>
+        body {
+            padding: 40px;
+        }
+        .demo {
+            list-style: none;
+        }
+        .demo >li {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h2>Dropdown</h2>
+        <div class="row">
+            <div class="column half">
+                <h4>HTML</h4>
+                <pre><code data-language="html">&lt;div&nbsp;class=&quot;az-dropdown&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;az-dropdown-trigger&quot;&gt;dropdown&lt;i&gt;&lt;/i&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;class=&quot;az-dropdown-panel&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;dropdown1&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;dropdown2&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;dropdown3&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;dropdown4&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.az-dropdown&nbsp;.az-dropdown-trigger').dropdown({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-dropdown',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;imitateSelect:&nbsp;true
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</code></pre>
+            </div>
+            <div class="column half">
+                <h4>RENDERED HTML</h4>
+                <div class="az-dropdown">
+                    <div class="az-dropdown-trigger">dropdown<i></i></div>
+                    <ul class="az-dropdown-panel">
+                        <li>dropdown1</li>
+                        <li>dropdown2</li>
+                        <li>dropdown3</li>
+                        <li>dropdown4</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="../js/highlighting/rainbow.min.js"></script>
+    <script type="text/javascript" src="../js/highlighting/html.js"></script>
+    <script type="text/javascript" src="../js/highlighting/javascript.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/jquery-dropdown.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.az-dropdown .az-dropdown-trigger').dropdown({
+                namespace: 'az-dropdown',
+                imitateSelect: true
+            });
+        });
+    </script>
+</body>
+</html>

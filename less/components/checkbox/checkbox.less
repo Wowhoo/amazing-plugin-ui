@@ -1,0 +1,45 @@
+// ==============================================
+// checkbox
+// ==============================================
+.@{namespace}-checkbox {
+	position: relative;
+	.inline-block();
+	width: @checkbox-width;
+	height: @checkbox-height;
+	margin: 0;
+	padding: 0;
+	vertical-align: middle;
+	background-color: @checkbox-bgColor;
+	cursor: pointer;
+	&:hover,
+	&.@{namespace}-checkbox_hover {
+		background: @checkbox_hover-bgColor url(@checkbox_hover-bgImage) no-repeat center center;
+	}
+
+	& + label {
+		.inline-block();
+	}
+}
+.@{namespace}-checkbox_checked {
+	background: @checkbox_checked-bgColor url(@checkbox_checked-bgImage) no-repeat center center;
+	&:hover,
+	&.@{namespace}-checkbox_hover {
+		background: @checkbox_checked_hover-bgColor url(@checkbox_checked_hover-bgImage) no-repeat center center;
+	}
+}
+.@{namespace}-checkbox_disabled {
+	background: @checkbox_disabled-bgColor;
+	cursor: default;
+	&:hover,
+	&.@{namespace}-checkbox_hover {
+		background: @checkbox_disabled_hover-bgColor;
+	}
+}
+.@{namespace}-checkbox_disabled.@{namespace}-checkbox_checked {
+	background: @checkbox_disabled_checked-bgColor url(@checkbox_disabled_checked-bgImage) no-repeat center center;
+	cursor: default;
+	&:hover,
+	&.@{namespace}-checkbox_hover {
+		background: @checkbox_disabled_checked_hover-bgColor url(@checkbox_disabled_checked_hover-bgImage) no-repeat center center;
+	}
+}

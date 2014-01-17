@@ -1,0 +1,115 @@
+//==============================================
+//select
+//==============================================
+
+.@{namespace}-selector-wrapper {
+	position: relative;
+	.inline-block();
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+.@{namespace}-selector-wrapper .@{namespace}-selector-mask {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+.@{namespace}-selector_disabled { 
+	cursor: default; 
+	-webkit-touch-callout: none; 
+	-webkit-user-select: none; 
+	-moz-user-select: none; 
+	-ms-user-select: none; 
+	user-select: none; 
+}
+.@{namespace}-selector-old { 
+	position: relative; 
+	overflow: hidden; 
+}
+.@{namespace}-selector-old select { 
+	position: absolute; 
+	left: -100%;
+}
+
+.@{namespace}-selector-trigger {
+	width: 160px;
+	padding: 0 10px;
+	color: @selector-trigger-color;
+	font-size: 14px;
+	line-height: 32px;
+	border: 2px solid @selector-trigger-borderColor;
+	background-color: @selector-trigger-bgColor;
+	.clearfix();
+	text-align: right;
+	&:hover {
+		border-color: @selector-trigger_hover-borderColor;
+	}	
+}
+
+.@{namespace}-selector-label {
+	float: left;
+	margin-right: 20px;
+	white-space: nowrap; 
+	overflow: hidden;
+}
+
+.@{namespace}-selector-handler {
+	&:before {
+		content: url("../images/icon-trangle.png");
+		speak: none;
+		.inline-block();
+		text-decoration: none;
+		width: 1em;
+		line-height: 1em;
+	}
+}
+
+.@{namespace}-selector-dropdown {
+	position: absolute;
+	display: none;
+	overflow: auto; 
+	top: 100%; 
+	left: 0;
+	z-index: 1;
+	& >ul {
+		position: relative;
+		margin-left: 0;
+		padding: 3px 2px;
+		background-color: @selector-dropdown-ul-bgColor;
+		border: 2px solid @selector-dropdown-ul-borderColor;
+	}
+}
+
+.@{namespace}-selector_open {
+	.@{namespace}-selector-trigger {
+		color: @selector_open-trigger-color;
+		border: 2px solid @selector_open-trigger-borderColor;
+		&:hover {
+			border: 2px solid @selector_open-trigger_hover-borderColor;
+		}
+	}
+	.@{namespace}-selector-dropdown {
+		display: block;
+	}
+}
+
+.@{namespace}-selector-dropdown li {
+	position: relative;
+	display: block;
+	width: 156px;
+	margin: 0;
+	padding: 8px 10px;
+	color: @selector-dropdown-li-color;
+	list-style: none;
+	background-color: @selector-dropdown-li-bgColor;
+	cursor: pointer;
+	&:hover {
+		color: @selector-dropdown-li_hover-bgColor;
+		background-color: @az-reactive-color;
+	}
+}
+//==============================================

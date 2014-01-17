@@ -1,0 +1,41 @@
+{
+  "name": "amazing-plugin-ui",
+  "title": "amazing-plugin-ui",
+  "description": "Component",
+  "version": "0.1.0",
+  "homepage": "https://github.com/amazingSurge/amazing-plugin-ui",
+  "author": {
+    "name": "amazingSurge",
+    "email": "amazingSurge@yahoo.com",
+    "url": "amazingSurge.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:amazingSurge/amazing-plugin-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/amazingSurge/amazing-plugin-ui/issues"
+  },
+  "licenses": [
+    {
+      "type": "GPL",
+      "url": "https://github.com/amazingSurge/amazing-plugin-ui/blob/master/LICENSE-GPL"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "devDependencies": {
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-cssmin": "~0.7.0",
+    "grunt-contrib-csslint": "~0.2.0",
+    "grunt-contrib-compress": "*",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt": "*",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-less": "~0.8.3",
+    "grunt-lessimportfile": "*",
+    "grunt-csscomb": "~2.0.0"
+  }
+}

@@ -1,0 +1,91 @@
+// ==============================================
+// tooltip
+// ==============================================
+.@{namespace}-tooltip-container {
+    position: relative;
+    display: inline-block;
+}
+.@{namespace}-tooltip-arrow {
+    position: absolute;
+    z-index: -1;
+
+    .inline-block();
+    width: 20px;
+    height: 20px;
+    background-color: @tooltip-arrow-bgColor;
+    .rotate (45deg);
+}
+.@{namespace}-tooltip-content {
+    .inline-block();
+    padding: 6px 10px;
+    font-size: 12px;
+    color: @tooltip-content-color;
+    background-color: @tooltip-content-bgColor;
+}
+.@{namespace}-tooltip-loading {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url('../img/tooltip-loading.gif') no-repeat scroll 0 0 transparent;
+}
+
+.@{namespace}-tooltip-n {
+    padding-bottom: 10px;
+    .@{namespace}-tooltip-arrow {
+        left: 50%;
+        bottom: 6px;
+        margin-left: -10px;
+    }
+}
+.@{namespace}-tooltip-s {
+    padding-top: 10px;
+    .@{namespace}-tooltip-arrow {
+        left: 50%;
+        top: 6px;
+        margin-left: -10px;
+    }
+}
+.@{namespace}-tooltip-w {
+    padding-right: 10px;
+    .@{namespace}-tooltip-arrow {
+        top: 50%;
+        right: 6px;
+        margin-top: -10px;
+    }
+}
+.@{namespace}-tooltip-e {
+    padding-left: 10px;
+    .@{namespace}-tooltip-arrow {
+        top: 50%;
+        left: 6px;
+        margin-top: -10px;
+    }
+}
+.@{namespace}-tooltip-ne {
+    padding-bottom: 10px;
+    .@{namespace}-tooltip-arrow {
+        bottom: 6px;
+        left: 9px;
+    }
+}
+.@{namespace}-tooltip-nw {
+    padding-bottom: 10px;
+    .@{namespace}-tooltip-arrow {
+        bottom: 6px;
+        right: 9px;
+    }
+}
+.@{namespace}-tooltip-se {
+    padding-top: 10px;
+    .@{namespace}-tooltip-arrow {
+        left: 9px;
+        top: 6px;
+    }
+}
+.@{namespace}-tooltip-sw {
+    padding-top: 10px;
+    .@{namespace}-tooltip-arrow {
+        right: 9px;
+        top: 6px;
+    }
+}

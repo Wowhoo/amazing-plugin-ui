@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/wp-admin.css">
+    <link rel="stylesheet" type="text/css" href="../../css/amazing-plugin-ui-min.css">
+    <style>
+        body {
+            padding: 40px;
+        }
+        .demo {
+            list-style: none;
+        }
+        .demo >li {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <input type='text' class="az-colorInput-trigger" /> -->
+
+    <div class="az-colorInput-trigger">
+        <input type="text">
+        <span style="background-color: red;"></span>
+    </div>
+
+    <div class="az-colorInput" style="display: block; position: relative; top: 0px; left: 0px;" >
+
+        <div class="az-colorInput-saturation" style="display: block;">
+            <i><b></b></i>
+        </div>
+        <div class="az-colorInput-hue" style="display: block;">
+            <i></i>
+        </div>
+        <div class="az-colorInput-alpha" style="display: block;">
+            <i></i>
+        </div>
+        
+        <div class="az-colorInput-preview">
+            <span class="az-colorInput-preview-previous"></span>
+            <span class="az-colorInput-preview-current"></span>
+        </div>
+        <div class="az-colorInput-palettes" tabindex="0">
+            <ul>
+                <li data-color="rgba(36,99,42,1)" style="background-color:rgba(36,99,42,1)">rgba(36,99,42,1)</li>
+                <li data-color="rgba(49,153,57,1)" style="background-color:rgba(49,153,57,1)">rgba(49,153,57,1)</li>
+                <li data-color="rgba(42,98,47,1)" style="background-color:rgba(42,98,47,1)">rgba(42,98,47,1)</li>
+                <li data-color="rgba(63,136,69,1)" style="background-color:rgba(63,136,69,1)">rgba(63,136,69,1)</li>
+                <li data-color="rgba(34,123,42,1)" style="background-color:rgba(34,123,42,1)">rgba(34,123,42,1)</li>
+                <li data-color="rgba(37,125,44,1)" style="background-color:rgba(37,125,44,1)">rgba(37,125,44,1)</li>
+            </ul>
+            <ul>
+                <li data-color="rgba(36,99,42,1)" style="background-color:rgba(36,99,42,1)">rgba(36,99,42,1)</li>
+                <li data-color="rgba(49,153,57,1)" style="background-color:rgba(49,153,57,1)">rgba(49,153,57,1)</li>
+                <li data-color="rgba(42,98,47,1)" style="background-color:rgba(42,98,47,1)">rgba(42,98,47,1)</li>
+                <li data-color="rgba(63,136,69,1)" style="background-color:rgba(63,136,69,1)">rgba(63,136,69,1)</li>
+                <li data-color="rgba(34,123,42,1)" style="background-color:rgba(34,123,42,1)">rgba(34,123,42,1)</li>
+                <li data-color="rgba(37,125,44,1)" style="background-color:rgba(37,125,44,1)">rgba(37,125,44,1)</li>
+            </ul>
+        </div>
+
+        <input type="text" class="az-colorInput-hex" value="#000ff">
+
+        <a href="#" class="az-colorInput-gradient-trigger">Gradient</a>
+        <div class="az-colorInput-gradient">
+            <div class="az-colorInput-gradient-panel"><!-- /need the div? -->
+                <div class="az-colorInput-gradient-background"></div>
+
+                <div class="az-colorInput-gradient-markers">
+                    <div class="az-colorInput-gradient-maker" style="left: 30px;">
+                        <i></i>
+                    </div>
+                    <div class="az-colorInput-gradient-maker">
+                        <i></i>
+                    </div>
+                </div>
+            </div>
+            <div class="az-colorInput-gradient-wheel">
+                <i></i>
+            </div>
+            <input class="az-colorInput-gradient-degree" type="text" value="360" size="3" />
+        </div>
+    </div>
+
+    <!--<script type="text/javascript" src="../../js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="../../js/jquery-az-colorInput.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $(".flat").az-colorInput({
+                    flat: true
+                });
+            });
+        </script>-->
+</body>
+</html>

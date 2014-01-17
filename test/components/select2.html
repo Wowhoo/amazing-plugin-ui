@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/wp-admin.css">
+    <link rel="stylesheet" href="../css/highlighting/github.css">
+    <link rel="stylesheet" type="text/css" href="../css/adaptGrid.css">
+    <link rel="stylesheet" type="text/css" href="../../css/amazing-plugin-ui-min.css">
+    <style>
+        body {
+            padding: 40px;
+            scrollbar-face-color: red;
+        }
+        .demo {
+            list-style: none;
+        }
+        .demo >li {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h2>Select2</h2>
+        <div class="row">
+            <div class="column half">
+                <h4>HTML</h4>
+                <pre><code data-language="html">&lt;div&nbsp;class=&quot;demo&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;select&nbsp;class=&quot;az-select2&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;optgroup&nbsp;label=&quot;Who&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value&nbsp;=&quot;jscript&quot;&gt;jscript&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value&nbsp;=&quot;lion&quot;&gt;lion&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value&nbsp;=&quot;vicc&quot;&gt;vicc&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value&nbsp;=&quot;ielljerry&quot;&gt;ielljerry&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/optgroup&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;optgroup&nbsp;label=&quot;Cars&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value&nbsp;=&quot;mercedes&quot;&gt;MercedesMercedes&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value&nbsp;=&quot;audi&quot;&gt;Audi&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value&nbsp;=&quot;volvo&quot;&gt;Volvo&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value&nbsp;=&quot;saab&quot;&gt;Saab&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/optgroup&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;optgroup&nbsp;label=&quot;Where&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;a&quot;&gt;beijing&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;b&quot;&gt;fujian&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;c&quot;&gt;zhejiang&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;d&quot;&gt;tianjin&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;e&quot;&gt;shanghai&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/optgroup&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/select&gt;
+&lt;/div&gt;&nbsp;&nbsp;&nbsp;
+&lt;div&nbsp;class=&quot;demo&quot;&nbsp;style=&quot;padding-top:&nbsp;100px;&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;&quot;&nbsp;id=&quot;s2_m&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;$(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.az-select2').select2();
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('#s2_m').select2({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder:&nbsp;&quot;Select&nbsp;please&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;multiple:&nbsp;true,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;createSearchChoice:&nbsp;function(term,&nbsp;data)&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;($(data).filter(function()&nbsp;{&nbsp;return&nbsp;this.text.localeCompare(term)===0;&nbsp;}).length===0)&nbsp;{return&nbsp;{id:term,&nbsp;text:term};}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data:&nbsp;[
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{id:&nbsp;0,&nbsp;text:&nbsp;'astsssory'},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{id:&nbsp;1,&nbsp;text:&nbsp;'bstssqsssory'},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{id:&nbsp;3,&nbsp;text:&nbsp;'cstssssory'},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{id:&nbsp;4,&nbsp;text:&nbsp;'estsssssssory'},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{id:&nbsp;5,&nbsp;text:&nbsp;'fstssdssory'},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{id:&nbsp;6,&nbsp;text:&nbsp;'ggstssxsssory'},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{id:&nbsp;7,&nbsp;text:&nbsp;'hstssssory'},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{id:&nbsp;8,&nbsp;text:&nbsp;'jkistsssssory'},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{id:&nbsp;9,&nbsp;text:&nbsp;'kbug'},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{id:&nbsp;10,&nbsp;text:&nbsp;'ltask'}]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</code></pre>
+            </div>
+            <div class="column half">
+                <h4>RENDERED HTML</h4>
+                <div class="demo">
+                    <select class="az-select2">
+                        <optgroup label="Who">
+                            <option value ="jscript">jscript</option>
+                            <option value ="lion">lion</option>
+                            <option value ="vicc">vicc</option>
+                            <option value ="ielljerry">ielljerry</option>
+                        </optgroup>
+                        <optgroup label="Cars">
+                            <option value ="mercedes">MercedesMercedes</option>
+                            <option value ="audi">Audi</option>
+                            <option value ="volvo">Volvo</option>
+                            <option value ="saab">Saab</option>
+                        </optgroup>
+                        <optgroup label="Where">
+                            <option value="a">beijing</option>
+                            <option value="b">fujian</option>
+                            <option value="c">zhejiang</option>
+                            <option value="d">tianjin</option>
+                            <option value="e">shanghai</option>
+                        </optgroup>            
+                    </select>
+                </div>   
+                <div class="demo" style="padding-top: 100px;">
+                    <div class="" id="s2_m"></div>
+                </div> 
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="../js/highlighting/rainbow.min.js"></script>
+    <script type="text/javascript" src="../js/highlighting/html.js"></script>
+    <script type="text/javascript" src="../js/highlighting/javascript.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/select2.min.js"></script>
+    <script>
+        $(function(){
+            $('.az-select2').select2();
+
+            $('#s2_m').select2({
+                placeholder: "Select please",
+                multiple: true,
+                createSearchChoice: function(term, data) { 
+                    if ($(data).filter(function() { return this.text.localeCompare(term)===0; }).length===0) {return {id:term, text:term};} 
+                },
+                data: [
+                {id: 0, text: 'astsssory'},
+                {id: 1, text: 'bstssqsssory'},
+                {id: 3, text: 'cstssssory'},
+                {id: 4, text: 'estsssssssory'},
+                {id: 5, text: 'fstssdssory'},
+                {id: 6, text: 'ggstssxsssory'},
+                {id: 7, text: 'hstssssory'},
+                {id: 8, text: 'jkistsssssory'},
+                {id: 9, text: 'kbug'},
+                {id: 10, text: 'ltask'}]
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,422 @@
+// ==============================================
+// colorInput
+// ==============================================
+
+.@{namespace}-colorInput-trigger {
+	width: 201px;
+	height: 36px;
+
+	background-color: @colorInput-trigger-bgColor;
+	border: @colorInput-trigger-borderWidth solid @colorInput-trigger-borderColor;
+	overflow: hidden;
+	>input[type='text'] {
+		float: left;
+		.inline-block();
+		width: 165px;
+		height: 100%;
+
+		padding: 8px;
+		margin: 0;
+		font-size: 14px;
+		line-height: 1;
+		color: #aaa;
+		border: 0;
+		border: none;
+		border-right: 1px solid @colorInput-text-borderColor;
+		background: transparent;
+		letter-spacing: normal;
+		outline: none;
+		.box-sizing(border-box);
+		.border-radius(0);
+		&:hover {
+			border: 0;
+			border: none;
+			border-right: 1px solid @colorInput-text_hover-borderColor;
+		}
+		&:focus {
+			border: 0;
+			border: none;
+			border-right: 1px solid @colorInput-text_focus-borderColor;
+			.box-shadow(none);
+		}
+	}
+	>span {
+		float: left;
+		display: block;
+		width: 32px;
+		height: 32px;
+
+		border: 2px solid @colorInput-span-borderColor;
+		&:after {
+			content: "@";
+			position: absolute;
+			bottom: 1px;
+			right: 5px;
+		}
+	}
+}
+
+.@{namespace}-colorInput-input {
+	display: none;
+}
+.@{namespace}-colorInput {
+	display: none;
+	position: absolute;
+	z-index: 9999;
+	
+	width: 282px;
+	height: 394px;
+	border: 2px solid @colorInput-borderColor;
+}
+.@{namespace}-colorInput.@{namespace}-colorInput_show {
+	display: block;
+}
+.@{namespace}-colorInput.@{namespace}-colorInput_flat {
+	display: block;
+	position: relative;
+	top: 0;
+	left: 0;
+	z-index: auto;
+}
+.@{namespace}-colorInput.@{namespace}-colorInput_flat.@{namespace}-colorInput_show {
+	display: block;
+}
+.@{namespace}-colorInput-mask {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9998;
+}
+.@{namespace}-colorInput-trigger {
+	position: relative;
+}
+
+.@{namespace}-colorInput .@{namespace}-colorInput-alpha, 
+.@{namespace}-colorInput .@{namespace}-colorInput-check, 
+.@{namespace}-colorInput .@{namespace}-colorInput-hue, 
+.@{namespace}-colorInput .@{namespace}-colorInput-hex, 
+.@{namespace}-colorInput .@{namespace}-colorInput-info, 
+.@{namespace}-colorInput .@{namespace}-colorInput-palettes, 
+.@{namespace}-colorInput .@{namespace}-colorInput-preview, 
+.@{namespace}-colorInput .@{namespace}-colorInput-saturation {
+	position: absolute;
+}
+
+
+.@{namespace}-colorInput-saturation {
+	top: 79px;
+	left: 15px;
+
+	width: 175px;
+	height: 175px;
+	
+	margin: 0;
+    padding: 0;
+    border: 2px solid @colorInput-saturation-borderColor;
+    background: @colorInput-saturation-bgColor url("../images/saturation.png") no-repeat center center;
+    cursor: crosshair;
+    i {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        border: @colorInput-saturation-i-borderWidth solid @colorInput-saturation-i-borderColor;
+        .border-radius(10px);
+    }
+    b {
+    	display: none;
+    }
+}
+
+.@{namespace}-colorInput-hue {
+	top: 79px;
+	left: 209px;
+
+	width: 20px;
+	height: 175px;
+	
+	border: 2px solid @colorInput-hue-borderColor;
+	cursor: pointer;
+	i {
+		position: absolute;
+		top: 10px;
+		left: -2px;
+
+		width: 20px;
+		height: 3px;
+		border: @colorInput-hue-i-borderWidth solid @colorInput-hue-i-borderColor;
+		cursor: row-resize;
+	}
+}
+
+.@{namespace}-colorInput-alpha {
+	top: 79px;
+	left: 241px;
+
+	width: 20px;
+	height: 175px;
+
+	border: 2px solid @colorInput-alpha-borderColor;
+	cursor: pointer;
+	i {
+		position: absolute;
+		top: 50px;
+		left: -2px;
+
+		width: 20px;
+		height: 3px;
+		border: @colorInput-alpha-i-boderWidth solid @colorInput-alpha-i-boderColor;
+		cursor: row-resize;
+	}
+}
+
+.@{namespace}-colorInput-preview {
+	top: 20px;
+	left: 15px;
+
+	width: 95px;
+	height: 40px;
+
+	border: 2px solid @colorInput-preview-borderColor;
+
+	overflow: hidden;
+}
+.@{namespace}-colorInput-preview-previous {
+	float: left;
+	width: 50%;
+	height: 100%;
+	background-color: #000;
+	cursor: pointer;
+}
+.@{namespace}-colorInput-preview-current {
+	float: left;
+	width: 50%;
+	height: 100%;
+	background-color: #f77268;
+	cursor: pointer;
+}
+
+.@{namespace}-colorInput-palettes {
+	top: 20px;
+	left: 134px;
+	
+	ul {
+		display: block;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+	}
+
+	li {
+		float: left;
+		width: 14px;
+		height: 14px;
+		margin: 0;
+		padding: 0;
+		margin-left: 5px;
+		margin-bottom: 8px;
+		border: 2px solid @colorInput-palettes-li-borderColor;
+
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		cursor: pointer;
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+}
+
+input.@{namespace}-colorInput-hex[type="text"] {
+	top: 273px;
+	left: 15px;
+
+	width: 179px;
+	height: 31px;
+
+	padding: 6px 10px;
+	font-size: 14px;
+	line-height: 1;
+	color: @colorInput-hex-color;
+	border: 2px solid @colorInput-hex-borderColor;
+	background: @colorInput-hex-bgColor;
+	letter-spacing: normal;
+	outline: none;
+	.box-sizing(border-box);
+	.border-radius(0);
+	&:hover {
+		border-color: @colorInput-hex_hover-borderColor;
+	}
+	&:focus {
+		color: @colorInput-hex_focus-color;
+		border-color: @colorInput-hex_focus-borderColor;
+		.box-shadow(none);
+	}
+}
+
+.@{namespace}-colorInput-gradient-trigger {
+	position: absolute;
+	top: 273px;
+	left: 209px;
+
+	display: block;
+	width: 58px;
+	height: 31px;
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+	line-height: 31px;
+	color: #777;
+	text-decoration: none;
+	&:hover {
+		color: #444;
+		text-decoration: none;
+	}
+	&:active,
+	&:focus {
+		outline: none !important;
+	}
+}
+
+.@{namespace}-colorInput-gradient {
+	position: absolute;
+	top: 324px;
+	left: 0;
+	z-index: -1;
+	
+	height: 70px;
+	width: 100%;
+	padding: 23px 15px 20px;
+	border-top: 2px solid #e5e5e5;
+	background-color: #fafafa;
+	.box-sizing(border-box);
+	&:after {
+		content: "";
+		position: absolute;
+		top: -7px;
+		right: 38px;
+		z-index: 1;
+
+		width: 10px;
+		height: 10px;
+		border: 2px solid #e5e5e5;
+		border-right-color: transparent;
+		border-bottom-color: transparent;
+		background-color: #fafafa;
+		.transform(rotate(45deg));
+	}
+}
+
+.@{namespace}-colorInput-gradient-panel {
+	float: left;
+	// width: 187px;
+	// height: 40px;
+}
+.@{namespace}-colorInput-gradient-background {
+	width: 175px;
+	height: 21px;
+	border: 2px solid #e5e5e5;
+}
+.@{namespace}-colorInput-gradient-markers {
+	position: absolute;
+	top: 10px;
+	left: 15px;
+	width: 187px;
+	height: 15px;
+}
+.@{namespace}-colorInput-gradient-maker {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 10px;
+	height: 10px;
+	line-height: 1;
+	border: 1px solid #e5e5e5;
+	background-color: #fff;
+	&:focus {
+
+	}
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: -3px;
+		left: 3px;
+		z-index: 1;
+
+		width: 3px;
+		height: 3px;
+		border: 1px solid #e5e5e5;
+		border-top-color: transparent;
+		border-left-color: transparent;
+		background-color: #fff;
+		.transform(rotate(45deg));
+	}
+	i {
+		position: relative;
+		z-index: 2;
+		display: inline-block;
+		width: 6px;
+		height: 6px;
+		margin: 1px;
+		line-height: 1;
+		border: 1px solid #e5e5e5;
+	}
+}
+
+// .@{namespace}-colorInput-gradient-degree {
+// 	position: absolute;
+// 	top: 25px;
+// 	left: 202px;
+	
+// 	width: 65px;
+// 	height: 25px;
+
+// 	overflow: hidden;
+// }
+
+.@{namespace}-colorInput-gradient-wheel {
+	position: relative;
+	float: left;
+	width: 21px;
+	height: 21px;
+	margin-left: 8px;
+	border: 2px solid #e5e5e5;
+	.border-radius(100%);
+	i {
+		position: absolute;
+		top: 10px;
+		left: 5px;
+		width: 3px;
+		height: 3px;
+		background-color: #444;
+		.border-radius(100%);
+	}
+}
+
+input.@{namespace}-colorInput-gradient-degree[type="text"] {
+	float: left;
+	width: 35px;
+	height: 25px;
+
+	padding: 3px;
+	margin: 0 0 0 5px;
+	font-size: 12px;
+	line-height: 1;
+	color: #aaa;
+	border: 2px solid #e5e5e5;
+	background: #fff;
+	letter-spacing: normal;
+	outline: none;
+	.box-sizing(border-box);
+	.border-radius(0);//for co wp-admin.css
+	&:hover {
+		// color: #666;
+		border-color: #d9d9d9;
+	}
+	&:focus {
+		border-color: @az-reactive-color;
+		color: #444;
+		.box-shadow(none);
+	}
+}

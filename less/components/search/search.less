@@ -1,0 +1,83 @@
+//==============================================
+//Search
+//==============================================
+.@{namespace}-search {
+	position: relative;
+	*zoom: 1;
+
+	>input.@{namespace}-input[type="text"] {
+		*float: left;
+		*display: inline;
+		margin: 0px;
+		width: 100%;
+		height: 36px;
+		line-height: 1.5;
+		*line-height: 36px;//for ie7
+		padding: 3px 45px 3px 10px;
+		*padding: 0;//for ie7
+		font-size: 14px;
+		color: @search-input-color;
+		background-color: @search-input-bgColor;
+		border: 2px solid @search-input-borderColor;
+
+		.box-sizing(border-box);
+		.border-radius(0);
+		&:hover {
+			border-color: @search-input_hover-borderColor;
+		}
+
+		&:focus {
+			color: @search-input_focus-color;
+			border-color: @search-input_focus-borderColor;
+			& + button {
+				border-color: @search-input_focus-button-borderColor;
+				background: @search-input_focus-button-bgColor url("../images/search-hover.png") no-repeat center center;
+				color: transparent;
+				text-shadow: none;
+			}
+		}
+	}
+
+	>button {
+		position: absolute;
+		top: 0;
+		right: 0;
+		*right: -4px;
+		display: block;
+		margin: 0;
+		padding: 0;
+		width: 45px;
+		height: 36px;
+		line-height: 1.5;
+		*height: 40px;//for ie7
+		padding: 3px 5px;
+		*padding: 0;//for ie7
+		cursor: pointer;
+		border: 2px solid @search-button-borderColor;
+		border-left: 1px solid @search-button-borderColor;
+		background: @search-button-bgColor url("../images/search.png") no-repeat center center;
+
+		color: transparent;
+		text-shadow: none;
+
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+
+		.box-sizing(border-box);
+		*filter: chroma(color=#000000);//for remove black border in ie7
+		&:focus {
+			border-color: @search-button_focus-borderColor;
+			*filter: chroma(color=#000000);//for remove black border in ie7
+		}
+	}
+
+	&:hover {
+		>button {
+			border-color: @search_hover-button-borderColor;
+			background: @search_hover-button-bgColor url("../images/search-hover.png") no-repeat center center;
+			color: transparent;
+			text-shadow: none;
+		}
+	}
+}

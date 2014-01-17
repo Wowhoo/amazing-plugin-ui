@@ -1,0 +1,198 @@
+// ================================================
+// Buttons
+// ================================================
+.@{namespace}-button {
+    .inline-block();
+    padding: @button-padding;
+    font-size: @button-fontSize;
+    color: @button-color;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1;
+    background-color: @button-bgColor;
+    border: @button-borderWidth solid @button-borderColor;
+
+    vertical-align: middle;
+    cursor: pointer;
+
+   .user-select(none);
+
+    // Hover state
+    &:hover {
+        color: @button_hover-color;
+        text-decoration: none;
+        background-color: @button_hover-bgColor;
+    }
+
+    // Active state
+    &:active {
+        color: @button_active-color;
+        text-decoration: none;
+        background-color: @button_active-bgColor;
+    }
+}
+
+button.@{namespace}-button,
+input.@{namespace}-button {
+    border: 0;
+    border: none;
+}
+
+//button extends
+.@{namespace}-button_primary {
+    color: @button_primary-color;
+    background-color: @button_primary-bgColor;
+    border: @button_primary-borderWidth solid @button_primary-borderColor;
+
+    &:hover {
+        color: @button_primary_hover-color;
+        background-color: @button_primary_hover-bgColor;
+    }
+
+    &:active {
+        color: @button_primary_active-color;
+        background-color: @button_primary_active-bgColor;
+    }
+}
+
+.@{namespace}-button_highlight {
+    color: @button_highlight-color;
+    background-color: @button_highlight-bgColor;
+    border: @button_highlight-borderWidth solid @button_highlight-borderColor;
+
+    &:hover {
+        color: @button_highlight_hover-color;
+        background-color: @button_highlight_hover-bgColor;
+    }
+
+    &:active {
+        color: @button_highlight_active-color;
+        background-color: @button_highlight_active-bgColor;
+    }
+}
+
+.@{namespace}-button_action {
+    color: @button_action-color;
+    background-color: @button_action-bgColor;
+    border: @button_action-borderWidth solid @button_action-borderColor;
+
+    &:hover {
+        color: @button_action_hover-color;
+        background-color: @button_action_hover-bgColor;
+    }
+
+    &:active {
+        color: @button_action_active-color;
+        background-color: @button_action_active-bgColor;
+    }
+}
+
+.@{namespace}-button_caution {
+    color: @button_caution-color;
+    background-color: @button_caution-bgColor;
+    border: @button_caution-borderWidth solid @button_caution-borderColor;
+
+    &:hover {
+        color: @button_caution_hover-color;
+        background-color: @button_caution_hover-bgColor;
+    }
+
+    &:active {
+        color: @button_caution_active-color;
+        background-color: @button_caution_active-bgColor;
+    }
+}
+
+.@{namespace}-button_normal {
+    color: @button_normal-color;
+    background-color: @button_normal-bgColor;
+    border: @button_normal-borderWidth solid @button_normal-borderColor;
+
+    &:hover {
+        color: @button_normal_hover-color;
+        background-color: @button_normal_hover-bgColor;
+    }
+
+    &:active {
+        color: @button_normal_active-color;
+        background-color: @button_normal_active-bgColor;
+    }
+}
+
+.@{namespace}-button_radius {
+    .border-radius(@button-borderRadius);
+}
+.@{namespace}-button_full {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.@{namespace}-button_disabled {
+    cursor: default;
+    color: @button_disabled-color;
+    background-color: @button_disabled-bgColor;
+    border: @button_disabled-borderWidth solid @button_disabled-borderColor;
+    &:hover {
+        color: @button_disabled-color;
+        background-color: @button_disabled-bgColor;
+    }
+
+    &:active {
+        color: @button_disabled-color;
+        background-color: @button_disabled-bgColor;
+    }
+}
+
+// button size
+.@{namespace}-button_mini {
+    padding: @button_mini-padding;
+    font-size: @button_fontSize-mini;
+}
+.@{namespace}-button_small {
+    padding: @button_small-padding;
+    font-size: @button_small-fontSize;
+}
+.@{namespace}-button_large {
+    padding: @button_large-padding;
+    font-size: @button_large-fontSize;
+}
+
+//Button groups
+.@{namespace}-buttons {
+    .inline-block();
+    .margin-right-rem(@buttons-margin-right);
+    vertical-align: bottom;
+    &:after {
+        clear: both;
+    }
+    &:before, &:after {
+        content: "";
+        display: table;
+    }
+    > .button, > input {
+        float: left;
+        margin-left: -1px;
+    }
+}
+
+//remove focus dashed
+.@{namespace}-button {
+    outline: none;
+    &:focus {
+        outline: none;
+    }
+    &:active {
+        outline: none;
+    }
+}
+
+.@{namespace}-button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+    outline: 0;
+}
+
+button.@{namespace}-button {
+    *overflow: visible;
+}
