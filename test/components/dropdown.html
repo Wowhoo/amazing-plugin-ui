@@ -32,7 +32,7 @@
         <div class="row">
             <div class="column half">
                 <h4>HTML</h4>
-                <pre><code data-language="html">&lt;div&nbsp;class=&quot;az-dropdown&quot;&gt;
+                <pre><code data-language="html">&lt;div&nbsp;class=&quot;az-dropdown-wrapper&quot;&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;az-dropdown-trigger&quot;&gt;dropdown&lt;i&gt;&lt;/i&gt;&lt;/div&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;class=&quot;az-dropdown-panel&quot;&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;dropdown1&lt;/li&gt;
@@ -43,7 +43,7 @@
 &lt;/div&gt;
 &lt;script&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.az-dropdown&nbsp;.az-dropdown-trigger').dropdown({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.az-dropdown-wrapper&nbsp;.az-dropdown-trigger').dropdown({
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-dropdown',
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;imitateSelect:&nbsp;true
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
@@ -52,7 +52,7 @@
             </div>
             <div class="column half">
                 <h4>RENDERED HTML</h4>
-                <div class="az-dropdown">
+                <div class="az-dropdown-wrapper">
                     <div class="az-dropdown-trigger">dropdown<i></i></div>
                     <ul class="az-dropdown-panel">
                         <li>dropdown1</li>
@@ -72,7 +72,7 @@
     <script type="text/javascript" src="../js/jquery-dropdown.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('.az-dropdown .az-dropdown-trigger').dropdown({
+            $('.az-dropdown-wrapper .az-dropdown-trigger').dropdown({
                 namespace: 'az-dropdown',
                 imitateSelect: true
             });
