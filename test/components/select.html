@@ -17,37 +17,30 @@
     <style>
         body {
             padding: 40px;
-        }
-        .demo {
-            list-style: none;
-        }
-        .demo >li {
-            margin-bottom: 20px;
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
     <section>
         <h2>Select</h2>
-        <div class="row">
-            <div class="column half">
-                <h4>HTML</h4>
-                <pre><code data-language="html">&lt;ul&nbsp;class=&quot;demo&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;select&nbsp;class=&quot;az-selector&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;a&quot;&gt;Bulk&nbsp;Actions0&lt;/option&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;b&quot;&gt;Bulk&nbsp;Actions2&lt;/option&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;c&quot;&gt;Bulk&nbsp;Actions3&lt;/option&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;d&quot;&gt;Bulk&nbsp;Actions4&lt;/option&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;e&quot;&gt;Bulk&nbsp;Actions5&lt;/option&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/select&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
-&lt;/ul&gt;
+        <section>
+            <h3>Default</h3>
+            <div class="row">
+                <div class="column half">
+                    <h4>HTML</h4>
+                    <pre><code data-language="html">&lt;select&nbsp;class=&quot;az-selector&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;a&quot;&gt;Bulk&nbsp;Actions1&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;b&quot;&gt;Bulk&nbsp;Actions2&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;c&quot;&gt;Bulk&nbsp;Actions3&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;d&quot;&gt;Bulk&nbsp;Actions4&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;e&quot;&gt;Bulk&nbsp;Actions5&lt;/option&gt;
+&lt;/select&gt;
 &lt;script&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.az-selector').select({
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-selector',&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;offset:&nbsp;[5,&nbsp;5],&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-selector',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;offset:&nbsp;[5,&nbsp;5],
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onChange:&nbsp;function(data)&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;value&nbsp;=&nbsp;instance.get();
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('&lt;div&gt;&lt;span&gt;value:&nbsp;&lt;/span&gt;'&nbsp;+&nbsp;data&nbsp;+&nbsp;'&lt;/div&gt;').prependTo($('.content1'));
@@ -55,22 +48,141 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
 &nbsp;&nbsp;&nbsp;&nbsp;});
 &lt;/script&gt;</code></pre>
+                </div>
+                <div class="column half">
+                    <h4>RENDERED HTML</h4>
+                    <select class="az-selector">
+                        <option value="a">Bulk Actions1</option>
+                        <option value="b">Bulk Actions2</option>
+                        <option value="c">Bulk Actions3</option>
+                        <option value="d">Bulk Actions4</option>
+                        <option value="e">Bulk Actions5</option>
+                    </select>
+                </div>
             </div>
-            <div class="column half">
-                <h4>RENDERED HTML</h4>
-                <ul class="demo">
-                    <li>
-                        <select class="az-selector">
-                            <option value="a">Bulk Actions0</option>
-                            <option value="b">Bulk Actions2</option>
-                            <option value="c">Bulk Actions3</option>
-                            <option value="d">Bulk Actions4</option>
-                            <option value="e">Bulk Actions5</option>
-                        </select>
-                    </li>
-                </ul>
+        </section>
+        <hr />
+        <section>
+            <h3>Group options</h3>
+            <div class="row">
+                <div class="column half">
+                    <h4>HTML</h4>
+                    <pre><code data-language="html">&lt;select&nbsp;class=&quot;group-select&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;optgroup&nbsp;label=&quot;north&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;a&quot;&gt;beijing&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;b&quot;&gt;fujian&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/optgroup&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;optgroup&nbsp;label=&quot;east&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;c&quot;&gt;zhejiang&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;d&quot;&gt;tianjin&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;e&quot;&gt;shanghai&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/optgroup&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;optgroup&nbsp;label=&quot;south&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;f&quot;&gt;jiangsu&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/optgroup&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;/select&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.group-select').select({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-selector',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;skin:&nbsp;'simple'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</code></pre>
+                </div>
+                <div class="column half">
+                    <h4>RENDERED HTML</h4>
+                    <select class="group-select">
+                        <optgroup label="north">
+                            <option value="a">beijing</option>
+                            <option value="b">fujian</option>
+                        </optgroup>
+                        <optgroup label="east">
+                            <option value="c">zhejiang</option>
+                            <option value="d">tianjin</option>
+                            <option value="e">shanghai</option>
+                        </optgroup>
+                        <optgroup label="south">
+                            <option value="f">jiangsu</option>
+                        </optgroup>                    
+                    </select>
+                </div>
             </div>
-        </div>
+        </section>
+        <hr />
+        <section>
+            <h3>Hover trigger</h3>
+            <div class="row">
+                <div class="column half">
+                    <h4>HTML</h4>
+                    <pre><code data-language="html">&lt;select&nbsp;class=&quot;hover-select&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;a&quot;&gt;Bulk&nbsp;Actions1&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;b&quot;&gt;Bulk&nbsp;Actions2&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;c&quot;&gt;Bulk&nbsp;Actions3&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;d&quot;&gt;Bulk&nbsp;Actions4&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;e&quot;&gt;Bulk&nbsp;Actions5&lt;/option&gt;
+&lt;/select&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.hover-select').select({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-selector',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;trigger:&nbsp;hover
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</code></pre>
+                </div>
+                <div class="column half">
+                    <h4>RENDERED HTML</h4>
+                    <select class="hover-select">
+                        <option value="a">Bulk Actions1</option>
+                        <option value="b">Bulk Actions2</option>
+                        <option value="c">Bulk Actions3</option>
+                        <option value="d">Bulk Actions4</option>
+                        <option value="e">Bulk Actions5</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+        <hr />
+        <section>
+            <h3>Build from json</h3>
+            <div class="row">
+                <div class="column half">
+                    <h4>HTML</h4>
+                    <pre><code data-language="html">&lt;div&nbsp;class=&quot;build-from-json&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.build-from-json').select({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-selector',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;preload:&nbsp;true,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;load:&nbsp;function(callback){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;callback([
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_1&quot;,&quot;text&quot;:&quot;value&nbsp;1&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_2&quot;,&quot;text&quot;:&quot;value&nbsp;2&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_3&quot;,&quot;text&quot;:&quot;value&nbsp;3&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;group&quot;:true,&quot;label&quot;:&quot;group-a&quot;,&quot;options&quot;:[
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_4&quot;,&quot;text&quot;:&quot;a-value4&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_5&quot;,&quot;text&quot;:&quot;a-value5&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_6&quot;,&quot;text&quot;:&quot;a-value6&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_7&quot;,&quot;text&quot;:&quot;a-value7&quot;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_8&quot;,&quot;text&quot;:&quot;b-value&nbsp;8&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_9&quot;,&quot;text&quot;:&quot;b-value&nbsp;9&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_10&quot;,&quot;text&quot;:&quot;b-value&nbsp;10&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_11&quot;,&quot;text&quot;:&quot;b-value&nbsp;11&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_12&quot;,&quot;text&quot;:&quot;b-value&nbsp;12&quot;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});});
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</code></pre>
+                </div>
+                <div class="column half">
+                    <h4>RENDERED HTML</h4>
+                    <div class="build-from-json"></div>
+                </div>
+            </div>
+        </section>
     </section>
 
     <script type="text/javascript" src="../js/highlighting/rainbow.min.js"></script>
@@ -81,11 +193,41 @@
     <script>
         $(document).ready(function() {
             $('.az-selector').select({
-                namespace: 'az-selector', 
-                offset: [5, 5], 
+                namespace: 'az-selector',
+                offset: [5, 5],
                 onChange: function(data) {
                     var value = instance.get();
                     $('<div><span>value: </span>' + data + '</div>').prependTo($('.content1'));
+                }
+            });
+            $('.group-select').select({
+                namespace: 'az-selector',
+                skin: 'simple'
+            });
+            $('.hover-select').select({
+                namespace: 'az-selector',
+                trigger: 'hover'
+            });
+            $('.build-from-json').select({
+                namespace: 'az-selector',
+                preload: true,
+                load: function(callback){
+                    callback([
+                        {"value":"value_1","text":"value 1"},
+                        {"value":"value_2","text":"value 2"},
+                        {"value":"value_3","text":"value 3"},
+                        {"group":true,"label":"group-a","options":[
+                            {"value":"value_4","text":"a-value4"},
+                            {"value":"value_5","text":"a-value5"},
+                            {"value":"value_6","text":"a-value6"},
+                            {"value":"value_7","text":"a-value7"}
+                        ]},
+                        {"value":"value_8","text":"b-value 8"},
+                        {"value":"value_9","text":"b-value 9"},
+                        {"value":"value_10","text":"b-value 10"},
+                        {"value":"value_11","text":"b-value 11"},
+                        {"value":"value_12","text":"b-value 12"}
+                    ]);
                 }
             });
         });

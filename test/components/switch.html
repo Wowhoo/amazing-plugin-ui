@@ -17,6 +17,7 @@
     <style>
         body {
             padding: 40px;
+            font-size: 16px;
         }
         .demo {
             list-style: none;
@@ -29,10 +30,12 @@
 <body>
     <section>
         <h2>Switch</h2>
-        <div class="row">
-            <div class="column half">
-                <h4>HTML</h4>
-                <pre><code data-language="html">&lt;input&nbsp;class=&quot;az-switch&quot;&nbsp;type=&quot;checkbox&quot;&nbsp;checked=&quot;checked&quot;&nbsp;/&gt;
+        <section>
+            <h3>Default</h3>
+            <div class="row">
+                <div class="column half">
+                    <h4>HTML</h4>
+                    <pre><code data-language="html">&lt;input&nbsp;class=&quot;switch1&quot;&nbsp;type=&quot;checkbox&quot;&nbsp;checked=&quot;checked&quot;&nbsp;/&gt;
 &lt;script&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.az-switch').switcher({
@@ -40,12 +43,59 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
 &nbsp;&nbsp;&nbsp;&nbsp;});
 &lt;/script&gt;</code></pre>
+                </div>
+                <div class="column half">
+                    <h4>RENDERED HTML</h4>
+                    <input class="switch1" type="checkbox" checked="checked" />
+                </div>
             </div>
-            <div class="column half">
-                <h4>RENDERED HTML</h4>
-                <input class="az-switch" type="checkbox" checked="checked" />
+        </section>
+        <hr />
+        <section>
+            <h3>Only drag</h3>
+            <div class="row">
+                <div class="column half">
+                    <h4>HTML</h4>
+                    <pre><code data-language="html">&lt;input&nbsp;class=&quot;switch2&quot;&nbsp;type=&quot;checkbox&quot;&nbsp;checked=&quot;checked&quot;&nbsp;/&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.az-switch').switcher({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-switch',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dragable:&nbsp;'true',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clickable:&nbsp;'false'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</code></pre>
+                </div>
+                <div class="column half">
+                    <h4>RENDERED HTML</h4>
+                    <input class="switch2" type="checkbox" checked="checked" />
+                </div>
             </div>
-        </div>
+        </section>
+        <hr />
+        <section>
+            <h3>Only drag</h3>
+            <div class="row">
+                <div class="column half">
+                    <h4>HTML</h4>
+                    <pre><code data-language="html">&lt;input&nbsp;class=&quot;switch3&quot;&nbsp;type=&quot;checkbox&quot;&nbsp;checked=&quot;checked&quot;&nbsp;/&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.az-switch').switcher({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-switch',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dragable:&nbsp;'false',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clickable:&nbsp;'true'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</code></pre>
+                </div>
+                <div class="column half">
+                    <h4>RENDERED HTML</h4>
+                    <input class="switch3" type="checkbox" checked="checked" />
+                </div>
+            </div>
+        </section>
     </section>
     
     <script type="text/javascript" src="../js/highlighting/rainbow.min.js"></script>
@@ -56,8 +106,18 @@
     <script type="text/javascript" src="../js/jquery-switcher.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('.az-switch').switcher({
+            $('.switch1').switcher({
                 namespace: 'az-switch'
+            });
+            $('.switch2').switcher({
+                namespace: 'az-switch',
+                dragable: true,
+                clickable: false
+            });
+            $('.switch3').switcher({
+                namespace: 'az-switch',
+                dragable: false,
+                clickable: true
             });
         });
     </script>

@@ -17,29 +17,99 @@
     <style>
         body {
             padding: 40px;
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
     <section>
         <h2>Datepicker</h2>
-        <div class="row">
-            <div class="column half">
-                <h4>HTML</h4>
-                <pre><code data-language="html">&lt;input&nbsp;type=&quot;text&quot;&nbsp;class=&quot;az-calendar&quot;/&gt;
+        <section>
+            <h3>Default</h3>
+            <div class="row">
+                <div class="column half">
+                    <h4>HTML</h4>
+                    <pre><code data-language="html">&lt;input&nbsp;type=&quot;text&quot;&nbsp;class=&quot;az-calendar&nbsp;az-calendar1&quot;/&gt;
 &lt;script&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function(){
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;.az-calendar&quot;).datepicker({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;.az-calendar1&quot;).datepicker({
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-calendar'
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
 &nbsp;&nbsp;&nbsp;&nbsp;});
 &lt;/script&gt;</code></pre>
+                </div>
+                <div class="column half">
+                    <h4>RENDERED HTML</h4>
+                    <input type="text" class="az-calendar az-calendar1"/>
+                </div>
             </div>
-            <div class="column half">
-                <h4>RENDERED HTML</h4>
-                <input type="text" class="az-calendar"/>
+        </section>
+        <hr />
+        <section>
+            <h3>Range</h3>
+            <div class="row">
+                <div class="column half">
+                    <h4>HTML</h4>
+                    <pre><code data-language="html">&lt;input&nbsp;type=&quot;text&quot;&nbsp;class=&quot;az-calendar&nbsp;az-calendar2&quot;/&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;.az-calendar2&quot;).datepicker({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-calendar',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mode:&nbsp;'range'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</code></pre>
+                </div>
+                <div class="column half">
+                    <h4>RENDERED HTML</h4>
+                    <input type="text" class="az-calendar az-calendar2"/>
+                </div>
             </div>
-        </div>
+        </section>
+        <hr />
+        <section>
+            <h3>Multiple</h3>
+            <div class="row">
+                <div class="column half">
+                    <h4>HTML</h4>
+                    <pre><code data-language="html">&lt;input&nbsp;type=&quot;text&quot;&nbsp;class=&quot;az-calendar&nbsp;az-calendar3&quot;/&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;.az-calendar3&quot;).datepicker({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-calendar',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mode:&nbsp;'multiple',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;calendars:&nbsp;'4'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</code></pre>
+                </div>
+                <div class="column half">
+                    <h4>RENDERED HTML</h4>
+                    <input type="text" class="az-calendar az-calendar3"/>
+                </div>
+            </div>
+        </section>
+        <hr />
+        <section>
+            <h3>Data attributes</h3>
+            <div class="row">
+                <div class="column half">
+                    <h4>HTML</h4>
+                    <pre><code data-language="html">&lt;input&nbsp;type=&quot;text&quot;&nbsp;class=&quot;az-calendar&nbsp;az-calendar4&quot;/&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;.az-calendar3&quot;).datepicker({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-calendar'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</code></pre>
+                </div>
+                <div class="column half">
+                    <h4>RENDERED HTML</h4>
+                    <input type="text" data-mode="range" data-range-mode="section" data-selectable-year="2001>2010,2013,2015>2018" class="az-calendar az-calendar3"/>
+                </div>
+            </div>
+        </section>
     </section>
 
     <script type="text/javascript" src="../js/highlighting/rainbow.min.js"></script>
@@ -49,8 +119,20 @@
     <script type="text/javascript" src="../js/jquery-datepicker.min.js"></script>
     <script>
         $(document).ready(function(){
-            $(".az-calendar").datepicker({
+            $(".az-calendar1").datepicker({
                 namespace: 'az-calendar'
+            });
+            $(".az-calendar2").datepicker({
+                namespace: 'az-calendar',
+                mode: 'range'
+            });
+            $(".az-calendar3").datepicker({
+                namespace: 'az-calendar',
+                mode: 'multiple',
+                calendars: '4'
+            });
+            $(".az-calendar4").datepicker({
+                namespace: 'az-calendar',
             });
         });
     </script>

@@ -154,7 +154,7 @@ module.exports = function(grunt) {
             expand: true,
             flatten: true,
             cwd: 'bower_components/jquery-tabs/dist',
-            src: 'jquery-tabs-all.min.js',
+            src: 'jquery-tabs.js',
             dest: 'test/js'
           }]
         },

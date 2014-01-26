@@ -196,6 +196,10 @@ button.az-button {
 }
 .az-checkbox + label {
   display: inline-block;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 
   *display: inline;
   *zoom: 1;
@@ -637,7 +641,7 @@ input.az-colorInput-gradient-degree[type="text"]:focus {
           box-shadow: none;
 }
 input[type="text"].az-calendar {
-  padding: 6px 10px;
+  padding: 6px 35px 6px 10px;
   font-size: 14px;
   line-height: 1;
   color: #bbb;
@@ -884,12 +888,10 @@ input[type="text"].az-calendar:focus {
 .az-dropdown-wrapper {
   position: relative;
 }
-.az-dropdown {
-  position: relative;
-  padding: 0;
-}
 .az-dropdown-trigger {
+  position: relative;
   width: 160px;
+  height: 32px;
   padding: 0 10px;
   font-size: 14px;
   line-height: 32px;
@@ -931,7 +933,7 @@ input[type="text"].az-calendar:focus {
   z-index: 1;
   display: none;
   padding: 3px 2px;
-  margin: 10px 0 0;
+  margin: 5px 0 0;
   background-color: #fff;
   border: 2px solid #e4e4e4;
 }
@@ -993,12 +995,10 @@ input[type="text"].az-calendar:focus {
   color: #fff;
   background-color: #ccc;
 }
-.az-paginator .az-paginator_active {
-  background-color: #5cafda;
-}
 .az-paginator .az-paginator_active a {
   color: #fff;
   cursor: default;
+  background-color: #5cafda;
 }
 .az-paginator .az-paginator_active a:hover {
   background-color: #5cafda;
@@ -1061,6 +1061,10 @@ input[type="text"].az-calendar:focus {
 }
 .az-radio + label {
   display: inline-block;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 
   *display: inline;
   *zoom: 1;
@@ -1299,9 +1303,12 @@ input[type="text"].az-calendar:focus {
 .az-selector-wrapper {
   position: relative;
   display: inline-block;
+  width: 184px;
+  line-height: 1;
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
+      -ms-user-select: none;
           user-select: none;
 
   *display: inline;
@@ -1333,7 +1340,6 @@ input[type="text"].az-calendar:focus {
   left: -100%;
 }
 .az-selector-trigger {
-  width: 160px;
   padding: 0 10px;
   font-size: 14px;
   line-height: 32px;
@@ -1364,7 +1370,6 @@ input[type="text"].az-calendar:focus {
 .az-selector-handler:before {
   display: inline-block;
   width: 1em;
-  line-height: 1em;
   text-decoration: none;
   content: url("../images/icon-trangle.png");
 
@@ -1378,14 +1383,18 @@ input[type="text"].az-calendar:focus {
   left: 0;
   z-index: 1;
   display: none;
+  width: inherit;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 3px 2px;
   overflow: auto;
+  background-color: #fff;
+  border: 2px solid #e4e4e4;
 }
 .az-selector-dropdown > ul {
   position: relative;
-  padding: 3px 2px;
-  margin-left: 0;
-  background-color: #fff;
-  border: 2px solid #e4e4e4;
+  margin: 0;
 }
 .az-selector_open .az-selector-trigger {
   color: #444;
@@ -1397,10 +1406,9 @@ input[type="text"].az-calendar:focus {
 .az-selector_open .az-selector-dropdown {
   display: block;
 }
-.az-selector-dropdown li {
+.az-selector-dropdown .az-selector-item {
   position: relative;
   display: block;
-  width: 156px;
   padding: 8px 10px;
   margin: 0;
   color: #777;
@@ -1408,9 +1416,21 @@ input[type="text"].az-calendar:focus {
   cursor: pointer;
   background-color: #fff;
 }
-.az-selector-dropdown li:hover {
+.az-selector-dropdown .az-selector-item:hover {
   color: #fff;
   background-color: #5cafda;
+}
+.az-selector-dropdown .az-selector-group {
+  margin: 0;
+}
+.az-selector-dropdown .az-selector-group .az-selector-group-label {
+  padding: 4px 6px;
+  font-weight: bold;
+  cursor: default;
+  background-color: #f0f0f0;
+}
+.az-selector-dropdown .az-selector-group .az-selector-item {
+  padding-left: 16px;
 }
 /*
 Version: @@ver@@ Timestamp: @@timestamp@@
