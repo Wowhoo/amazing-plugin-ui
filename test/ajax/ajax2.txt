@@ -1,0 +1,11 @@
+<div id="ajax" style="max-width:700px;">
+	<h2>Lorem ipsum dolor sit amet3</h2>
+	
+	<p>
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum ante et sapien dignissim in viverra magna feugiat. Donec tempus ipsum nec neque dignissim quis eleifend eros gravida.
+	</p>
+	<p>
+	Phasellus et ligula vel diam ullamcorper volutpat. Integer rhoncus rhoncus aliquam. Aliquam erat volutpat. Aenean luctus vestibulum placerat.
+	</p>
+	
+</div>

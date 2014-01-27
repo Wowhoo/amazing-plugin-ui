@@ -156,6 +156,13 @@ module.exports = function(grunt) {
             cwd: 'bower_components/jquery-tabs/dist',
             src: 'jquery-tabs.js',
             dest: 'test/js'
+          },
+          {
+            expand: true,
+            flatten: true,
+            cwd: 'bower_components/jquery-tabs/css',
+            src: 'effects.css',
+            dest: 'test/css'
           }]
         },
         jquery_tooltip: {
