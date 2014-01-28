@@ -27,8 +27,8 @@
 	transform-style: preserve-3d;
 }
 
-[class*="effect_"] .az-tabs_active,
-[class*="effect_"] .az-effect_last,
+[class*="effect_"] .tabs_active,
+[class*="effect_"] .effect_last,
 .no-js .tabs_active {
 	visibility: visible;
 	z-index: 1;

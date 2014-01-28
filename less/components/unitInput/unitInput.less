@@ -3,12 +3,12 @@
 //==============================================
 .@{namespace}-unitInput-wrap {
     position: relative;
-    width: 300px;
     .clearfix();
-    &:hover .@{namespace}-unitInput-input[type="text"],
-    &:hover .@{namespace}-unitInput-mockInput,
-    &:hover .@{namespace}-unitInput-trigger {
+    &:hover * {
         border-color: @unitInput-wrap_hover-borderColor;
+    }
+    &.@{namespace}-unitInput_wrapAictive * {
+        border-color: @unitInput-wrapActive-borderColor;
     }
 }
 
@@ -16,11 +16,10 @@
 .@{namespace}-unitInput-mockInput {
     display: none;
     width: 120px;
+    height: 32px;
     padding: 2px 10px;
     margin: 0;
     line-height: 24px;
-    height: 32px;
-
     
     border: 2px solid @unitInput-input-borderColor;
     .border-radius(0);
@@ -31,23 +30,22 @@
 .@{namespace}-unitInput-input[type="text"]:focus {
     color: @unitInput-input_focus-color;
     outline: 0;
+    border-color: @unitInput-input_focus-borderColor;
     .box-shadow(none);
-    & + .@{namespace}-unitInput-unit .@{namespace}-unitInput-trigger {
-        border-color: @unitInput-input_focus-unitTrigger-borderColor !important;
+    &:hover {
+        border-color: @unitInput-input_focus-borderColor;
+    }
+
+    & ~ .@{namespace}-unitInput-unit .@{namespace}-unitInput-trigger {
+        border-color: @unitInput-input_focus-borderColor;
+        &:hover {
+            border-color: @unitInput-input_focus-borderColor;
+        }
     }
 }
 
 .@{namespace}-unitInput_focus {
     display: inline-block !important;
-}
-
-.@{namespace}-unitInput-input[type="text"],
-.@{namespace}-unitInput-mockInput,
-.@{namespace}-unitInput-unit {
-    float: left;
-    &:hover {
-        color: @unitInput-mockInput_hover-color;
-    }
 }
 
 .@{namespace}-unitInput-unit {
