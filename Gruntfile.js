@@ -99,8 +99,8 @@ module.exports = function(grunt) {
           files: [{
             expand: true,
             flatten: true,
-            cwd: 'bower_components/jquery-dropdown/dist',
-            src: 'jquery-dropdown.min.js',
+            cwd: 'bower_components/jquery-dropdown/src',
+            src: 'jquery-dropdown.js',
             dest: 'test/js'
           }]
         },

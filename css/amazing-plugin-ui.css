@@ -13,7 +13,6 @@
       -ms-user-select: none;
           user-select: none;
   background-color: #c4c6cc;
-  border: 1px solid rgba(0, 0, 0, .05);
 
   *display: inline;
   *zoom: 1;
@@ -36,7 +35,6 @@ input.az-button {
 .az-button_primary {
   color: #fefefe;
   background-color: #5cafda;
-  border: 1px solid rgba(0, 0, 0, .05);
 }
 .az-button_primary:hover {
   color: #fefefe;
@@ -49,7 +47,6 @@ input.az-button {
 .az-button_highlight {
   color: #fefefe;
   background-color: #fca353;
-  border: 1px solid rgba(0, 0, 0, .05);
 }
 .az-button_highlight:hover {
   color: #fefefe;
@@ -62,7 +59,6 @@ input.az-button {
 .az-button_action {
   color: #fefefe;
   background-color: #74c56e;
-  border: 1px solid rgba(0, 0, 0, .05);
 }
 .az-button_action:hover {
   color: #fefefe;
@@ -75,7 +71,6 @@ input.az-button {
 .az-button_caution {
   color: #fefefe;
   background-color: #f15c5c;
-  border: 1px solid rgba(0, 0, 0, .05);
 }
 .az-button_caution:hover {
   color: #fefefe;
@@ -88,7 +83,6 @@ input.az-button {
 .az-button_normal {
   color: #fefefe;
   background-color: #4d5357;
-  border: 1px solid rgba(0, 0, 0, .05);
 }
 .az-button_normal:hover {
   color: #fefefe;
@@ -115,7 +109,6 @@ input.az-button {
   color: #aaa;
   cursor: default;
   background-color: #e4e4e4;
-  border: 1px solid rgba(0, 0, 0, .05);
 }
 .az-button_disabled:hover {
   color: #aaa;
@@ -140,7 +133,6 @@ input.az-button {
 .az-buttons {
   display: inline-block;
   margin-right: 4.62px;
-  margin-right: .28875rem;
   vertical-align: bottom;
 
   *display: inline;
@@ -666,6 +658,10 @@ input[type="text"].az-calendar:focus {
 }
 .az-calendar-wrap {
   line-height: 1;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .az-calendar-wrap span {
   -webkit-box-sizing: border-box;
@@ -887,10 +883,10 @@ input[type="text"].az-calendar:focus {
 }
 .az-dropdown-wrapper {
   position: relative;
+  width: 180px;
 }
 .az-dropdown-trigger {
   position: relative;
-  width: 160px;
   height: 32px;
   padding: 0 10px;
   font-size: 14px;
@@ -932,14 +928,17 @@ input[type="text"].az-calendar:focus {
   position: absolute;
   z-index: 1;
   display: none;
+  width: inherit;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 3px 2px;
-  margin: 5px 0 0;
+  margin: 5px 0;
   background-color: #fff;
   border: 2px solid #e4e4e4;
 }
 .az-dropdown-panel li {
   display: block;
-  width: 156px;
   padding: 8px 10px;
   margin: 0;
   color: #777;
@@ -1006,11 +1005,10 @@ input[type="text"].az-calendar:focus {
 .az-paginator .az-paginator-prev a,
 .az-paginator .az-paginator-next a {
   padding: 5px 0;
+  overflow: hidden;
   color: transparent;
   text-indent: 100%;
   white-space: nowrap;
-
-  over-flow: hidden;
 }
 .az-paginator .az-paginator-prev a:active,
 .az-paginator .az-paginator-next a:active {

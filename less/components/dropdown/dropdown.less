@@ -3,11 +3,11 @@
 // ==============================================
 .@{namespace}-dropdown-wrapper {
     position: relative;
+    width: 180px;
 }
 
 .@{namespace}-dropdown-trigger {
     position: relative;
-    width: 160px;
     height: 32px;
     padding: 0 10px;
     color: @dropdown-trigger-color;
@@ -37,13 +37,14 @@
 	display: none;
 	position: absolute;
 	z-index: 1;
-    margin: 5px 0 0;
+    width: inherit;
+    margin: 5px 0;
     padding: 3px 2px;
     border: 2px solid @dropdown-panel-borderColor;
     background-color: @dropdown-panel-bgColor;
+    .box-sizing(border-box);
     li {
         display: block;
-        width: 156px;
         margin: 0;
         padding: 8px 10px;
         color: @dropdown-panel-li-color;

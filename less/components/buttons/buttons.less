@@ -10,7 +10,6 @@
     text-decoration: none;
     line-height: 1;
     background-color: @button-bgColor;
-    border: @button-borderWidth solid @button-borderColor;
 
     vertical-align: middle;
     cursor: pointer;
@@ -42,8 +41,7 @@ input.@{namespace}-button {
 .@{namespace}-button_primary {
     color: @button_primary-color;
     background-color: @button_primary-bgColor;
-    border: @button_primary-borderWidth solid @button_primary-borderColor;
-
+    
     &:hover {
         color: @button_primary_hover-color;
         background-color: @button_primary_hover-bgColor;
@@ -58,8 +56,7 @@ input.@{namespace}-button {
 .@{namespace}-button_highlight {
     color: @button_highlight-color;
     background-color: @button_highlight-bgColor;
-    border: @button_highlight-borderWidth solid @button_highlight-borderColor;
-
+    
     &:hover {
         color: @button_highlight_hover-color;
         background-color: @button_highlight_hover-bgColor;
@@ -74,8 +71,7 @@ input.@{namespace}-button {
 .@{namespace}-button_action {
     color: @button_action-color;
     background-color: @button_action-bgColor;
-    border: @button_action-borderWidth solid @button_action-borderColor;
-
+    
     &:hover {
         color: @button_action_hover-color;
         background-color: @button_action_hover-bgColor;
@@ -90,8 +86,7 @@ input.@{namespace}-button {
 .@{namespace}-button_caution {
     color: @button_caution-color;
     background-color: @button_caution-bgColor;
-    border: @button_caution-borderWidth solid @button_caution-borderColor;
-
+    
     &:hover {
         color: @button_caution_hover-color;
         background-color: @button_caution_hover-bgColor;
@@ -106,8 +101,7 @@ input.@{namespace}-button {
 .@{namespace}-button_normal {
     color: @button_normal-color;
     background-color: @button_normal-bgColor;
-    border: @button_normal-borderWidth solid @button_normal-borderColor;
-
+    
     &:hover {
         color: @button_normal_hover-color;
         background-color: @button_normal_hover-bgColor;
@@ -132,7 +126,6 @@ input.@{namespace}-button {
     cursor: default;
     color: @button_disabled-color;
     background-color: @button_disabled-bgColor;
-    border: @button_disabled-borderWidth solid @button_disabled-borderColor;
     &:hover {
         color: @button_disabled-color;
         background-color: @button_disabled-bgColor;
@@ -161,7 +154,7 @@ input.@{namespace}-button {
 //Button groups
 .@{namespace}-buttons {
     .inline-block();
-    .margin-right-rem(@buttons-margin-right);
+    margin-right: @buttons-margin-right;
     vertical-align: bottom;
     &:after {
         clear: both;
