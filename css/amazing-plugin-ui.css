@@ -819,7 +819,7 @@ input[type="text"].az-calendar:focus {
 .az-calendar-months,
 .az-calendar-years {
   display: none;
-  padding: 5px;
+  padding: 2px 5px 5px;
   border: 2px solid #5cafda;
   border-top: none;
 }
@@ -827,9 +827,9 @@ input[type="text"].az-calendar:focus {
 .az-calendar-years span {
   display: inline-block;
   width: 74.66666666666667px;
-  height: 50.5px;
+  height: 50px;
   font-size: 13px;
-  line-height: 50.5px;
+  line-height: 50px;
   text-align: center;
   cursor: pointer;
 
@@ -870,7 +870,6 @@ input[type="text"].az-calendar:focus {
 .az-calendar-months span.az-calendar_focus,
 .az-calendar-years span.az-calendar_focus {
   color: #43a3d4;
-  border: 1px dashed #5cafda;
 }
 .az-calendar_hide {
   display: none;

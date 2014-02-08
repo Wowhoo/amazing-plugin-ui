@@ -44,7 +44,6 @@
 @calendar-year_untouchable_active-color:          @calendar-year_untouchable-color;
 @calendar-year_inRange-bgColor:                   #eee;
 @calendar-year_focus-color:                       darken(@az-reactive-color, 6%);
-@calendar-year_focus-borderColor:                 @az-reactive-color;
 
 
 @calendar-head-height:                            38px;
@@ -52,5 +51,5 @@
 @calendar-day-height:                             28px;
 @calendar-day-width:                              32px;
 
-@calendarMonthHeight:                             (@calendar-week-height + @calendar-day-height * 6) / 4;
+@calendarMonthHeight:                             floor((@calendar-week-height + @calendar-day-height * 6) / 4);
 @calendarMonthWidth:                              (@calendar-day-width * 7 )/ 3;
