@@ -1,14 +1,12 @@
 // ==============================================
 // datepicker
 // ==============================================
-input[type="text"].@{namespace}-calendar {
+input[type="text"].asCalendar {
 	padding: @calendar-padding;
 	color: @calendar-color;
 	font-size: @calendar-fontSize;
 	line-height: 1;
-	*line-height: 36px;
 	border: 2px solid @calendar-borderColor;
-	background: @calendar-bgColor url('../images/calendar-2.png') no-repeat right center;
 	.border-radius(0);
 	&:hover {
 		border-color: @calendar_hover-borderColor;
@@ -20,39 +18,63 @@ input[type="text"].@{namespace}-calendar {
 	}
 }
 
-.@{namespace}-calendar-wrap {
-  line-height: 1;
-  .user-select(none);
-  span {
-  	.box-sizing(border-box);
-  }
+.asCalendar-wrap {
+	position: relative;
+	.inline-block();
+	line-height: 1;
+	.user-select(none);
+	span {
+		.box-sizing(border-box);
+	}
+	.asCalendar-icon {
+		position: absolute;
+		top: 8px;
+		right: 9px;
+		color: @calendar-icon-color;
+		font-family: 'asFont';
+		speak: none;
+		font-size: 21px;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1;
+
+		/* Better Font Rendering =========== */
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+
+		&:before {
+			content: "\e606";
+		}
+	}
 }
 
-.@{namespace}-calendar-content {
+.asCalendar-content {
 	position: relative;
 	.inline-block();
 	font-size: 14px;
 	background-color: @calendar-content-bgColor;
 	vertical-align: middle;
 
-	&.@{namespace}-calendar_days {
-		> .@{namespace}-calendar-days {
+	&.asCalendar_days {
+		> .asCalendar-days {
 			display: block;
 		}
 	}
-	&.@{namespace}-calendar_months {
-		.@{namespace}-calendar-months {
+	&.asCalendar_months {
+		.asCalendar-months {
 			display: block;
 		}
 	}
-	&.@{namespace}-calendar_years {
-		.@{namespace}-calendar-years {
+	&.asCalendar_years {
+		.asCalendar-years {
 			display: block;
 		}
 	}
 }
 
-.@{namespace}-calendar-header {
+.asCalendar-header {
 	position: relative;
 
 	height: @calendar-head-height;
@@ -60,8 +82,8 @@ input[type="text"].@{namespace}-calendar {
 	text-align: center;
 	background-color: @calendar-header-bgColor;
 }
-.@{namespace}-calendar-prev,
-.@{namespace}-calendar-next {
+.asCalendar-prev,
+.asCalendar-next {
 	position: absolute;
 	top: 0;
 	display: block;
@@ -70,73 +92,104 @@ input[type="text"].@{namespace}-calendar {
 	height: @calendar-head-height;
 	color: transparent;
 	cursor: pointer;
+
+	font-family: 'asFont';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	background-color: @calendar-arrow-bgColor;
+
+	&:before {
+		position: absolute;
+		top: 12px;
+		left: 12px;
+		color: @calendar-arrow-before-color;
+		font-size: 16px;
+	}
 	&:hover {
-		background-color: @calendar-arraw_hover-bgColor;
+		background-color: @calendar-arrow_hover-bgColor;
 	}
-	&.@{namespace}-calendar_blocked,
-	&.@{namespace}-calendar_blocked:hover {
-		background-image: none;
+	&.asCalendar_blocked,
+	&.asCalendar_blocked:hover {
 		cursor: auto;
+		&:before {
+			display: none;
+		}
 	}
-	&.@{namespace}-calendar_blocked:hover {
+	&.asCalendar_blocked:hover {
 		background-color: @calendar-arrow_blocked_hover-bgColor;
 	}
 }
 
-.@{namespace}-calendar-prev {
+.asCalendar-prev {
 	left: 0;
 	border-right: 1px solid @calendar-prev-borderColor;
-	background: @az-reactive-color url(@calendar-prev-bgImage) no-repeat center center;
+	&:before {
+		content: "\e602";
+	}
 }
 
-.@{namespace}-calendar-next {
+.asCalendar-next {
 	right: 0;
 	border-left: 1px solid @calendar-next-borderColor;
-	background: @az-reactive-color url(@calendar-next-bgImage) no-repeat center center;	
+	&:before {
+		content: "\e601";
+	}
 }
 
-.@{namespace}-calendar-caption {
+.asCalendar-caption {
 	display: block;
 	padding: 0 50px;
 	height: 100%;
 	color: @calendar-caption-color;
+	font-size: 18px;
 	text-align: center;
 	cursor: pointer;
 	&:hover {
 		background-color: @calendar-caption_hover-bgColor;
 	}
-	&.@{namespace}-calendar_blocked,
-	&.@{namespace}-calendar_blocked:hover {
+	&.asCalendar_blocked,
+	&.asCalendar_blocked:hover {
 		background-color: @calendar-caption_blocked-bgColor;
 		cursor: auto;
 	}
 }
 
-.@{namespace}-calendar-days {
+.asCalendar-days {
 	border: 2px solid @calendar-days-borderColor;
 	border-top: none;
 	display: none;
 	span {
 		.inline-block();
 		width: @calendar-day-width;
-		font-size: 12px;
+		font-size: 14px;
 		text-align: center;
 	}
 }
 
-.@{namespace}-calendar-head {
+.asCalendar-head {
 	color: @calendar-head-color;
 	line-height:  @calendar-week-height;
 	height: @calendar-week-height;
 	padding-left: 5px;
 	padding-right: 5px;
 	span {
+		font-size: 12px;
+		text-transform: uppercase;
 		cursor: default;
 		border: 1px solid transparent;
 	}
 }
 
-.@{namespace}-calendar-body {
+.asCalendar-body {
 	padding: 5px;
 	padding-top: 0;
 	span {
@@ -147,43 +200,43 @@ input[type="text"].@{namespace}-calendar {
 		&:hover {
 			background-color: @calendar-body_hover-bgColor;
 		}
-		&.@{namespace}-calendar_active {
+		&.asCalendar_active {
 			color: @calendar-body_active-color !important;
 			background-color: @calendar-body_active-bgColor !important;
 		}
-		&.@{namespace}-calendar_otherMonth,
-		&.@{namespace}-calendar_untouchable {
+		&.asCalendar_otherMonth,
+		&.asCalendar_untouchable {
 			color: @calendar-body_otherMonth-color;
 			background-color: inherit;
 			cursor: default;
 			&:hover,
 			&:active,
-			&.@{namespace}-calendar_active {
+			&.asCalendar_active {
 				color: @calendar-body_otherMonth_active-color;
 				background-color: inherit;
 			}
 			
 		}
-		&.@{namespace}-calendar_inRange {
+		&.asCalendar_inRange {
 			background-color: @calendar-body_inRange-bgColor;
 			&:hover {
 				background-color: inherit;
 			}
 		}
-		&.@{namespace}-calendar_otherMonth.@{namespace}-calendar_inRange {
+		&.asCalendar_otherMonth.asCalendar_inRange {
 			&:hover {
 				background-color: @calendar-body_otherMonth_inRange_hover-bgColor;
 			}
 		}
-		&.@{namespace}-calendar_focus {
+		&.asCalendar_focus {
 			color: @calendar-body_focus-color;
-			border: 1px dashed @calendar-body_focus-borderColor;
+			// border: 1px dashed @calendar-body_focus-borderColor;
 		}
 	}
 }
 
-.@{namespace}-calendar-months,
-.@{namespace}-calendar-years {
+.asCalendar-months,
+.asCalendar-years {
 	border: 2px solid @calendar-year-borderColor;
 	border-top: none;
 	padding: 2px 5px 5px;
@@ -199,41 +252,44 @@ input[type="text"].@{namespace}-calendar {
 		&:hover {
 			background-color: @calendar-year_hover-bgColor;
 		}
-		&.@{namespace}-calendar_active {
+		&.asCalendar_active {
 			color: @calendar-year_active-color !important;
 			background-color: @calendar-year_active_hover-bgColor !important;
 		}
-		&.@{namespace}-calendar_untouchable {
+		&.asCalendar_untouchable {
 			color: @calendar-year_untouchable-color;
 			cursor: default;
 			&:hover,
 			&:active,
-			&.@{namespace}-calendar_active {
+			&.asCalendar_active {
 				color: @calendar-year_untouchable_active-color;
 				background-color: inherit;
 			}	
 		}
-		&.@{namespace}-calendar_inRange {
+		&.asCalendar_inRange {
 			background-color: @calendar-year_inRange-bgColor;
 			&:hover {
 				background-color: inherit;
 			}
 		}
-		&.@{namespace}-calendar_focus {
+		&.asCalendar_focus {
 			color: @calendar-year_focus-color;
 		}
 	}
 }
 
-.@{namespace}-calendar_hide {
+.asCalendar_hide {
 	display: none;
+	& ~ .asCalendar-icon {
+		display: none;
+	}
 }
 
-.@{namespace}-calendar_show {
+.asCalendar_show {
 	display: block;
 }
 
-.@{namespace}-calendar_absolute {
+.asCalendar_absolute {
 	position: absolute;
 }
 

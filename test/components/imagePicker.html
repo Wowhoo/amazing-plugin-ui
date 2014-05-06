@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/wp-admin.css">
+    <link rel="stylesheet" href="../css/highlighting//github.css">
+    <link rel="stylesheet" type="text/css" href="../css/adaptGrid.css">
+    <link rel="stylesheet" type="text/css" href="../../css/amazing-plugin-ui-min.css">
+    <style>
+        body {
+            padding: 40px;
+            font-size: 16px;
+        }
+        .demo {
+            list-style: none;
+        }
+        .demo li {
+            margin-bottom: 20px;
+        }
+        .bg-location {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h2>ImagePicker</h2>
+        <div class="row">
+            <div class="column half">
+                <h4>HTML</h4>
+                <pre><code data-language="html">&lt;input&nbsp;type=&quot;text&quot;&nbsp;class=&quot;imagePicker&quot;&nbsp;value='{&quot;image&quot;:&nbsp;&quot;../../images/gril.png&quot;}'&nbsp;/&gt;
+&lt;input&nbsp;type=&quot;text&quot;&nbsp;class=&quot;imagePicker&quot;&nbsp;value=''&nbsp;/&gt;
+
+&lt;button&nbsp;class=&quot;test_val&quot;&gt;test&nbsp;val&lt;/button&gt;
+&lt;button&nbsp;class=&quot;test_val_empty&quot;&gt;test&nbsp;val&nbsp;empty&lt;/button&gt;
+&lt;button&nbsp;class=&quot;test_get_val&quot;&gt;test&nbsp;get&nbsp;val&lt;/button&gt;
+&lt;button&nbsp;class=&quot;test_enable&quot;&gt;test&nbsp;enable&lt;/button&gt;
+&lt;button&nbsp;class=&quot;test_disable&quot;&gt;test&nbsp;disable&lt;/button&gt;
+&lt;button&nbsp;class=&quot;test_destory&quot;&gt;test&nbsp;destory&lt;/button&gt;
+
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.imagePicker').asImagePicker({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onSelect:&nbsp;function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.set({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;image:&nbsp;'../../images/nvnv.png'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;disabled:&nbsp;true
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.test_val').click(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.imagePicker').asImagePicker('val',{image:&nbsp;'../../images/gril.png'});
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.test_val_empty').click(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.imagePicker').asImagePicker('val',null);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.test_get_val').click(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;val&nbsp;=&nbsp;$('.imagePicker').asImagePicker('val');
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.info(val);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.test_enable').click(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.imagePicker').asImagePicker('enable');
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.test_disable').click(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.imagePicker').asImagePicker('disable');
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.test_destory').click(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.imagePicker').asImagePicker('destory');
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</code></pre>
+            </div>
+            <div class="column half">
+                <h4>RENDERED HTML</h4>
+                <input type="text" class="imagePicker" value='{"image": "../../images/gril.png"}' />
+
+                <input type="text" class="imagePicker" value='' />
+
+                <button class="test_val">test val</button>
+                <button class="test_val_empty">test val empty</button>
+                <button class="test_get_val">test get val</button>
+                <button class="test_enable">test enable</button>
+                <button class="test_disable">test disable</button>
+                <button class="test_destory">test destory</button>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="../js/highlighting/rainbow.min.js"></script>
+    <script type="text/javascript" src="../js/highlighting/html.js"></script>
+    <script type="text/javascript" src="../js/highlighting/javascript.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/jquery-dropdown.js"></script>
+    <script type="text/javascript" src="../js/jquery-range.js"></script>
+    <script type="text/javascript" src="../js/jquery-asImagePicker.js"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.imagePicker').asImagePicker({
+                onSelect: function(){
+                    this.set({
+                        image: '../../images/nvnv.png'
+                    });
+                },
+                disabled: true
+            });
+
+            $('.test_val').click(function(){
+                $('.imagePicker').asImagePicker('val',{image: '../../images/gril.png'});
+            });
+            $('.test_val_empty').click(function(){
+                $('.imagePicker').asImagePicker('val',null);
+            });
+            $('.test_get_val').click(function(){
+                var val = $('.imagePicker').asImagePicker('val');
+                console.info(val);
+            });
+
+            $('.test_enable').click(function(){
+                $('.imagePicker').asImagePicker('enable');
+            });
+            $('.test_disable').click(function(){
+                $('.imagePicker').asImagePicker('disable');
+            });
+            $('.test_destory').click(function(){
+                $('.imagePicker').asImagePicker('destory');
+            });
+
+        });
+    </script>
+</body>
+</html>

@@ -77,48 +77,93 @@ module.exports = function(grunt) {
             dest: 'less/mixins/'
           }]
         },
-        jquery_check: {
+        jquery_asBgPicker: {
           files: [{
             expand: true,
             flatten: true,
-            cwd: 'bower_components/jquery-check/dist',
-            src: 'jquery-check.min.js',
+            cwd: 'bower_components/jquery-asBgPicker/src',
+            src: 'jquery-asBgPicker.js',
             dest: 'test/js'
           }]
         },
-        jquery_datepicker: {
+        jquery_asCheck: {
           files: [{
             expand: true,
             flatten: true,
-            cwd: 'bower_components/jquery-datepicker/dist',
-            src: 'jquery-datepicker.min.js',
+            cwd: 'bower_components/jquery-asCheck/dist',
+            src: 'jquery-asCheck.min.js',
             dest: 'test/js'
           }]
         },
-        jquery_dropdown: {
+        jquery_asColor: {
           files: [{
             expand: true,
             flatten: true,
-            cwd: 'bower_components/jquery-dropdown/src',
-            src: 'jquery-dropdown.js',
+            cwd: 'bower_components/jquery-asColor/dist',
+            src: 'jquery-asColor.min.js',
             dest: 'test/js'
           }]
         },
-        jquery_range: {
+        jquery_asColorInput: {
           files: [{
             expand: true,
             flatten: true,
-            cwd: 'bower_components/jquery-range/dist',
-            src: 'jquery-range.min.js',
+            cwd: 'bower_components/jquery-asColorInput/dist/',
+            src: 'jquery-asColorInput.js',
             dest: 'test/js'
           }]
         },
-        jquery_select: {
+        jquery_asDatepicker: {
           files: [{
             expand: true,
             flatten: true,
-            cwd: 'bower_components/jquery-select/dist',
-            src: 'jquery-select.min.js',
+            cwd: 'bower_components/jquery-asDatepicker/dist',
+            src: 'jquery-asDatepicker.min.js',
+            dest: 'test/js'
+          }]
+        },
+        jquery_asDropdown: {
+          files: [{
+            expand: true,
+            flatten: true,
+            cwd: 'bower_components/jquery-asDropdown/src',
+            src: 'jquery-asDropdown.js',
+            dest: 'test/js'
+          }]
+        },
+        jquery_asFontEditor: {
+          files: [{
+            expand: true,
+            flatten: true,
+            cwd: 'bower_components/jquery-asFontEditor/src',
+            src: 'jquery-asFontEditor.js',
+            dest: 'test/js'
+          }]
+        },
+        jquery_asImagePicker: {
+          files: [{
+            expand: true,
+            flatten: true,
+            cwd: 'bower_components/jquery-asImagePicker/src',
+            src: 'jquery-asImagePicker.js',
+            dest: 'test/js'
+          }]
+        },
+        jquery_asRange: {
+          files: [{
+            expand: true,
+            flatten: true,
+            cwd: 'bower_components/jquery-asRange/dist',
+            src: 'jquery-asRange.min.js',
+            dest: 'test/js'
+          }]
+        },
+        jquery_asSelect: {
+          files: [{
+            expand: true,
+            flatten: true,
+            cwd: 'bower_components/jquery-asSelect/dist',
+            src: 'jquery-asSelect.min.js',
             dest: 'test/js'
           }]
         },
@@ -131,55 +176,64 @@ module.exports = function(grunt) {
             dest: 'test/js'
           }]
         },
-        jquery_spiner: {
+        jquery_asSpinner: {
           files: [{
             expand: true,
             flatten: true,
-            cwd: 'bower_components/jquery-spiner/dist',
-            src: 'jquery-spiner.min.js',
+            cwd: 'bower_components/jquery-asSpinner/dist',
+            src: 'jquery-asSpinner.js',
             dest: 'test/js'
           }]
         },
-        jquery_switcher: {
+        jquery_asSwitcher: {
           files: [{
             expand: true,
             flatten: true,
-            cwd: 'bower_components/jquery-switcher/dist',
-            src: 'jquery-switcher.min.js',
+            cwd: 'bower_components/jquery-asSwitcher/dist',
+            src: 'jquery-asSwitcher.min.js',
             dest: 'test/js'
           }]
         },
-        jquery_tabs: {
+        jquery_asTabs: {
           files: [{
             expand: true,
             flatten: true,
-            cwd: 'bower_components/jquery-tabs/dist',
-            src: 'jquery-tabs.js',
+            cwd: 'bower_components/jquery-asTabs/dist',
+            src: 'jquery-asTabs.js',
             dest: 'test/js'
           },
           {
             expand: true,
             flatten: true,
-            cwd: 'bower_components/jquery-tabs/css',
+            cwd: 'bower_components/jquery-asTabs/css',
             src: 'effects.css',
             dest: 'test/css'
           }]
         },
-        jquery_tooltip: {
+        jquery_asTooltip: {
           files: [{
             expand: true,
             flatten: true,
-            cwd: 'bower_components/jquery-tooltip/dist',
-            src: 'jquery-tooltip.min.js',
+            cwd: 'bower_components/jquery-asTooltip/dist',
+            src: 'jquery-asTooltip.min.js',
             dest: 'test/js'
           }]
         },
-        jquery_unitInput: {
+        jquery_asPaginator: {
           files: [{
             expand: true,
             flatten: true,
-            cwd: 'bower_components/jquery-unitInput/dist',
-            src: 'jquery-unitInput.min.js',
+            cwd: 'bower_components/jquery-asPaginator/dist',
+            src: 'jquery-asPaginator.min.js',
+            dest: 'test/js'
+          }]
+        },
+        jquery_asUnitInput: {
+          files: [{
+            expand: true,
+            flatten: true,
+            cwd: 'bower_components/jquery-asUnitInput/dist',
+            src: 'jquery-asUnitInput.min.js',
             dest: 'test/js'
           }]
         }

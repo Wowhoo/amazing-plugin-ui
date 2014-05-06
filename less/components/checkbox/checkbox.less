@@ -1,19 +1,20 @@
 // ==============================================
 // checkbox
 // ==============================================
-.@{namespace}-checkbox {
+.asCheckbox {
 	position: relative;
 	.inline-block();
 	width: @checkbox-width;
 	height: @checkbox-height;
 	margin: 0;
 	padding: 0;
+	color: @checkbox-color;
 	vertical-align: middle;
 	background-color: @checkbox-bgColor;
 	cursor: pointer;
 	&:hover,
-	&.@{namespace}-checkbox_hover {
-		background: @checkbox_hover-bgColor url(@checkbox_hover-bgImage) no-repeat center center;
+	&.asCheckbox_hover {
+		font-size: 20px;
 	}
 
 	& + label {
@@ -21,26 +22,50 @@
 		.user-select(none);
 	}
 }
-.@{namespace}-checkbox_checked {
-	background: @checkbox_checked-bgColor url(@checkbox_checked-bgImage) no-repeat center center;
-	&:hover,
-	&.@{namespace}-checkbox_hover {
-		background: @checkbox_checked_hover-bgColor url(@checkbox_checked_hover-bgImage) no-repeat center center;
+.asCheckbox_checkbox {
+	font-size: 0;
+	font-family: 'asFont';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	&:before {
+		content: "\e603";
 	}
 }
-.@{namespace}-checkbox_disabled {
-	background: @checkbox_disabled-bgColor;
-	cursor: default;
+.asCheckbox_checked {
+	font-size: 20px;
+	background-color: @checkbox_checked-bgColor;
 	&:hover,
-	&.@{namespace}-checkbox_hover {
-		background: @checkbox_disabled_hover-bgColor;
+	&.asCheckbox_hover {
+		font-size: 20px;
+		background-color: @checkbox_checked_hover-bgColor;
 	}
 }
-.@{namespace}-checkbox_disabled.@{namespace}-checkbox_checked {
-	background: @checkbox_disabled_checked-bgColor url(@checkbox_disabled_checked-bgImage) no-repeat center center;
+.asCheckbox_disabled {
+	font-size: 0;
+	background-color: @checkbox_disabled-bgColor;
 	cursor: default;
 	&:hover,
-	&.@{namespace}-checkbox_hover {
-		background: @checkbox_disabled_checked_hover-bgColor url(@checkbox_disabled_checked_hover-bgImage) no-repeat center center;
+	&.asCheckbox_hover {
+		font-size: 0;
+		background-color: @checkbox_disabled_hover-bgColor;
+	}
+}
+.asCheckbox_disabled.asCheckbox_checked {
+	font-size: 20px;
+	background-color: @checkbox_disabled_checked-bgColor;
+	cursor: default;
+	&:hover,
+	&.asCheckbox_hover {
+		font-size: 20px;
+		background-color: @checkbox_disabled_checked_hover-bgColor;
 	}
 }

@@ -1,20 +1,35 @@
 //==============================================
 //checkBox 
 //==============================================
-.@{namespace}-radio {
+.asRadio {
 	position: relative;
 	.inline-block();
-	width: 22px;
-	height: 22px;
+	width: 16px;
+	height: 16px;
 	margin: 0;
 	padding: 0;
 	vertical-align: middle;
 	background-color: @radio-bgColor;
+	border: 3px solid @radio-borderColor;
 	cursor: pointer;
 	.border-radius(23px);
+	&:after {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		content: '';
+		width: 8px;
+		height: 8px;
+		margin: -4px 0 0 -4px;
+		background-color: transparent;
+		.border-radius(inherit);
+	}
+
 	&:hover,
-	&.@{namespace}-radio_hover {
-		background: @radio_hover-bgColor url("../images/radio_checked.png") no-repeat center center;
+	&.asRadio_hover {
+		&:after {
+			background-color: @radio_hover-bgColor;
+		}
 	}
 	
 	& + label {
@@ -22,27 +37,42 @@
 		.user-select(none);
 	}
 }
-.@{namespace}-radio_checked {
-	background: @radio_checked-bgColor url("../images/radio_checked.png") no-repeat center center;
+.asRadio_checked {
+	background-color: @radio_checked-bgColor;
+	border-color: @radio_checked-borderColor;
+	&:after {
+		background-color: @radio_checked-after-bgColor;
+	}
 	&:hover,
-	&.@{namespace}-radio_hover {
-		background: @radio_checked_hover-bgColor url("../images/radio_checked.png") no-repeat center center;
+	&.asRadio_hover {
+		&:after {
+			background-color: @radio_checked_hover-bgColor;
+		}
 	}
 }
-.@{namespace}-radio_disabled {
-	background: @radio_disabled-bgColor;
+.asRadio_disabled {
+	background-color: @radio_disabled-bgColor;
+	border-color: @radio_disabled-borderColor;
 	cursor: default;
 	&:hover,
-	&.@{namespace}-radio_hover {
-		background: @radio_disabled_hover-bgColor;
+	&.asRadio_hover {
+		&:after {
+			background-color: transparent;
+		}
 	}
 }
-.@{namespace}-radio_disabled.@{namespace}-radio_checked {
-	background: @radio_disabled_checked-bgColor url("../images/radio_checked.png") no-repeat center center;
+.asRadio_disabled.asRadio_checked {
+	background-color: @radio_disabled_checked-bgColor;
+	border-color: @radio_disabled_checked-borderColor;
 	cursor: default;
+	&:after {
+		background-color: @radio_disabled_checked-after-bgColor;
+	}
 	&:hover,
-	&.@{namespace}-radio_hover {
-		background: @radio_disabled_checked_hover-bgColor url("../images/radio_checked.png") no-repeat center center;
+	&.asRadio_hover {
+		&:after {
+			background-color: @radio_disabled_checked_hover-bgColor;
+		}	
 	}
 }
 //==============================================

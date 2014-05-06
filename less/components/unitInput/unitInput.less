@@ -1,19 +1,19 @@
 //==============================================
 // unitInput
 //==============================================
-.@{namespace}-unitInput-wrap {
+.asUnitInput-wrap {
     position: relative;
     .clearfix();
     &:hover * {
         border-color: @unitInput-wrap_hover-borderColor;
     }
-    &.@{namespace}-unitInput_wrapAictive * {
+    &.asUnitInput_wrapAictive * {
         border-color: @unitInput-wrapActive-borderColor;
     }
 }
 
-.@{namespace}-unitInput-input[type="text"],
-.@{namespace}-unitInput-mockInput {
+.asUnitInput-input[type="text"],
+.asUnitInput-mockInput {
     display: none;
     width: 120px;
     height: 32px;
@@ -27,7 +27,7 @@
     .box-sizing(border-box);
 }
 
-.@{namespace}-unitInput-input[type="text"]:focus {
+.asUnitInput-input[type="text"]:focus {
     color: @unitInput-input_focus-color;
     outline: 0;
     border-color: @unitInput-input_focus-borderColor;
@@ -36,7 +36,7 @@
         border-color: @unitInput-input_focus-borderColor;
     }
 
-    & ~ .@{namespace}-unitInput-unit .@{namespace}-unitInput-trigger {
+    & ~ .asUnitInput-unit .asUnitInput-trigger {
         border-color: @unitInput-input_focus-borderColor;
         &:hover {
             border-color: @unitInput-input_focus-borderColor;
@@ -44,11 +44,11 @@
     }
 }
 
-.@{namespace}-unitInput_focus {
+.asUnitInput_focus {
     display: inline-block !important;
 }
 
-.@{namespace}-unitInput-unit {
+.asUnitInput-unit {
     position: relative;
     .inline-block();
     vertical-align: middle;
@@ -56,11 +56,11 @@
     .box-sizing(border-box);
 }
 
-.@{namespace}-unitInput-unit .@{namespace}-unitInput_show {
+.asUnitInput-unit .asUnitInput_show {
     display: block!important;
 }
 
-.@{namespace}-unitInput-trigger {
+.asUnitInput-trigger {
     min-width: 64px;
     height: 32px;
     padding: 2px 10px;
@@ -71,26 +71,36 @@
     .clearfix();
 }
 
-.@{namespace}-unitInput-unitText {
+.asUnitInput-unitText {
     float: left;
     text-align: left;
     padding-right: 10px; 
 }
 
-.@{namespace}-unitInput-dropdownIcon {
-    float: right;
+.asUnitInput-dropdownIcon {
+    .inline-block();
+    margin-top: 5px;
+    margin-right: -4px;
+    color: #bbb;
+    font-size: 20px;
+    font-family: 'asFont';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
     &:before {
-        content: url("../images/icon-trangle.png");
-        speak: none;
-        .inline-block();
-        text-decoration: none;
-        width: 1em;
-        line-height: 1em;
+        content: "\e604";
     }
 }
 
-.@{namespace}-unitInput-select {
+.asUnitInput-select {
     position: absolute;
     top: 100%;
     left: 0;
@@ -119,7 +129,7 @@
     }
 }
 
-.@{namespace}-unitInput-mask {
+.asUnitInput-mask {
     position: fixed;
     top: 0;
     left: 0;

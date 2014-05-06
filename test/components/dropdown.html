@@ -35,8 +35,8 @@
             <div class="row">
                 <div class="column half">
                     <h4>HTML</h4>
-                    <pre><code data-language="html">&lt;div&nbsp;class=&quot;az-dropdown-wrap1&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;az-dropdown-trigger&quot;&gt;dropdown&lt;i&gt;&lt;/i&gt;&lt;/div&gt;
+                    <pre><code data-language="html">&lt;div&nbsp;class=&quot;asDropdown-wrap1&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;asDropdown-trigger&quot;&gt;&lt;i&nbsp;class=&quot;asIcon-caret-down&quot;&gt;&lt;/i&gt;&lt;/div&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;dropdown1&lt;/li&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;dropdown2&lt;/li&gt;
@@ -46,16 +46,94 @@
 &lt;/div&gt;
 &lt;script&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.az-dropdown-wrap1&nbsp;.az-dropdown-trigger').dropdown({
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-dropdown'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.asDropdown-wrap1&nbsp;.asDropdown-trigger').asDropdown({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asDropdown'
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
 &nbsp;&nbsp;&nbsp;&nbsp;});
 &lt;/script&gt;</code></pre>
                 </div>
                 <div class="column half">
                     <h4>RENDERED HTML</h4>
-                    <div class="az-dropdown-wrap1">
-                        <div class="az-dropdown-trigger">dropdown<i></i></div>
+                    <div class="asDropdown-wrap1">
+                        <div class="asDropdown-trigger">dropdown<i class="asIcon-caret-down"></i></div>
+                        <ul>
+                            <li>dropdown1</li>
+                            <li>dropdown2</li>
+                            <li>dropdown3</li>
+                            <li>dropdown4</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr />
+        <section>
+            <h3>Panel selector</h3>
+            <div class="row">
+                <div class="column half">
+                    <h4>HTML</h4>
+                    <pre><code data-language="html">&lt;div&nbsp;class=&quot;asDropdown-wrap2&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;asDropdown-trigger&quot;&gt;dropdown&lt;i&nbsp;class=&quot;asIcon-caret-down&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Here&nbsp;used&nbsp;to&nbsp;split&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;class=&quot;asDropdown-content&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;dropdown1&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;dropdown2&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;dropdown3&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;dropdown4&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.asDropdown-wrap2&nbsp;.asDropdown-trigger').asDropdown({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asDropdown',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;panel:&nbsp;'.asDropdown-content'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</code></pre>
+                </div>
+                <div class="column half">
+                    <h4>RENDERED HTML</h4>
+                    <div class="asDropdown-wrap2">
+                        <div class="asDropdown-trigger">dropdown<i class="asIcon-caret-down"></i></div>
+                        <p>Here used to split</p>
+                        <ul class="asDropdown-content">
+                            <li>dropdown1</li>
+                            <li>dropdown2</li>
+                            <li>dropdown3</li>
+                            <li>dropdown4</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr />
+        <section>
+            <h3>ClickoutHide</h3>
+            <div class="row">
+                <div class="column half">
+                    <h4>HTML</h4>
+                    <pre><code data-language="html">&lt;div&nbsp;class=&quot;asDropdown-wrap3&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;asDropdown-trigger&quot;&gt;dropdown&lt;i&nbsp;class=&quot;asIcon-caret-down&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;dropdown1&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;dropdown2&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;dropdown3&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;dropdown4&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.asDropdown-wrap3&nbsp;.asDropdown-trigger').asDropdown({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asDropdown',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clickoutHide:&nbsp;false
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</code></pre>
+                </div>
+                <div class="column half">
+                    <h4>RENDERED HTML</h4>
+                    <div class="asDropdown-wrap3">
+                        <div class="asDropdown-trigger">dropdown<i class="asIcon-caret-down"></i></div>
                         <ul>
                             <li>dropdown1</li>
                             <li>dropdown2</li>
@@ -72,34 +150,38 @@
             <div class="row">
                 <div class="column half">
                     <h4>HTML</h4>
-                    <pre><code data-language="html">&lt;div&nbsp;class=&quot;az-dropdown-wrap2&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;az-dropdown-trigger&quot;&gt;dropdown&lt;i&gt;&lt;/i&gt;&lt;/div&gt;
+                    <pre><code data-language="html">&lt;div&nbsp;class=&quot;asDropdown-wrap4&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;asDropdown-trigger&quot;&gt;&lt;i&nbsp;class=&quot;asIcon-caret-down&quot;&gt;&lt;/i&gt;&lt;/div&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;dropdown1&lt;/li&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;dropdown2&lt;/li&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;dropdown3&lt;/li&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;dropdown4&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;data-category=&quot;dropdown1&quot;&gt;dropdown1&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;data-category=&quot;dropdown2&quot;&gt;dropdown2&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;data-category=&quot;dropdown3&quot;&gt;dropdown3&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;data-category=&quot;dropdown4&quot;&gt;dropdown4&lt;/li&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
 &lt;/div&gt;
 &lt;script&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.az-dropdown-wrap2&nbsp;.az-dropdown-trigger').dropdown({
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-dropdown',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.asDropdown-wrap4&nbsp;.asDropdown-trigger').asDropdown({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asDropdown',
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;imitateSelect:&nbsp;true,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select:&nbsp;1
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select:&nbsp;'dropdown3',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data:&nbsp;'category',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onChange:&nbsp;function(value)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('selected&nbsp;'&nbsp;+&nbsp;value);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
 &nbsp;&nbsp;&nbsp;&nbsp;});
 &lt;/script&gt;</code></pre>
                 </div>
                 <div class="column half">
                     <h4>RENDERED HTML</h4>
-                    <div class="az-dropdown-wrap2">
-                        <div class="az-dropdown-trigger">dropdown<i></i></div>
+                    <div class="asDropdown-wrap4">
+                        <div class="asDropdown-trigger"><i class="asIcon-caret-down"></i></div>
                         <ul>
-                            <li>dropdown1</li>
-                            <li>dropdown2</li>
-                            <li>dropdown3</li>
-                            <li>dropdown4</li>
+                            <li data-category="dropdown1">dropdown1</li>
+                            <li data-category="dropdown2">dropdown2</li>
+                            <li data-category="dropdown3">dropdown3</li>
+                            <li data-category="dropdown4">dropdown4</li>
                         </ul>
                     </div>
                 </div>
@@ -111,16 +193,28 @@
     <script type="text/javascript" src="../js/highlighting/html.js"></script>
     <script type="text/javascript" src="../js/highlighting/javascript.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
-    <script type="text/javascript" src="../js/jquery-dropdown.js"></script>
+    <script type="text/javascript" src="../js/jquery-asDropdown.js"></script>
     <script>
         $(document).ready(function() {
-            $('.az-dropdown-wrap1 .az-dropdown-trigger').dropdown({
-                namespace: 'az-dropdown'
+            $('.asDropdown-wrap1 .asDropdown-trigger').asDropdown({
+                namespace: 'asDropdown'
             });
-            $('.az-dropdown-wrap2 .az-dropdown-trigger').dropdown({
-                namespace: 'az-dropdown',
+            $('.asDropdown-wrap2 .asDropdown-trigger').asDropdown({
+                namespace: 'asDropdown',
+                panel: '.asDropdown-content'
+            });
+            $('.asDropdown-wrap3 .asDropdown-trigger').asDropdown({
+                namespace: 'asDropdown',
+                clickoutHide: false
+            });
+            $('.asDropdown-wrap4 .asDropdown-trigger').asDropdown({
+                namespace: 'asDropdown',
                 imitateSelect: true,
-                select: 1
+                select: 'dropdown3',
+                data: 'category',
+                onChange: function(value) {
+                    console.log('selected ' + value);
+                }
             });
         });
     </script>

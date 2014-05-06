@@ -1,87 +1,86 @@
 // ==============================================
 // colorInput
 // ==============================================
-
-.@{namespace}-colorInput-trigger {
+.asColorInput-wrap {
+	position: relative;
 	width: 201px;
 	height: 36px;
+	background-color: @colorInput-wrap-bgColor;
+	border: @colorInput-wrap-borderWidth solid @colorInput-wrap-borderColor;
+}
 
-	background-color: @colorInput-trigger-bgColor;
-	border: @colorInput-trigger-borderWidth solid @colorInput-trigger-borderColor;
-	overflow: hidden;
-	>input[type='text'] {
-		float: left;
-		.inline-block();
-		width: 165px;
-		height: 100%;
+.asColorInput-trigger {
+	position: absolute;
+	top: 0;
+	right: 0;
+	.size(36px);
 
-		padding: 8px;
-		margin: 0;
-		font-size: 14px;
-		line-height: 1;
-		color: #aaa;
-		border: 0;
-		border: none;
-		border-right: 1px solid @colorInput-text-borderColor;
-		background: transparent;
-		letter-spacing: normal;
-		outline: none;
-		.box-sizing(border-box);
-		.border-radius(0);
-		&:hover {
-			border: 0;
-			border: none;
-			border-right: 1px solid @colorInput-text_hover-borderColor;
-		}
-		&:focus {
-			border: 0;
-			border: none;
-			border-right: 1px solid @colorInput-text_focus-borderColor;
-			.box-shadow(none);
-		}
-	}
+	background-color: transparent;
+	border-left: 1px solid @colorInput-trigger-borderColor;
+
 	>span {
 		float: left;
 		display: block;
-		width: 32px;
-		height: 32px;
+		.size(32px);
+		margin: 2px;
+		color: @colorInput-trigger-span-color;
+		font-family: 'asFont';
+		font-size: 12px;
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1;
 
-		border: 2px solid @colorInput-span-borderColor;
+		/* Better Font Rendering =========== */
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+
 		&:after {
-			content: "@";
+			content: "\e604";
 			position: absolute;
 			bottom: 1px;
-			right: 5px;
+			right: 3px;
 		}
 	}
 }
+.asColorInput-input[type="text"] {
+	float: left;
+	.inline-block();
+	width: 165px;
+	height: 100%;
 
-.@{namespace}-colorInput-input {
-	display: none;
+	padding: 8px;
+	margin: 0;
+	font-size: 14px;
+	line-height: 1;
+	color: @colorInput-input-color;
+	border: 0;
+	border: none;
+	background: transparent;
+	letter-spacing: normal;
+	outline: none;
+	.box-sizing(border-box);
+	.border-radius(0);
+
+	&:focus {
+		.box-shadow(none);
+	}
 }
-.@{namespace}-colorInput {
+.asColorInput {
 	display: none;
-	position: absolute;
 	z-index: 9999;
 	
 	width: 282px;
-	height: 394px;
+	padding-top: 323px;
+	background-color: @colorInput-bgColor;
 	border: 2px solid @colorInput-borderColor;
 }
-.@{namespace}-colorInput.@{namespace}-colorInput_show {
+.asColorInput.asColorInput_show {
 	display: block;
 }
-.@{namespace}-colorInput.@{namespace}-colorInput_flat {
-	display: block;
-	position: relative;
-	top: 0;
-	left: 0;
-	z-index: auto;
-}
-.@{namespace}-colorInput.@{namespace}-colorInput_flat.@{namespace}-colorInput_show {
-	display: block;
-}
-.@{namespace}-colorInput-mask {
+.asColorInput-mask {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -89,38 +88,30 @@
 	height: 100%;
 	z-index: 9998;
 }
-.@{namespace}-colorInput-trigger {
-	position: relative;
-}
 
-.@{namespace}-colorInput .@{namespace}-colorInput-alpha, 
-.@{namespace}-colorInput .@{namespace}-colorInput-check, 
-.@{namespace}-colorInput .@{namespace}-colorInput-hue, 
-.@{namespace}-colorInput .@{namespace}-colorInput-hex, 
-.@{namespace}-colorInput .@{namespace}-colorInput-info, 
-.@{namespace}-colorInput .@{namespace}-colorInput-palettes, 
-.@{namespace}-colorInput .@{namespace}-colorInput-preview, 
-.@{namespace}-colorInput .@{namespace}-colorInput-saturation {
+.asColorInput .asColorInput-alpha, 
+.asColorInput .asColorInput-check, 
+.asColorInput .asColorInput-hue, 
+.asColorInput .asColorInput-hex, 
+.asColorInput .asColorInput-info, 
+.asColorInput .asColorInput-palettes, 
+.asColorInput .asColorInput-preview, 
+.asColorInput .asColorInput-saturation {
 	position: absolute;
 }
 
 
-.@{namespace}-colorInput-saturation {
-	top: 79px;
-	left: 15px;
-
-	width: 175px;
-	height: 175px;
-	
+.asColorInput-saturation {	
 	margin: 0;
     padding: 0;
     border: 2px solid @colorInput-saturation-borderColor;
-    background: @colorInput-saturation-bgColor url("../images/saturation.png") no-repeat center center;
     cursor: crosshair;
     i {
         position: absolute;
-        width: 7px;
-        height: 7px;
+        width: 6px;
+        height: 6px;
+        margin-top: -4px;
+        margin-left: -4px;
         border: @colorInput-saturation-i-borderWidth solid @colorInput-saturation-i-borderColor;
         .border-radius(10px);
     }
@@ -129,78 +120,57 @@
     }
 }
 
-.@{namespace}-colorInput-hue {
-	top: 79px;
-	left: 209px;
-
-	width: 20px;
-	height: 175px;
-	
+.asColorInput-hue {
 	border: 2px solid @colorInput-hue-borderColor;
+	background: url('../images/hue.png') no-repeat center center;
 	cursor: pointer;
 	i {
 		position: absolute;
-		top: 10px;
 		left: -2px;
 
 		width: 20px;
 		height: 3px;
+		margin-top: -3.5px;
+		background-color: @colorInput-hue-i-bgColor;
 		border: @colorInput-hue-i-borderWidth solid @colorInput-hue-i-borderColor;
 		cursor: row-resize;
 	}
 }
-
-.@{namespace}-colorInput-alpha {
-	top: 79px;
-	left: 241px;
-
-	width: 20px;
-	height: 175px;
-
+.asColorInput-alpha {
 	border: 2px solid @colorInput-alpha-borderColor;
+	background: url('../images/alpha.png') no-repeat center center;
 	cursor: pointer;
 	i {
 		position: absolute;
-		top: 50px;
 		left: -2px;
 
 		width: 20px;
 		height: 3px;
-		border: @colorInput-alpha-i-boderWidth solid @colorInput-alpha-i-boderColor;
+		margin-top: -3.5px;
+		background-color: @colorInput-alpha-i-bgColor;
+		border: @colorInput-alpha-i-borderWidth solid @colorInput-alpha-i-borderColor;
 		cursor: row-resize;
 	}
 }
-
-.@{namespace}-colorInput-preview {
-	top: 20px;
-	left: 15px;
-
-	width: 95px;
-	height: 40px;
-
+.asColorInput-preview {
 	border: 2px solid @colorInput-preview-borderColor;
 
 	overflow: hidden;
 }
-.@{namespace}-colorInput-preview-previous {
+.asColorInput-preview-previous {
 	float: left;
 	width: 50%;
 	height: 100%;
-	background-color: #000;
 	cursor: pointer;
 }
-.@{namespace}-colorInput-preview-current {
+.asColorInput-preview-current {
 	float: left;
 	width: 50%;
 	height: 100%;
-	background-color: #f77268;
 	cursor: pointer;
 }
 
-.@{namespace}-colorInput-palettes {
-	top: 20px;
-	left: 134px;
-	
+.asColorInput-palettes {
 	ul {
 		display: block;
 		margin: 0;
@@ -210,11 +180,9 @@
 
 	li {
 		float: left;
-		width: 14px;
-		height: 14px;
 		margin: 0;
 		padding: 0;
-		margin-left: 5px;
+		margin-right: 5px;
 		margin-bottom: 8px;
 		border: 2px solid @colorInput-palettes-li-borderColor;
 
@@ -222,19 +190,10 @@
 		white-space: nowrap;
 		overflow: hidden;
 		cursor: pointer;
-		&:first-child {
-			margin-left: 0;
-		}
 	}
 }
 
-input.@{namespace}-colorInput-hex[type="text"] {
-	top: 273px;
-	left: 15px;
-
-	width: 179px;
-	height: 31px;
-
+input.asColorInput-hex[type="text"] {
 	padding: 6px 10px;
 	font-size: 14px;
 	line-height: 1;
@@ -255,22 +214,41 @@ input.@{namespace}-colorInput-hex[type="text"] {
 	}
 }
 
-.@{namespace}-colorInput-gradient-trigger {
+.asColorInput-check {
+	.asColorInput-check-cancel {
+		display: block;
+		margin: 0;
+		padding: 0;
+		font-size: 14px;
+		line-height: 31px;
+		color: @colorInput-check-cancel-color;
+		text-decoration: none;
+		text-transform: capitalize;
+		cursor: pointer;
+		&:hover {
+			color: @colorInput-check-cancel_hover-color;
+			text-decoration: none;
+		}
+		&:active,
+		&:focus {
+			outline: none !important;
+		}
+	}
+}
+
+.asColorInput-gradient-trigger,
+.asColorInput-gradient-cancel {
 	position: absolute;
-	top: 273px;
-	left: 209px;
 
 	display: block;
-	width: 58px;
-	height: 31px;
 	margin: 0;
 	padding: 0;
 	font-size: 14px;
 	line-height: 31px;
-	color: #777;
+	color: @colorInput-gradient-controll-color;
 	text-decoration: none;
 	&:hover {
-		color: #444;
+		color: @colorInput-gradient-controll_hover-color;
 		text-decoration: none;
 	}
 	&:active,
@@ -279,63 +257,63 @@ input.@{namespace}-colorInput-hex[type="text"] {
 	}
 }
 
-.@{namespace}-colorInput-gradient {
-	position: absolute;
-	top: 324px;
+.asColorInput-gradient {
+	position: relative;
 	left: 0;
-	z-index: -1;
+	display: none;
 	
 	height: 70px;
 	width: 100%;
 	padding: 23px 15px 20px;
-	border-top: 2px solid #e5e5e5;
-	background-color: #fafafa;
+	border-top: 2px solid @colorInput-gradient-borderColor;
+	background-color: @colorInput-gradient-bgColor;
 	.box-sizing(border-box);
 	&:after {
 		content: "";
 		position: absolute;
 		top: -7px;
-		right: 38px;
-		z-index: 1;
 
 		width: 10px;
 		height: 10px;
-		border: 2px solid #e5e5e5;
+		border: 2px solid @colorInput-gradient-after-borderColor;
 		border-right-color: transparent;
 		border-bottom-color: transparent;
-		background-color: #fafafa;
+		background-color: @colorInput-gradient-after-bgColor;
 		.transform(rotate(45deg));
+	}
+
+	&.asColorInput-gradient_show {
+		display: block;
 	}
 }
 
-.@{namespace}-colorInput-gradient-panel {
+.asColorInput-gradient-panel {
 	float: left;
-	// width: 187px;
-	// height: 40px;
-}
-.@{namespace}-colorInput-gradient-background {
-	width: 175px;
+	width: 174px;
 	height: 21px;
-	border: 2px solid #e5e5e5;
+	border: 2px solid @colorInput-gradient-panel-borderColor;
 }
-.@{namespace}-colorInput-gradient-markers {
-	position: absolute;
-	top: 10px;
-	left: 15px;
-	width: 187px;
-	height: 15px;
+.asColorInput-gradient-markers {
+	position: relative;
+	top: -16px;
+	width: 174px;
+	height: 16px;
 }
-.@{namespace}-colorInput-gradient-maker {
+.asColorInput-gradient-marker {
 	position: absolute;
-	top: 0;
 	left: 0;
 	width: 10px;
 	height: 10px;
+	margin-left: -6px;
 	line-height: 1;
-	border: 1px solid #e5e5e5;
-	background-color: #fff;
-	&:focus {
-
+	border: 1px solid @colorInput-gradient-marker-borderColor;
+	background-color: @colorInput-gradient-marker-bgColor;
+	&.asColorInput-gradient-marker_active {
+		border-color: @colorInput-gradient-marker_active-borderColor;
+		&:after {
+			border-right-color: @colorInput-gradient-marker_active-after-borderColor;
+			border-bottom-color: @colorInput-gradient-marker_active-after-borderColor;
+		}
 	}
 	&:after {
 		content: "";
@@ -346,10 +324,10 @@ input.@{namespace}-colorInput-hex[type="text"] {
 
 		width: 3px;
 		height: 3px;
-		border: 1px solid #e5e5e5;
-		border-top-color: transparent;
-		border-left-color: transparent;
-		background-color: #fff;
+		border: 1px solid transparent;
+		border-right-color: @colorInput-gradient-marker-after-borderColor;
+		border-bottom-color: @colorInput-gradient-marker-after-borderColor;
+		background-color: @colorInput-gradient-marker-after-bgColor;
 		.transform(rotate(45deg));
 	}
 	i {
@@ -360,28 +338,18 @@ input.@{namespace}-colorInput-hex[type="text"] {
 		height: 6px;
 		margin: 1px;
 		line-height: 1;
-		border: 1px solid #e5e5e5;
+		vertical-align: top;
+		border: 1px solid @colorInput-gradient-marker-i-borderColor;
 	}
 }
 
-// .@{namespace}-colorInput-gradient-degree {
-// 	position: absolute;
-// 	top: 25px;
-// 	left: 202px;
-	
-// 	width: 65px;
-// 	height: 25px;
-
-// 	overflow: hidden;
-// }
-
-.@{namespace}-colorInput-gradient-wheel {
+.asColorInput-gradient-wheel {
 	position: relative;
 	float: left;
 	width: 21px;
 	height: 21px;
 	margin-left: 8px;
-	border: 2px solid #e5e5e5;
+	border: 2px solid @colorInput-gradient-wheel-borderColor;
 	.border-radius(100%);
 	i {
 		position: absolute;
@@ -389,12 +357,12 @@ input.@{namespace}-colorInput-hex[type="text"] {
 		left: 5px;
 		width: 3px;
 		height: 3px;
-		background-color: #444;
+		background-color: @colorInput-gradinet-wheel-i-bgColor;
 		.border-radius(100%);
 	}
 }
 
-input.@{namespace}-colorInput-gradient-degree[type="text"] {
+input.asColorInput-gradient-degree[type="text"] {
 	float: left;
 	width: 35px;
 	height: 25px;
@@ -404,19 +372,123 @@ input.@{namespace}-colorInput-gradient-degree[type="text"] {
 	font-size: 12px;
 	line-height: 1;
 	color: #aaa;
-	border: 2px solid #e5e5e5;
-	background: #fff;
+	border: 2px solid @colorInput-gradient-degree-borderColor;
+	background: @colorInput-gradient-degree-bgColor;
 	letter-spacing: normal;
 	outline: none;
 	.box-sizing(border-box);
 	.border-radius(0);//for co wp-admin.css
 	&:hover {
-		// color: #666;
-		border-color: #d9d9d9;
+		border-color: @colorInput-gradient-degree_hover-borderColor;
 	}
 	&:focus {
-		border-color: @az-reactive-color;
-		color: #444;
+		color: @colorInput-gradient-degree_focus-color;
+		border-color: @colorInput-gradient-degree_focus-borderColor;
 		.box-shadow(none);
+	}
+}
+
+
+
+.asColorInput_flat {
+	&.asColorInput {
+		position: relative;
+		top: 38px;
+		left: 0;
+		display: block;
+		z-index: auto;
+	}
+}
+
+.asColorInput_fullStack {
+	.asColorInput-preview {
+		top: 20px;
+		left: 15px;
+		.size(95px, 40px);
+	}
+	.asColorInput-palettes {
+		top: 20px;
+		left: 134px;
+		li {
+			.size(14px);
+		}
+	}
+	.asColorInput-saturation {
+		top: 79px;
+		left: 15px;
+		.size(175px);
+		background: @colorInput-saturation-bgColor url("../images/saturation.png") no-repeat center center;
+	}
+	.asColorInput-hue {
+		top: 79px;
+		left: 209px;
+		.size(20px, 175px);
+	}
+	.asColorInput-alpha {
+		top: 79px;
+		left: 241px;
+		.size(20px, 175px);
+	}
+	.asColorInput-hex[type="text"] {
+		top: 273px;
+		left: 15px;
+		.size(96px, 31px);
+	}
+	.asColorInput-gradient-trigger {
+		top: 273px;
+		left: 138px;
+	}
+	.asColorInput-gradient-cancel  {
+		top: 273px;
+		right: 20px;
+	}
+	.asColorInput-gradient {
+		&:after {
+			left: 158px;
+		}
+	}
+}
+
+.asColorInput_basicStyle {
+	.asColorInput-preview {
+		top: 20px;
+		left: 15px;
+		.size(95px, 40px);
+	}
+	.asColorInput-palettes {
+		top: 20px;
+		left: 134px;
+		li {
+			.size(14px);
+		}
+	}
+	.asColorInput-saturation {
+		top: 79px;
+		left: 15px;
+		.size(205px,175px);
+		background: @colorInput-saturation-bgColor url("../images/saturation_basic.png") no-repeat center center;
+	}
+	.asColorInput-hue {
+		top: 79px;
+		left: 241px;
+		.size(20px, 175px);
+	}
+	.asColorInput-hex[type="text"] {
+		top: 273px;
+		left: 15px;
+		.size(96px, 31px);
+	}
+	.asColorInput-gradient-trigger {
+		top: 273px;
+		left: 138px;
+	}
+	.asColorInput-gradient-cancel {
+		top: 273px;
+		right: 20px;
+	}
+	.asColorInput-gradient {
+		&:after {
+			left: 158px;
+		}
 	}
 }

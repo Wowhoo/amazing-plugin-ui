@@ -18,50 +18,83 @@
     <style>
         body {
             padding: 40px;
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
     <section>
         <h2>Pagination</h2>
-        <div class="row">
-            <div class="column half">
-                <h4>HTML</h4>
-                <pre><code data-language="html">&lt;div&nbsp;class=&quot;az-paginator&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;class=&quot;az-paginator-basic&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;az-paginator-prev&nbsp;az-paginator_disable&quot;&gt;&lt;a&nbsp;href=&quot;&quot;&gt;prev&lt;/a&gt;&lt;/li&gt;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;az-paginator_active&quot;&gt;&lt;a&nbsp;href=&quot;&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;&quot;&gt;4&lt;/a&gt;&lt;/li&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;&quot;&gt;6&lt;/a&gt;&lt;/li&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;az-paginator_omit&quot;&gt;...&lt;/li&gt;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a&nbsp;href=&quot;&quot;&gt;7&lt;/a&gt;&lt;/li&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;az-paginator-next&quot;&gt;&lt;a&nbsp;href=&quot;&quot;&gt;next&lt;/a&gt;&lt;/li&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-            <div class="column half">
-                <h4>RENDERED HTML</h4>
-                <div class="az-paginator">
-                    <ul class="az-paginator-basic">
-                        <li class="az-paginator-prev az-paginator_disable"><a href="">prev</a></li> 
-                        <li><a href="">1</a></li>
-                        <li><a href="">2</a></li>
-                        <li class="az-paginator_active"><a href="">3</a></li>
-                        <li><a href="">4</a></li>
-                        <li><a href="">6</a></li>
-                        <li class="az-paginator_omit">...</li> 
-                        <li><a href="">10</a></li>
-                        <li class="az-paginator-next"><a href="">next</a></li>
-                    </ul>
+        <section>
+            <h3>Defaults</h3>
+            <div class="row">
+                <div class="column half">
+                    <h4>HTML</h4>
+                    <pre><code data-language="html">&lt;div&nbsp;class=&quot;asPaginator&nbsp;asPaginator1&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;.asPaginator1&quot;).asPaginator(100,&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asPaginator',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;numPerPage:&nbsp;10,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;currentPage:&nbsp;1
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</code></pre>
+                </div>
+                <div class="column half">
+                    <h4>RENDERED HTML</h4>
+                    <div class="asPaginator asPaginator1"></div>
                 </div>
             </div>
-        </div>
+        </section>
+        <hr />
+        <section>
+            <h3>Fix</h3>
+            <div class="row">
+                <div class="column half">
+                    <h4>HTML</h4>
+                    <pre><code data-language="html">&lt;div&nbsp;class=&quot;asPaginator&nbsp;asPaginator2&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;.asPaginator2&quot;).asPaginator(100,&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asPaginator',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;numPerPage:&nbsp;10,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;currentPage:&nbsp;1
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</code></pre>
+                </div>
+                <div class="column half">
+                    <h4>RENDERED HTML</h4>
+                    <div class="asPaginator asPaginator2"></div>
+                </div>
+            </div>
+        </section>
     </section>
 
     <script type="text/javascript" src="../js/highlighting/rainbow.min.js"></script>
     <script type="text/javascript" src="../js/highlighting/html.js"></script>
+    <script type="text/javascript" src="../js/highlighting/javascript.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/jquery-asPaginator.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".asPaginator1").asPaginator(100, {
+                namespace: 'asPaginator',
+                numPerPage: 10,
+                currentPage: 1
+            });
+            $(".asPaginator2").asPaginator(100, {
+                namespace: 'asPaginator',
+                numPerPage: 10,
+                currentPage: 1,
+                components: {
+                    lists: {
+                        fix: true
+                    }
+                }
+            })
+        });
+    </script>
 </body>
 </html>

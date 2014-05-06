@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="column half">
                     <h4>HTML</h4>
-                    <pre><code data-language="html">&lt;select&nbsp;class=&quot;az-selector&quot;&gt;
+                    <pre><code data-language="html">&lt;select&nbsp;class=&quot;asSelector&quot;&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;a&quot;&gt;Bulk&nbsp;Actions1&lt;/option&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;b&quot;&gt;Bulk&nbsp;Actions2&lt;/option&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;c&quot;&gt;Bulk&nbsp;Actions3&lt;/option&gt;
@@ -38,8 +38,8 @@
 &lt;/select&gt;
 &lt;script&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.az-selector').select({
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-selector',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.asSelector').asSelect({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asSelector',
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;offset:&nbsp;[5,&nbsp;5],
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onChange:&nbsp;function(data)&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;value&nbsp;=&nbsp;instance.get();
@@ -51,7 +51,7 @@
                 </div>
                 <div class="column half">
                     <h4>RENDERED HTML</h4>
-                    <select class="az-selector">
+                    <select class="asSelector">
                         <option value="a">Bulk Actions1</option>
                         <option value="b">Bulk Actions2</option>
                         <option value="c">Bulk Actions3</option>
@@ -83,8 +83,8 @@
 &lt;/select&gt;
 &lt;script&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.group-select').select({
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-selector',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.group-select').asSelect({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asSelector',
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;skin:&nbsp;'simple'
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
 &nbsp;&nbsp;&nbsp;&nbsp;});
@@ -124,8 +124,8 @@
 &lt;/select&gt;
 &lt;script&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.hover-select').select({
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-selector',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.hover-select').asSelect({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asSelector',
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;trigger:&nbsp;hover
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
 &nbsp;&nbsp;&nbsp;&nbsp;});
@@ -152,8 +152,8 @@
                     <pre><code data-language="html">&lt;div&nbsp;class=&quot;build-from-json&quot;&gt;&lt;/div&gt;
 &lt;script&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.build-from-json').select({
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-selector',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.build-from-json').asSelect({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asSelector',
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;preload:&nbsp;true,
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;load:&nbsp;function(callback){
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;callback([
@@ -183,33 +183,128 @@
                 </div>
             </div>
         </section>
+        <hr />
+        <section>
+            <h3>Add data after build</h3>
+            <div class="row">
+                <div class="column half">
+                    <h4>HTML</h4>
+                    <pre><code data-language="html">&lt;select&nbsp;class=&quot;select-load&quot;&gt;&lt;/select&gt;
+&lt;button&nbsp;class=&quot;load-button&quot;&gt;click&nbsp;to&nbsp;load&nbsp;data&lt;/button&gt;
+&lt;button&nbsp;class=&quot;reset-button&quot;&gt;reset&lt;/button&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;$('.select-load').asSelect({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asSelector',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;preload:&nbsp;true,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;load:&nbsp;function(callback)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;callback([
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_1&quot;,&quot;text&quot;:&quot;a-value1&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_2&quot;,&quot;text&quot;:&quot;a-value2&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_3&quot;,&quot;text&quot;:&quot;a-value3&quot;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.load-button').on('click',function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;instance&nbsp;=&nbsp;$('.select-load').data('asSelect');
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instance.addData([
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_4&quot;,&quot;text&quot;:&quot;a-value4&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_5&quot;,&quot;text&quot;:&quot;a-value5&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_6&quot;,&quot;text&quot;:&quot;a-value6&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_7&quot;,&quot;text&quot;:&quot;a-value7&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_8&quot;,&quot;text&quot;:&quot;b-value&nbsp;8&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_9&quot;,&quot;text&quot;:&quot;b-value&nbsp;9&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_10&quot;,&quot;text&quot;:&quot;b-value&nbsp;10&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_11&quot;,&quot;text&quot;:&quot;b-value&nbsp;11&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_12&quot;,&quot;text&quot;:&quot;b-value&nbsp;12&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_13&quot;,&quot;text&quot;:&quot;b-value&nbsp;13&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_14&quot;,&quot;text&quot;:&quot;c-value&nbsp;14&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_15&quot;,&quot;text&quot;:&quot;c-value&nbsp;15&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_16&quot;,&quot;text&quot;:&quot;c-value&nbsp;16&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_17&quot;,&quot;text&quot;:&quot;c-value&nbsp;17&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_18&quot;,&quot;text&quot;:&quot;d-value&nbsp;18&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_19&quot;,&quot;text&quot;:&quot;d-value&nbsp;19&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_20&quot;,&quot;text&quot;:&quot;d-value&nbsp;20&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_21&quot;,&quot;text&quot;:&quot;d-value&nbsp;21&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_22&quot;,&quot;text&quot;:&quot;d-value&nbsp;22&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_23&quot;,&quot;text&quot;:&quot;f-value&nbsp;23&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_24&quot;,&quot;text&quot;:&quot;f-value&nbsp;24&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_25&quot;,&quot;text&quot;:&quot;f-value&nbsp;25&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_26&quot;,&quot;text&quot;:&quot;f-value&nbsp;26&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_27&quot;,&quot;text&quot;:&quot;f-value&nbsp;27&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_28&quot;,&quot;text&quot;:&quot;value&nbsp;28&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_29&quot;,&quot;text&quot;:&quot;value&nbsp;29&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_30&quot;,&quot;text&quot;:&quot;value&nbsp;30&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_31&quot;,&quot;text&quot;:&quot;value&nbsp;31&quot;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.reset-button').on('click',&nbsp;function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;instance&nbsp;=&nbsp;$('.select-load').data('asSelect');
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instance.data&nbsp;=&nbsp;[
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_1&quot;,&quot;text&quot;:&quot;a-value1&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_2&quot;,&quot;text&quot;:&quot;a-value2&quot;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&quot;value&quot;:&quot;value_3&quot;,&quot;text&quot;:&quot;a-value3&quot;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;];
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instance.update();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</code></pre>
+                </div>
+                <div class="column half">
+                    <h4>RENDERED HTML</h4>
+                    <select class="select-load"></select>
+                    <button class="load-button">click to load data</button>
+                    <button class="reset-button">reset</button>
+                </div>
+            </div>
+        </section>
+        <hr />
+        <section>
+            <h3>Build use load function</h3>
+            <div class="row">
+                <div class="column half">
+                    <h4>HTML</h4>
+                    <pre><code data-language="html">&lt;select&nbsp;class=&quot;build-use-load&quot;&gt;&lt;/select&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.hover-select').asSelect({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asSelector',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;trigger:&nbsp;hover
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</code></pre>
+                </div>
+                <div class="column half">
+                    <h4>RENDERED HTML</h4>
+                    <select class="build-use-load"></select>
+                </div>
+            </div>
+        </section>
     </section>
 
     <script type="text/javascript" src="../js/highlighting/rainbow.min.js"></script>
     <script type="text/javascript" src="../js/highlighting/html.js"></script>
     <script type="text/javascript" src="../js/highlighting/javascript.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
-    <script type="text/javascript" src="../js/jquery-select.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-asSelect.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('.az-selector').select({
-                namespace: 'az-selector',
+            $('.asSelector').asSelect({
+                namespace: 'asSelector',
                 offset: [5, 5],
                 onChange: function(data) {
-                    var value = instance.get();
                     $('<div><span>value: </span>' + data + '</div>').prependTo($('.content1'));
                 }
             });
-            $('.group-select').select({
-                namespace: 'az-selector',
+            $('.group-select').asSelect({
+                namespace: 'asSelector',
                 skin: 'simple'
             });
-            $('.hover-select').select({
-                namespace: 'az-selector',
+            $('.hover-select').asSelect({
+                namespace: 'asSelector',
                 trigger: 'hover'
             });
-            $('.build-from-json').select({
-                namespace: 'az-selector',
+            $('.build-from-json').asSelect({
+                namespace: 'asSelector',
                 preload: true,
                 load: function(callback){
                     callback([
@@ -228,6 +323,92 @@
                         {"value":"value_11","text":"b-value 11"},
                         {"value":"value_12","text":"b-value 12"}
                     ]);
+                }
+            });
+            $('.select-load').asSelect({
+                namespace: 'asSelector',
+                preload: true,
+                load: function(callback) {
+                    callback([
+                        {"value":"value_1","text":"a-value1"},
+                        {"value":"value_2","text":"a-value2"},
+                        {"value":"value_3","text":"a-value3"}
+                    ]);
+                }
+            });
+            $('.load-button').on('click',function() {
+                var instance = $('.select-load').data('asSelect');
+                instance.addData([
+                    {"value":"value_4","text":"a-value4"},
+                    {"value":"value_5","text":"a-value5"},
+                    {"value":"value_6","text":"a-value6"},
+                    {"value":"value_7","text":"a-value7"},
+                    {"value":"value_8","text":"b-value 8"},
+                    {"value":"value_9","text":"b-value 9"},
+                    {"value":"value_10","text":"b-value 10"},
+                    {"value":"value_11","text":"b-value 11"},
+                    {"value":"value_12","text":"b-value 12"},
+                    {"value":"value_13","text":"b-value 13"},
+                    {"value":"value_14","text":"c-value 14"},
+                    {"value":"value_15","text":"c-value 15"},
+                    {"value":"value_16","text":"c-value 16"},
+                    {"value":"value_17","text":"c-value 17"},
+                    {"value":"value_18","text":"d-value 18"},
+                    {"value":"value_19","text":"d-value 19"},
+                    {"value":"value_20","text":"d-value 20"},
+                    {"value":"value_21","text":"d-value 21"},
+                    {"value":"value_22","text":"d-value 22"},
+                    {"value":"value_23","text":"f-value 23"},
+                    {"value":"value_24","text":"f-value 24"},
+                    {"value":"value_25","text":"f-value 25"},
+                    {"value":"value_26","text":"f-value 26"},
+                    {"value":"value_27","text":"f-value 27"},
+                    {"value":"value_28","text":"value 28"},
+                    {"value":"value_29","text":"value 29"},
+                    {"value":"value_30","text":"value 30"},
+                    {"value":"value_31","text":"value 31"}
+                ]);
+            });
+            $('.reset-button').on('click', function() {
+                var instance = $('.select-load').data('asSelect');
+                instance.data = [
+                    {"value":"value_1","text":"a-value1"},
+                    {"value":"value_2","text":"a-value2"},
+                    {"value":"value_3","text":"a-value3"}
+                ];
+                instance.update();
+            });
+            $('.build-use-load').asSelect({
+                namespace: 'asSelector',
+                valueField: 'url',
+                labelField: 'name',
+                preload: true,
+                load: function(callback){
+                    $.ajax({
+                        url: 'https://api.github.com/users/amazingSurge/repos',
+                        type: 'GET',
+                        error: function() {
+                            callback();
+                        },
+                        success: function(res) {
+                            var data = [];
+                            $.each(res.slice(0, 10), function(i, item){
+                                data.push({
+                                    value: item.url,
+                                    text: item.name,
+                                    fork: item.fork,
+                                    id: item.id
+                                });
+                            });
+                            callback(data);
+                        }
+                    });
+                },
+                render: {
+                    option: function(item){
+                        return '<span class="name"><i class="icon ' + (item.fork ? 'fork' : 'source') + '"></i>' + item.text + '</span>' +
+                                '<span class="id">' + item.id + '</span>';
+                    }
                 }
             });
         });

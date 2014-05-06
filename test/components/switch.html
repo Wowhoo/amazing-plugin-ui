@@ -38,8 +38,8 @@
                     <pre><code data-language="html">&lt;input&nbsp;class=&quot;switch1&quot;&nbsp;type=&quot;checkbox&quot;&nbsp;checked=&quot;checked&quot;&nbsp;/&gt;
 &lt;script&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.az-switch').switcher({
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-switch'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.asSwitch').asSwitcher({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asSwitch'
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
 &nbsp;&nbsp;&nbsp;&nbsp;});
 &lt;/script&gt;</code></pre>
@@ -59,8 +59,8 @@
                     <pre><code data-language="html">&lt;input&nbsp;class=&quot;switch2&quot;&nbsp;type=&quot;checkbox&quot;&nbsp;checked=&quot;checked&quot;&nbsp;/&gt;
 &lt;script&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.az-switch').switcher({
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-switch',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.asSwitch').asSwitcher({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asSwitch',
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dragable:&nbsp;true,
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clickable:&nbsp;false
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
@@ -75,15 +75,15 @@
         </section>
         <hr />
         <section>
-            <h3>Only drag</h3>
+            <h3>Only clickable</h3>
             <div class="row">
                 <div class="column half">
                     <h4>HTML</h4>
                     <pre><code data-language="html">&lt;input&nbsp;class=&quot;switch3&quot;&nbsp;type=&quot;checkbox&quot;&nbsp;checked=&quot;checked&quot;&nbsp;/&gt;
 &lt;script&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.az-switch').switcher({
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-switch',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.asSwitch').asSwitcher({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asSwitch',
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dragable:&nbsp;false,
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clickable:&nbsp;true
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
@@ -103,19 +103,19 @@
     <script type="text/javascript" src="../js/highlighting/javascript.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
 
-    <script type="text/javascript" src="../js/jquery-switcher.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-asSwitcher.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('.switch1').switcher({
-                namespace: 'az-switch'
+            $('.switch1').asSwitcher({
+                namespace: 'asSwitch'
             });
-            $('.switch2').switcher({
-                namespace: 'az-switch',
+            $('.switch2').asSwitcher({
+                namespace: 'asSwitch',
                 dragable: true,
                 clickable: false
             });
-            $('.switch3').switcher({
-                namespace: 'az-switch',
+            $('.switch3').asSwitcher({
+                namespace: 'asSwitch',
                 dragable: false,
                 clickable: true
             });

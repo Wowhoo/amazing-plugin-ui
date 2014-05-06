@@ -1,20 +1,24 @@
+
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-    <meta charset="utf-8">
+        <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href="../css/reset.css">
     <link rel="stylesheet" type="text/css" href="../css/wp-admin.css">
+    <link rel="stylesheet" href="../css/highlighting//github.css">
+    <link rel="stylesheet" type="text/css" href="../css/adaptGrid.css">
     <link rel="stylesheet" type="text/css" href="../../css/amazing-plugin-ui-min.css">
     <style>
         body {
             padding: 40px;
+            font-size: 16px;
         }
         .demo {
             list-style: none;
@@ -25,79 +29,110 @@
     </style>
 </head>
 <body>
-    <!-- <input type='text' class="az-colorInput-trigger" /> -->
-
-    <div class="az-colorInput-trigger">
-        <input type="text">
-        <span style="background-color: red;"></span>
-    </div>
-
-    <div class="az-colorInput" style="display: block; position: relative; top: 0px; left: 0px;" >
-
-        <div class="az-colorInput-saturation" style="display: block;">
-            <i><b></b></i>
-        </div>
-        <div class="az-colorInput-hue" style="display: block;">
-            <i></i>
-        </div>
-        <div class="az-colorInput-alpha" style="display: block;">
-            <i></i>
-        </div>
-        
-        <div class="az-colorInput-preview">
-            <span class="az-colorInput-preview-previous"></span>
-            <span class="az-colorInput-preview-current"></span>
-        </div>
-        <div class="az-colorInput-palettes" tabindex="0">
-            <ul>
-                <li data-color="rgba(36,99,42,1)" style="background-color:rgba(36,99,42,1)">rgba(36,99,42,1)</li>
-                <li data-color="rgba(49,153,57,1)" style="background-color:rgba(49,153,57,1)">rgba(49,153,57,1)</li>
-                <li data-color="rgba(42,98,47,1)" style="background-color:rgba(42,98,47,1)">rgba(42,98,47,1)</li>
-                <li data-color="rgba(63,136,69,1)" style="background-color:rgba(63,136,69,1)">rgba(63,136,69,1)</li>
-                <li data-color="rgba(34,123,42,1)" style="background-color:rgba(34,123,42,1)">rgba(34,123,42,1)</li>
-                <li data-color="rgba(37,125,44,1)" style="background-color:rgba(37,125,44,1)">rgba(37,125,44,1)</li>
-            </ul>
-            <ul>
-                <li data-color="rgba(36,99,42,1)" style="background-color:rgba(36,99,42,1)">rgba(36,99,42,1)</li>
-                <li data-color="rgba(49,153,57,1)" style="background-color:rgba(49,153,57,1)">rgba(49,153,57,1)</li>
-                <li data-color="rgba(42,98,47,1)" style="background-color:rgba(42,98,47,1)">rgba(42,98,47,1)</li>
-                <li data-color="rgba(63,136,69,1)" style="background-color:rgba(63,136,69,1)">rgba(63,136,69,1)</li>
-                <li data-color="rgba(34,123,42,1)" style="background-color:rgba(34,123,42,1)">rgba(34,123,42,1)</li>
-                <li data-color="rgba(37,125,44,1)" style="background-color:rgba(37,125,44,1)">rgba(37,125,44,1)</li>
-            </ul>
-        </div>
-
-        <input type="text" class="az-colorInput-hex" value="#000ff">
-
-        <a href="#" class="az-colorInput-gradient-trigger">Gradient</a>
-        <div class="az-colorInput-gradient">
-            <div class="az-colorInput-gradient-panel"><!-- /need the div? -->
-                <div class="az-colorInput-gradient-background"></div>
-
-                <div class="az-colorInput-gradient-markers">
-                    <div class="az-colorInput-gradient-maker" style="left: 30px;">
-                        <i></i>
-                    </div>
-                    <div class="az-colorInput-gradient-maker">
-                        <i></i>
-                    </div>
+    <section>
+        <h2>ColorInput</h2>
+        <section>
+            <h3>BasicStyle</h3>
+            <div class="row">
+                <div class="column half">
+                    <h4>HTML</h4>
+                    <pre><code data-language="html">&lt;input&nbsp;class=&quot;asColorInput-input&quot;&nbsp;type=&quot;text&quot;&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;.asColorInput-input&quot;).asColorInput({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asColorInput',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color:&nbsp;'#f00',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flat:&nbsp;false,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;skin:&nbsp;'basicStyle',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;components:&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;palettes:&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;defines:&nbsp;[''],
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;colors:&nbsp;['#fff',&nbsp;'#000',&nbsp;'#0600ff',&nbsp;'#ff0000',&nbsp;'#ff9300',&nbsp;'#f0ff00',&nbsp;'#ccc',&nbsp;'#d07070',&nbsp;'#5cafda',&nbsp;'#f77268',&nbsp;'#00ffe6',&nbsp;'#c0ff00'],
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max:&nbsp;12
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</code></pre>
+                </div>
+                <div class="column half">
+                    <h4>RENDERED HTML</h4>
+                    <input class='asColorInput-basicStyle' type='text' />
                 </div>
             </div>
-            <div class="az-colorInput-gradient-wheel">
-                <i></i>
+        </section>
+        <hr />
+        <section>
+            <h3>FullStack</h3>
+            <div class="row">
+                <div class="column half">
+                    <h4>HTML</h4>
+                    <pre><code data-language="html">&lt;input&nbsp;class=&quot;asColorInput-input&quot;&nbsp;type=&quot;text&quot;&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;.asColorInput-input&quot;).asColorInput({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asColorInput',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color:&nbsp;'#f00',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flat:&nbsp;false,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;format:&nbsp;'rgba',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;skin:&nbsp;'fullStack',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;components:&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;palettes:&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;defines:&nbsp;[''],
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;colors:&nbsp;['#fff',&nbsp;'#000',&nbsp;'#0600ff',&nbsp;'#ff0000',&nbsp;'#ff9300',&nbsp;'#f0ff00',&nbsp;'#ccc',&nbsp;'#d07070',&nbsp;'#5cafda',&nbsp;'#f77268',&nbsp;'#00ffe6',&nbsp;'#c0ff00'],
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max:&nbsp;12
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</code></pre>
+                </div>
+                <div class="column half">
+                    <h4>RENDERED HTML</h4>
+                    <input class='asColorInput-fullStack' type='text' />
+                </div>
             </div>
-            <input class="az-colorInput-gradient-degree" type="text" value="360" size="3" />
-        </div>
-    </div>
+        </section>
+    </section>
 
-    <!--<script type="text/javascript" src="../../js/jquery/jquery.js"></script>
-    <script type="text/javascript" src="../../js/jquery-az-colorInput.min.js"></script>
-        <script>
-            $(document).ready(function() {
-                $(".flat").az-colorInput({
-                    flat: true
-                });
+
+    <script type="text/javascript" src="../js/highlighting/rainbow.min.js"></script>
+    <script type="text/javascript" src="../js/highlighting/html.js"></script>   
+    <script type="text/javascript" src="../js/highlighting/javascript.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/jquery-asColor.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-asColorInput.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.asColorInput.skins.basicStyle = 'saturation,hue,hex,preview,palettes,gradient';
+            $(".asColorInput-basicStyle").asColorInput({
+                namespace: 'asColorInput',
+                color: '#f00',
+                flat: false,
+                skin: 'basicStyle',
+                components: {
+                    palettes: {
+                        defines: [''],
+                        colors: ['#fff', '#000', '#0600ff', '#ff0000', '#ff9300', '#f0ff00', '#ccc', '#d07070', '#5cafda', '#f77268', '#00ffe6', '#c0ff00'],
+                        max: 12
+                    }
+                }
             });
-        </script>-->
+            $(".asColorInput-fullStack").asColorInput({
+                namespace: 'asColorInput',
+                color: '#f00',
+                flat: false,
+                format: 'rgba',
+                skin: 'fullStack',
+                components: {
+                    palettes: {
+                        defines: [''],
+                        colors: ['#fff', '#000', '#0600ff', '#ff0000', '#ff9300', '#f0ff00', '#ccc', '#d07070', '#5cafda', '#f77268', '#00ffe6', '#c0ff00'],
+                        max: 12
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>

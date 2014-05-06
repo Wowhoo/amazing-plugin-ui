@@ -29,18 +29,29 @@
             <div class="row">
                 <div class="column half">
                     <h4>HTML</h4>
-                    <pre><code data-language="html">&lt;input&nbsp;type=&quot;text&quot;&nbsp;class=&quot;az-calendar&nbsp;az-calendar1&quot;/&gt;
+                    <pre><code data-language="html">&lt;input&nbsp;type=&quot;text&quot;&nbsp;class=&quot;asCalendar&nbsp;asCalendar1&quot;/&gt;
 &lt;script&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function(){
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;.az-calendar1&quot;).datepicker({
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-calendar'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;.asCalendar1&quot;).asDatepicker({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asCalendar'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('#asCalendar-api-show-click').click(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.asCalendar1').asDatepicker('show');
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;false;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('#asCalendar-api-hide-click').click(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.asCalendar1').asDatepicker('hide');
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;false;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
 &nbsp;&nbsp;&nbsp;&nbsp;});
 &lt;/script&gt;</code></pre>
                 </div>
                 <div class="column half">
                     <h4>RENDERED HTML</h4>
-                    <input type="text" class="az-calendar az-calendar1"/>
+                    <input type="text" class="asCalendar asCalendar1"/>
+                    <a id="asCalendar-api-show-click" href="#">Click to show calendar</a>
+                    <a id="asCalendar-api-hide-click" href="#">Click to hide calendar</a>
                 </div>
             </div>
         </section>
@@ -50,11 +61,11 @@
             <div class="row">
                 <div class="column half">
                     <h4>HTML</h4>
-                    <pre><code data-language="html">&lt;input&nbsp;type=&quot;text&quot;&nbsp;class=&quot;az-calendar&nbsp;az-calendar2&quot;/&gt;
+                    <pre><code data-language="html">&lt;input&nbsp;type=&quot;text&quot;&nbsp;class=&quot;asCalendar&nbsp;asCalendar2&quot;/&gt;
 &lt;script&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function(){
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;.az-calendar2&quot;).datepicker({
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-calendar',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;.asCalendar2&quot;).asDatepicker({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asCalendar',
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mode:&nbsp;'range'
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
 &nbsp;&nbsp;&nbsp;&nbsp;});
@@ -62,7 +73,7 @@
                 </div>
                 <div class="column half">
                     <h4>RENDERED HTML</h4>
-                    <input type="text" class="az-calendar az-calendar2"/>
+                    <input type="text" class="asCalendar asCalendar2"/>
                 </div>
             </div>
         </section>
@@ -72,20 +83,25 @@
             <div class="row">
                 <div class="column half">
                     <h4>HTML</h4>
-                    <pre><code data-language="html">&lt;input&nbsp;type=&quot;text&quot;&nbsp;class=&quot;az-calendar&nbsp;az-calendar3&quot;/&gt;
+                    <pre><code data-language="html">&lt;input&nbsp;type=&quot;text&quot;&nbsp;class=&quot;asCalendar&nbsp;asCalendar3&quot;/&gt;
 &lt;script&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function(){
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;.az-calendar3&quot;).datepicker({
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-calendar',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;.asCalendar3&quot;).asDatepicker({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asCalendar',
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mode:&nbsp;'multiple',
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;calendars:&nbsp;'4'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;calendars:&nbsp;'3'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('#api-multipleClear-click').click(function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;.asCalendar3&quot;).asDatepicker('multipleClear');
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;false;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
 &nbsp;&nbsp;&nbsp;&nbsp;});
 &lt;/script&gt;</code></pre>
                 </div>
                 <div class="column half">
                     <h4>RENDERED HTML</h4>
-                    <input type="text" class="az-calendar az-calendar3"/>
+                    <input type="text" class="asCalendar asCalendar3"/>
+                    <button id="api-multipleClear-click">clear</button>
                 </div>
             </div>
         </section>
@@ -95,18 +111,40 @@
             <div class="row">
                 <div class="column half">
                     <h4>HTML</h4>
-                    <pre><code data-language="html">&lt;input&nbsp;type=&quot;text&quot;&nbsp;data-mode=&quot;range&quot;&nbsp;data-range-mode=&quot;section&quot;&nbsp;data-selectable-year=&quot;2001&gt;2010,2013,2015&gt;2018&quot;&nbsp;class=&quot;az-calendar&nbsp;az-calendar3&quot;/&gt;
+                    <pre><code data-language="html">&lt;input&nbsp;type=&quot;text&quot;&nbsp;data-mode=&quot;range&quot;&nbsp;data-range-mode=&quot;section&quot;&nbsp;data-selectable-year=&quot;2001&gt;2010,2013,2015&gt;2018&quot;&nbsp;class=&quot;asCalendar&nbsp;asCalendar4&quot;/&gt;
 &lt;script&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function(){
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;.az-calendar3&quot;).datepicker({
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-calendar'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;.asCalendar4&quot;).asDatepicker({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asCalendar'
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
 &nbsp;&nbsp;&nbsp;&nbsp;});
 &lt;/script&gt;</code></pre>
                 </div>
                 <div class="column half">
                     <h4>RENDERED HTML</h4>
-                    <input type="text" data-mode="range" data-range-mode="section" data-selectable-year="2001>2010,2013,2015>2018" class="az-calendar az-calendar3"/>
+                    <input type="text" data-mode="range" data-range-mode="section" data-selectable-year="2001>2010,2013,2015>2018" class="asCalendar asCalendar4"/>
+                </div>
+            </div>
+        </section>
+        <hr />
+        <section>
+            <h3>DisplayMode</h3>
+            <div class="row">
+                <div class="column half">
+                    <h4>HTML</h4>
+                    <pre><code data-language="html">&lt;input&nbsp;type=&quot;text&quot;&nbsp;class=&quot;asCalendar&nbsp;asCalendar5&quot;/&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;.asCalendar5&quot;).asDatepicker({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asCalendar',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;displayMode:&nbsp;'inline'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</code></pre>
+                </div>
+                <div class="column half">
+                    <h4>RENDERED HTML</h4>
+                    <input type="text" class="asCalendar asCalendar5"/>
                 </div>
             </div>
         </section>
@@ -116,23 +154,39 @@
     <script type="text/javascript" src="../js/highlighting/html.js"></script>
     <script type="text/javascript" src="../js/highlighting/javascript.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
-    <script type="text/javascript" src="../js/jquery-datepicker.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-asDatepicker.min.js"></script>
     <script>
         $(document).ready(function(){
-            $(".az-calendar1").datepicker({
-                namespace: 'az-calendar'
+            $(".asCalendar1").asDatepicker({
+                namespace: 'asCalendar'
             });
-            $(".az-calendar2").datepicker({
-                namespace: 'az-calendar',
+            $('#asCalendar-api-show-click').click(function(){
+                $('.asCalendar1').asDatepicker('show');
+                return false;
+            });
+            $('#asCalendar-api-hide-click').click(function(){
+                $('.asCalendar1').asDatepicker('hide');
+                return false;
+            });
+            $(".asCalendar2").asDatepicker({
+                namespace: 'asCalendar',
                 mode: 'range'
             });
-            $(".az-calendar3").datepicker({
-                namespace: 'az-calendar',
+            $(".asCalendar3").asDatepicker({
+                namespace: 'asCalendar',
                 mode: 'multiple',
                 calendars: '3'
             });
-            $(".az-calendar4").datepicker({
-                namespace: 'az-calendar',
+            $('#api-multipleClear-click').click(function() {
+                $(".asCalendar3").asDatepicker('multipleClear');
+                return false;
+            });
+            $(".asCalendar4").asDatepicker({
+                namespace: 'asCalendar'
+            });
+            $(".asCalendar5").asDatepicker({
+                namespace: 'asCalendar',
+                displayMode: 'inline'
             });
         });
     </script>

@@ -55,8 +55,8 @@
 &lt;span&nbsp;class=&quot;position_tooltip&quot;&nbsp;data-tooltip-position=&quot;se&quot;&nbsp;title=&quot;South&nbsp;East&quot;&gt;South&nbsp;East&lt;/span&gt;
 &lt;script&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.position_tooltip').tooltip(&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-tooltip'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.position_tooltip').asTooltip(&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asTooltip'
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
 &nbsp;&nbsp;&nbsp;&nbsp;});
 &lt;/script&gt;</code></pre>
@@ -79,15 +79,15 @@
         </section>
         <hr />
         <section>
-            <h3>Position</h3>
+            <h3>Click</h3>
             <div class="row">
                 <div class="column half">
                     <h4>HTML</h4>
-                    <pre><code data-language="html">&lt;span&nbsp;class=&quot;tooltip-click&quot;&nbsp;title=&quot;This&nbsp;triggers&nbsp;by&nbsp;click&quot;&gt;Click&nbsp;show&lt;/span&gt;
+                    <pre><code data-language="html">&lt;span&nbsp;class=&quot;asTooltip-click&quot;&nbsp;title=&quot;This&nbsp;triggers&nbsp;by&nbsp;click&quot;&gt;Click&nbsp;show&lt;/span&gt;
 &lt;script&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.tooltip-click').tooltip(&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-tooltip',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.asTooltip-click').asTooltip(&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asTooltip',
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;trigger:&nbsp;'click',
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position:&nbsp;'ne'
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
@@ -97,7 +97,7 @@
                 <div class="column half">
                     <h4>RENDERED HTML</h4>
                     <div class="testbox">
-                        <span class="tooltip-click" title="This triggers by click">Click show</span>
+                        <span class="asTooltip-click" title="This triggers by click">Click show</span>
                     </div>
                 </div>
             </div>
@@ -108,11 +108,11 @@
             <div class="row">
                 <div class="column half">
                     <h4>HTML</h4>
-                    <pre><code data-language="html">&lt;span&nbsp;class=&quot;tooltip-mouseTrace&quot;&nbsp;title=&quot;You&nbsp;trace&nbsp;with&nbsp;me&nbsp;!&quot;&gt;MouseTrace&nbsp;erea&lt;/span&gt;
+                    <pre><code data-language="html">&lt;span&nbsp;class=&quot;asToltip-mouseTrace&quot;&nbsp;title=&quot;You&nbsp;trace&nbsp;with&nbsp;me&nbsp;!&quot;&gt;MouseTrace&nbsp;erea&lt;/span&gt;
 &lt;script&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.tooltip-mouseTrace').tooltip(&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-tooltip',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.asTooltip-mouseTrace').asTooltip(&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asTooltip',
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mouseTrace:&nbsp;true
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
 &nbsp;&nbsp;&nbsp;&nbsp;});
@@ -121,7 +121,7 @@
                 <div class="column half">
                     <h4>RENDERED HTML</h4>
                     <div class="testbox">
-                        <span class="tooltip-mouseTrace" title="You trace with me !" style="width:250px;height:80px">MouseTrace area</span>
+                        <span class="asTooltip-mouseTrace" title="You trace with me !" style="width:250px;height:80px">MouseTrace area</span>
                     </div>
                 </div>
             </div>
@@ -132,11 +132,11 @@
             <div class="row">
                 <div class="column half">
                     <h4>HTML</h4>
-                    <pre><code data-language="html">&lt;span&nbsp;class=&quot;tooltip-interactive&quot;&nbsp;title=&quot;Interactive&nbsp;with&nbsp;popup&quot;&gt;MouseTrace&nbsp;erea&lt;/span&gt;
+                    <pre><code data-language="html">&lt;span&nbsp;class=&quot;asTooltip-interactive&quot;&nbsp;title=&quot;Interactive&nbsp;with&nbsp;popup&quot;&gt;MouseTrace&nbsp;erea&lt;/span&gt;
 &lt;script&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.tooltip-interactive').tooltip(&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-tooltip',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.asTooltip-interactive').asTooltip(&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asTooltip',
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interactive:&nbsp;true
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
 &nbsp;&nbsp;&nbsp;&nbsp;});
@@ -145,7 +145,7 @@
                 <div class="column half">
                     <h4>RENDERED HTML</h4>
                     <div class="testbox">
-                        <span class="tooltip-interactive" title="Interactive with popup" style="width:250px;">Interactive with popup</span>
+                        <span class="asTooltip-interactive" title="Interactive with popup" style="width:250px;">Interactive with popup</span>
                     </div>
                 </div>
             </div>
@@ -156,11 +156,11 @@
             <div class="row">
                 <div class="column half">
                     <h4>HTML</h4>
-                    <pre><code data-language="html">&lt;span&nbsp;class=&quot;tooltip-autoPosition&quot;&nbsp;title=&quot;AutoPosition&nbsp;with&nbsp;viewport&quot;&gt;MouseTrace&nbsp;erea&lt;/span&gt;
+                    <pre><code data-language="html">&lt;span&nbsp;class=&quot;asTooltip-autoPosition&quot;&nbsp;title=&quot;AutoPosition&nbsp;with&nbsp;viewport&quot;&gt;MouseTrace&nbsp;erea&lt;/span&gt;
 &lt;script&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.tooltip-autoPosition').tooltip(&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-tooltip',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.asTooltip-autoPosition').asTooltip(&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asTooltip',
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;autoPosition:&nbsp;true
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
 &nbsp;&nbsp;&nbsp;&nbsp;});
@@ -169,7 +169,7 @@
                 <div class="column half">
                     <h4>RENDERED HTML</h4>
                     <div class="testbox">
-                        <span class="tooltip-autoPosition" title="AutoPosition with viewport" style="width:250px;">AutoPosition</span>
+                        <span class="asTooltip-autoPosition" title="AutoPosition with viewport" style="width:250px;">AutoPosition</span>
                     </div>
                 </div>
             </div>
@@ -180,12 +180,12 @@
             <div class="row">
                 <div class="column half">
                     <h4>HTML</h4>
-                    <pre><code data-language="html">&lt;span&nbsp;class=&quot;tooltip-inline&quot;&gt;Inline&lt;/span&gt;
+                    <pre><code data-language="html">&lt;span&nbsp;class=&quot;asTooltip-inline&quot;&gt;Inline&lt;/span&gt;
 &lt;span&nbsp;id=&quot;tip&quot;&nbsp;style=&quot;display:none&quot;&gt;This&nbsp;is&nbsp;inline&nbsp;content&lt;/span&gt;
 &lt;script&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.tooltip-autoPosition').tooltip(&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-tooltip',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.asTooltip-autoPosition').asTooltip(&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asTooltip',
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inline:&nbsp;true,
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title:&nbsp;'#tip'
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
@@ -195,7 +195,7 @@
                 <div class="column half">
                     <h4>RENDERED HTML</h4>
                     <div class="testbox">
-                        <span class="tooltip-inline" style="width:250px;">Inline</span>
+                        <span class="asTooltip-inline" style="width:250px;">Inline</span>
                         <span id="tip" style="display:none">This is inline content</span>
                     </div>
                 </div>
@@ -207,31 +207,31 @@
     <script type="text/javascript" src="../js/highlighting/html.js"></script>
     <script type="text/javascript" src="../js/highlighting/javascript.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
-    <script type="text/javascript" src="../js/jquery-tooltip.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-asTooltip.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('.position_tooltip').tooltip( {
-                namespace: 'az-tooltip'
+            $('.position_tooltip').asTooltip( {
+                namespace: 'asTooltip'
             });
-            $('.tooltip-click').tooltip( {
-                namespace: 'az-tooltip',
+            $('.asTooltip-click').asTooltip( {
+                namespace: 'asTooltip',
                 trigger: 'click',
                 position: 'ne'
             });
-            $('.tooltip-mouseTrace').tooltip( {
-                namespace: 'az-tooltip',
+            $('.asTooltip-mouseTrace').asTooltip( {
+                namespace: 'asTooltip',
                 mouseTrace: true
             });
-            $('.tooltip-interactive').tooltip( {
-                namespace: 'az-tooltip',
+            $('.asTooltip-interactive').asTooltip( {
+                namespace: 'asTooltip',
                 interactive: true
             });
-            $('.tooltip-autoPosition').tooltip( {
-                namespace: 'az-tooltip',
+            $('.asTooltip-autoPosition').asTooltip( {
+                namespace: 'asTooltip',
                 autoPosition: true
             });
-            $('.tooltip-inline').tooltip( {
-                namespace: 'az-tooltip',
+            $('.asTooltip-inline').asTooltip( {
+                namespace: 'asTooltip',
                 inline: true,
                 title: '#tip'
             });

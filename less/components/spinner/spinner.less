@@ -1,0 +1,114 @@
+// ==============================================
+// spiner
+// ====================================================
+
+.asSpinner-wrap {
+    position: relative;
+    .inline-block();
+    .user-select(none);
+    &:hover {
+        .asSpinner {
+            color: @spiner-wrap_hover-spiner-color;
+            border-color: @spiner-wrap_hover-spiner-borderColor;
+            &:focus {
+                border-color: @spiner-wrap_hover-spiner_focus-borderColor;
+            }
+        }
+        .asSpinner-prev,
+        .asSpinner-next {
+            background-color: @spiner-wrap_hover-arrow-bgColor;
+            &:active {
+                background-color: @spiner-wrap_hover-arrow_active-bgColor;
+            }
+        }
+    }
+
+    input.asSpinner {
+        *float: left;
+        *display: inline;
+        height: 40px;
+        width: 158px;
+        padding-left: 10px;
+
+        padding: 10px\9;//for ie8 9
+        *height: auto;
+        *padding: 10px;
+        *font-size: 14px;
+        *line-height: 1;
+
+        color: @spiner-wrap-spiner-color;
+        background-color: @spiner-wrap-spiner-bgColor;
+        border: 2px solid @spiner-wrap-spiner-borderColor;
+        border-right: 0;
+        border-right: none;
+        .border-radius(0);
+        &:focus {
+            color: @spiner-wrap-spiner_focus-color;
+            border-color: @spiner-wrap-spiner_focus-borderColor;
+            .box-shadow(none);
+            & + .asSpinner-control {
+                .asSpinner-prev,
+                .asSpinner-next {
+                    background-color: @spiner-wrap-spiner_focus-control-bgColor;
+                    &:active {
+                        background-color: @spiner-wrap-spiner_focus-control_active-bgColor;
+                    }
+                }
+            }
+        }
+    }
+}
+.asSpinner-prev,
+.asSpinner-next {
+    position: absolute;
+    width: 26px;
+    height: 20px;
+    color: #fff;
+    font-family: 'asFont';
+    font-size: 20px;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    &:before {
+        position: absolute;
+        left: 3px;
+    }
+}
+
+.asSpinner-prev {
+    top: 21px;
+    right: -25px;
+    background-color: @spiner-prev-bgColor;
+    &:before {
+        content: '\e604';
+    }
+}
+.asSpinner-next {
+    top: 1px;
+    right: -25px;
+    background-color: @spiner-next-bgColor;
+    &:before {
+        content: '\e605';
+    }
+}
+
+.asSpinner_focus {
+    .asSpinner {
+        color: @spiner_focus-color !important;
+        border-color: @spiner_focus-borderColor !important;
+    }
+    .asSpinner-prev,
+    .asSpinner-next {
+        background-color: @spiner_focus-arrow-bgColor !important;
+        &:active {
+            background-color: @spiner_focus-bgColor !important;
+        }
+    }
+}

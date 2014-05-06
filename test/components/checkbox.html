@@ -37,22 +37,22 @@
                 <h4>HTML</h4>
                 <pre><code data-language="html">&lt;ul&nbsp;class=&quot;demo&quot;&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;class=&quot;az-checkbox&quot;&nbsp;id=&quot;az-checkbox1&quot;&nbsp;type=&quot;checkbox&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;for=&quot;az-checkbox1&quot;&gt;Normal&lt;/label&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;class=&quot;asCheckbox&quot;&nbsp;id=&quot;asCheckbox1&quot;&nbsp;type=&quot;checkbox&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;for=&quot;asCheckbox1&quot;&gt;Normal&lt;/label&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;class=&quot;az-checkbox&quot;&nbsp;id=&quot;az-checkbox2&quot;&nbsp;type=&quot;checkbox&quot;&nbsp;disabled=&quot;disabled&quot;&nbsp;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;for=&quot;az-checkbox2&quot;&gt;Click&lt;/label&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;class=&quot;asCheckbox&quot;&nbsp;id=&quot;asCheckbox2&quot;&nbsp;type=&quot;checkbox&quot;&nbsp;disabled=&quot;disabled&quot;&nbsp;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;for=&quot;asCheckbox2&quot;&gt;Disabled&lt;/label&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;class=&quot;az-checkbox&quot;&nbsp;id=&quot;az-checkbox3&quot;&nbsp;type=&quot;checkbox&quot;&nbsp;disabled=&quot;disabled&quot;&nbsp;checked=&quot;checked&quot;&nbsp;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;for=&quot;az-checkbox3&quot;&gt;Disabled&lt;/label&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;class=&quot;asCheckbox&quot;&nbsp;id=&quot;asCheckbox3&quot;&nbsp;type=&quot;checkbox&quot;&nbsp;disabled=&quot;disabled&quot;&nbsp;checked=&quot;checked&quot;&nbsp;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;for=&quot;asCheckbox3&quot;&gt;Disabled&nbsp;&amp;&nbsp;Checked&lt;/label&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;script&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.az-checkbox').check({
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-checkbox'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.asCheckbox').asCheck({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asCheckbox'
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
 &nbsp;&nbsp;&nbsp;&nbsp;});
 &lt;/script&gt;</code></pre>
@@ -61,16 +61,16 @@
                 <h4>RENDERED HTML</h4>
                 <ul class="demo">
                     <li>
-                        <input class="az-checkbox" id="az-checkbox1" type="checkbox" />
-                        <label for="az-checkbox1">Normal</label>
+                        <input class="asCheckbox" id="asCheckbox1" type="checkbox" />
+                        <label for="asCheckbox1">Normal</label>
                     </li>
                     <li>
-                        <input class="az-checkbox" id="az-checkbox2" type="checkbox" disabled="disabled" />
-                        <label for="az-checkbox2">Disabled</label>
+                        <input class="asCheckbox" id="asCheckbox2" type="checkbox" disabled="disabled" />
+                        <label for="asCheckbox2">Disabled</label>
                     </li>
                     <li>
-                        <input class="az-checkbox" id="az-checkbox3" type="checkbox" disabled="disabled" checked="checked" />
-                        <label for="az-checkbox3">Disabled&amp;Checked</label>
+                        <input class="asCheckbox" id="asCheckbox3" type="checkbox" disabled="disabled" checked="checked" />
+                        <label for="asCheckbox3">Disabled &amp; Checked</label>
                     </li>
                 </ul>
             </div>
@@ -81,11 +81,11 @@
     <script type="text/javascript" src="../js/highlighting/html.js"></script>   
     <script type="text/javascript" src="../js/highlighting/javascript.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
-    <script type="text/javascript" src="../js/jquery-check.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-asCheck.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('.az-checkbox').check({
-                namespace: 'az-checkbox'
+            $('.asCheckbox').asCheck({
+                namespace: 'asCheckbox'
             });
         });
     </script>    

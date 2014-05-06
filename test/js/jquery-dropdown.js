@@ -1,15 +1,9 @@
-/*
- * jquery-dropdown
- * https://github.com/amazingSurge/jquery-dropdown
- *
- * Copyright (c) 2013 amazingSurge
- * Licensed under the MIT license.
- */
-
+/*! jquery dropdown - v0.1.1 - 2014-03-18
+* https://github.com/amazingSurge/jquery-dropdown
+* Copyright (c) 2014 amazingSurge; Licensed MIT */
 /* global jQuery */
 
 (function($) {
-
     var Dropdown = $.dropdown = function(element, options) {
         this.element = element;
         this.$element = $(element);
@@ -68,16 +62,17 @@
             });
 
             this.$panel.on('click.dropdown', 'li', function() {
-                self.set($(this));
+                self.set($(this).data(self.options.data));
                 self.hide();
                 return false;
             });
 
-            if (typeof this.options.select === 'number') {
-                this.set(this.$panel.children().eq(this.options.select));
+            if (this.options.select !== null) {
+                this.set(this.options.select);
             }
 
             this._trigger('ready');
+            this.initialized = true;
         },
         _trigger: function(eventType) {
             // event
@@ -126,9 +121,17 @@
 
             this._trigger('hide');
         },
-        set: function($item) {
+        set: function(value) {
             if (this.options.imitateSelect) {
-                if ($item.length === 0) {
+                var $item = null;
+                var self = this;
+
+                self.$panel.children().each(function() {
+                    if ($(this).data(self.options.data) === value) {
+                        $item = $(this);
+                    }
+                });
+                if (!$item) {
                     return;
                 }
                 this.$element.text($item.text());
@@ -137,7 +140,7 @@
                 }
             }
             if (this.initialized) {
-                this._trigger('change', $item);
+                this._trigger('change', value);
             }
         },
         _generateMask: function() {
@@ -218,6 +221,7 @@
         clickoutHide: true, //When clicking outside of the dropdown, trigger hide event
         imitateSelect: false, //let select value show in trigger bar
         select: null, //set initial select value, when imitateSelect is set to true
+        data: 'value',
 
         //callback comes with corresponding event
         onInit: null,

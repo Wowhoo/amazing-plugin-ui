@@ -2,7 +2,7 @@
 // tab
 // ==============================================
 
-.@{namespace}-tabs {
+.asTabs {
 	margin: 10px 0;
 	padding: 0;
 	border-bottom: 1px solid @tabs-borderBottomColor;
@@ -26,23 +26,24 @@
 			padding-left: 0;
 		}
 	}
-	.@{namespace}-tabs_active {
+	.asTabs_active {
 		color: @tabs-li_active-color;
 	}
 }
 
-.@{namespace}-tabs-panes {
+.asTabs-panes {
 	padding: 15px 0;
 	& > * {
 		display: none;
 	}
-	.@{namespace}-tabs_active {
+	.asTabs_active {
 		display: block !important;
+		visibility: visible !important;
 	}
 }
 
-.@{namespace}-tabs_mini {
-	&.@{namespace}-tabs {
+.asTabs_mini {
+	&.asTabs {
 		li {
 			font-size: 14px;
 			padding: 10px 20px;
@@ -51,7 +52,7 @@
 			}
 		}
 
-		.@{namespace}-tabs_active {
+		.asTabs_active {
 			color: @tabs_mini-li_active-color;
 			border: 1px solid @tabs_mini-li_active-borderColor;
 			border-bottom-color: @tabs_mini-li_active-borderBottomColor;
@@ -59,7 +60,7 @@
 		}
 	}
 
-	&.@{namespace}-tabs-panes {
+	&.asTabs-panes {
 		padding: 20px 0;
 	}
 }

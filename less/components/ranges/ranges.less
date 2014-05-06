@@ -2,7 +2,7 @@
 //range
 //==============================================
 
-.@{namespace}-range {
+.asRange {
 	.inline-block();
 	position: relative;
 	width: 100%;
@@ -12,7 +12,7 @@
 	cursor: pointer;
 }
 
-.@{namespace}-range-pointer {
+.asRange-pointer {
 	position: absolute;
 	left: 60%;
 	top: -38%;
@@ -24,11 +24,11 @@
 	z-index: 2;
 }
 
-.@{namespace}-range-tip {
+.asRange-tip {
 	display: none;
 }
 
-.@{namespace}-range-view {
+.asRange-view {
 	position: absolute;
 	width: 60%;
 	height: 12px;
@@ -36,16 +36,16 @@
 	overflow: hidden;
 }
 
-.@{namespace}-range-scale {
+.asRange-scale {
 	display: none;
 }
 
 //=============================
-.@{namespace}-range_normal {
+.asRange_normal {
 	margin-bottom: 40px;
 }
 
-.@{namespace}-range_normal .@{namespace}-range-tip {
+.asRange_normal .asRange-tip {
 	position: absolute;
 	top: -30px;
 	left: 3px;
@@ -75,15 +75,15 @@
 		.rotate (-45deg);
 	}
 } 
-.@{namespace}-range_normal .@{namespace}-range-scale {
+.asRange_normal .asRange-scale {
 	position: absolute;
 	left: 0;
 	bottom: -4px;
 	display: block;
 	width: 100%;
 	
-	.@{namespace}-range-scaleGrid,
-	.@{namespace}-range-scaleValue {
+	.asRange-scaleGrid,
+	.asRange-scaleValue {
 		position: relative;
 		list-style: none;
 		margin: 0;
@@ -96,7 +96,7 @@
 		}		
 	}
 
-	.@{namespace}-range-scaleGrid {
+	.asRange-scaleGrid {
 		top: 8px;//2----------
 		li {
 			position: absolute;
@@ -105,13 +105,13 @@
 			width: 1px;
 			background-color: @range_normal-scaleGrid-bgColor;
 		}
-		.@{namespace}-range-scale-grid {
+		.asRange-scale-grid {
 			height: 10px;
 			margin-top: -5px;//2-------
 		}
 	}
 
-	.@{namespace}-range-scaleValue {
+	.asRange-scaleValue {
 		top: 15px;
 		margin-left: 1px;
 		li {

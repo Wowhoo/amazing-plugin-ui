@@ -1,11 +1,18 @@
-@radio-bgColor:                               #ddd;
+@radio-bgColor:                               #fff;
+@radio-borderColor:                           #ddd;
 @radio_hover-bgColor:                         #ddd;
 
-@radio_checked-bgColor:                       @az-reactive-color;
-@radio_checked_hover-bgColor:                 @radio_checked-bgColor;
+@radio_checked-bgColor:                       #fff;
+@radio_checked-borderColor:                   @az-reactive-color;
+@radio_checked-after-bgColor:                 @radio_checked-borderColor;
+@radio_checked_hover-bgColor:                 @radio_checked-borderColor;
 
-@radio_disabled-bgColor:                      lighten(#ddd,6.8%);
+@radio_disabled-bgColor:                      #fff;
+@radio_disabled-borderColor:                  #eee;
 @radio_disabled_hover-bgColor:                @radio_disabled-bgColor;
+@radio_disabled_hover-borderColor:            @radio_disabled-borderColor;
 
-@radio_disabled_checked-bgColor:              #eee;
-@radio_disabled_checked_hover-bgColor:        @radio_disabled_checked-bgColor;
+@radio_disabled_checked-bgColor:              #fff;
+@radio_disabled_checked-borderColor:          #eee;
+@radio_disabled_checked-after-bgColor:        @radio_disabled_checked-borderColor;
+@radio_disabled_checked_hover-bgColor:        @radio_disabled_checked-borderColor;

@@ -1,7 +1,7 @@
 // ================================================
 // Buttons
 // ================================================
-.@{namespace}-button {
+.asButton {
     .inline-block();
     padding: @button-padding;
     font-size: @button-fontSize;
@@ -14,7 +14,7 @@
     vertical-align: middle;
     cursor: pointer;
 
-   .user-select(none);
+    .user-select(none);
 
     // Hover state
     &:hover {
@@ -31,14 +31,14 @@
     }
 }
 
-button.@{namespace}-button,
-input.@{namespace}-button {
+button.asButton,
+input.asButton {
     border: 0;
     border: none;
 }
 
 //button extends
-.@{namespace}-button_primary {
+.asButton_primary {
     color: @button_primary-color;
     background-color: @button_primary-bgColor;
     
@@ -53,7 +53,7 @@ input.@{namespace}-button {
     }
 }
 
-.@{namespace}-button_highlight {
+.asButton_highlight {
     color: @button_highlight-color;
     background-color: @button_highlight-bgColor;
     
@@ -68,7 +68,7 @@ input.@{namespace}-button {
     }
 }
 
-.@{namespace}-button_action {
+.asButton_action {
     color: @button_action-color;
     background-color: @button_action-bgColor;
     
@@ -83,7 +83,7 @@ input.@{namespace}-button {
     }
 }
 
-.@{namespace}-button_caution {
+.asButton_caution {
     color: @button_caution-color;
     background-color: @button_caution-bgColor;
     
@@ -98,7 +98,7 @@ input.@{namespace}-button {
     }
 }
 
-.@{namespace}-button_normal {
+.asButton_normal {
     color: @button_normal-color;
     background-color: @button_normal-bgColor;
     
@@ -113,16 +113,16 @@ input.@{namespace}-button {
     }
 }
 
-.@{namespace}-button_radius {
+.asButton_radius {
     .border-radius(@button-borderRadius);
 }
-.@{namespace}-button_full {
+.asButton_full {
     width: 100%;
     padding-left: 0;
     padding-right: 0;
 }
 
-.@{namespace}-button_disabled {
+.asButton_disabled {
     cursor: default;
     color: @button_disabled-color;
     background-color: @button_disabled-bgColor;
@@ -138,21 +138,21 @@ input.@{namespace}-button {
 }
 
 // button size
-.@{namespace}-button_mini {
+.asButton_mini {
     padding: @button_mini-padding;
-    font-size: @button_fontSize-mini;
+    font-size: @button_mini-fontSize;
 }
-.@{namespace}-button_small {
+.asButton_small {
     padding: @button_small-padding;
     font-size: @button_small-fontSize;
 }
-.@{namespace}-button_large {
+.asButton_large {
     padding: @button_large-padding;
     font-size: @button_large-fontSize;
 }
 
 //Button groups
-.@{namespace}-buttons {
+.asButtons {
     .inline-block();
     margin-right: @buttons-margin-right;
     vertical-align: bottom;
@@ -170,7 +170,7 @@ input.@{namespace}-button {
 }
 
 //remove focus dashed
-.@{namespace}-button {
+.asButton {
     outline: none;
     &:focus {
         outline: none;
@@ -180,12 +180,12 @@ input.@{namespace}-button {
     }
 }
 
-.@{namespace}-button::-moz-focus-inner {
+.asButton::-moz-focus-inner {
     border: 0;
     padding: 0;
     outline: 0;
 }
 
-button.@{namespace}-button {
+button.asButton {
     *overflow: visible;
 }

@@ -37,22 +37,22 @@
                 <h4>HTML</h4>
                 <pre><code data-language="html">&lt;ul&nbsp;class=&quot;demo&quot;&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;id=&quot;az-radio1&quot;&nbsp;class=&quot;az-radio&quot;&nbsp;type=&quot;radio&quot;&nbsp;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;for=&quot;az-radio1&quot;&gt;Normal&lt;/label&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;id=&quot;asRadio1&quot;&nbsp;class=&quot;asRadio&quot;&nbsp;type=&quot;radio&quot;&nbsp;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;for=&quot;asRadio1&quot;&gt;Normal&lt;/label&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;id=&quot;az-radio2&quot;&nbsp;class=&quot;az-radio&quot;&nbsp;type=&quot;radio&quot;&nbsp;disabled=&quot;disabled&quot;&nbsp;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;for=&quot;az-radio2&quot;&gt;Disabled&lt;/label&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;id=&quot;asRadio2&quot;&nbsp;class=&quot;asRadio&quot;&nbsp;type=&quot;radio&quot;&nbsp;disabled=&quot;disabled&quot;&nbsp;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;for=&quot;asRadio2&quot;&gt;Disabled&lt;/label&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;id=&quot;az-radio3&quot;&nbsp;class=&quot;az-radio&quot;&nbsp;type=&quot;radio&quot;&nbsp;disabled=&quot;disabled&quot;&nbsp;checked=&quot;checked&quot;&nbsp;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;for=&quot;az-radio3&quot;&gt;Disabled&amp;amp;Checked&lt;/label&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;id=&quot;asRadio3&quot;&nbsp;class=&quot;asRadio&quot;&nbsp;type=&quot;radio&quot;&nbsp;disabled=&quot;disabled&quot;&nbsp;checked=&quot;checked&quot;&nbsp;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;for=&quot;asRadio3&quot;&gt;Disabled&nbsp;&amp;&nbsp;Checked&lt;/label&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;script&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.az-radio').check({
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'az-radio'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.asRadio').asCheck({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asRadio'
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
 &nbsp;&nbsp;&nbsp;&nbsp;});
 &lt;/script&gt;</code></pre>
@@ -61,16 +61,16 @@
                 <h4>RENDERED HTML</h4>
                 <ul class="demo">
                     <li>
-                        <input id="az-radio1" class="az-radio" type="radio" />
-                        <label for="az-radio1">Normal</label>
+                        <input id="asRadio1" class="asRadio" type="radio" />
+                        <label for="asRadio1">Normal</label>
                     </li>
                     <li>
-                        <input id="az-radio2" class="az-radio" type="radio" disabled="disabled" />
-                        <label for="az-radio2">Disabled</label>
+                        <input id="asRadio2" class="asRadio" type="radio" disabled="disabled" />
+                        <label for="asRadio2">Disabled</label>
                     </li>
                     <li>
-                        <input id="az-radio3" class="az-radio" type="radio" disabled="disabled" checked="checked" />
-                        <label for="az-radio3">Disabled&amp;Checked</label>
+                        <input id="asRadio3" class="asRadio" type="radio" disabled="disabled" checked="checked" />
+                        <label for="asRadio3">Disabled &amp; Checked</label>
                     </li>
                 </ul>
             </div>
@@ -81,11 +81,11 @@
     <script type="text/javascript" src="../js/highlighting/html.js"></script>
     <script type="text/javascript" src="../js/highlighting/javascript.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
-    <script type="text/javascript" src="../js/jquery-check.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-asCheck.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('.az-radio').check({
-                namespace: 'az-radio'
+            $('.asRadio').asCheck({
+                namespace: 'asRadio'
             });
         });
     </script>   

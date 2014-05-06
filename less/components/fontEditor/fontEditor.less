@@ -1,0 +1,333 @@
+.asFontEditor {
+    display: inline-block;
+}
+.asFontEditor-title {
+    display: block;
+    font-size: 14px;
+    color: @asFontEditor-title-color;
+}
+.asFontEditor-content {
+    padding: 20px;
+}
+
+.asFontEditor-trigger {
+    position: relative;
+    display: block;
+    line-height: 26px;
+    padding: 15px 20px;
+    border: 2px dashed @asFontEditor-trigger-borderColor;
+    // text-align: center;
+}
+
+.asFontEditor-font {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: @asFontEditor-font-color;
+    font-size: 14px;
+    span {
+        float: left;
+        margin-right: 8px;
+        font-size: 40px;
+        color: @asFontEditor-font-span-color;
+    }
+}
+
+.asFontEditor-actions {
+    display: none;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 100%;
+    height: 100%;
+    color: @asFontEditor-actions-color;
+    font-size: 16px;
+    line-height: 56px;
+    text-align: center;
+    border: 2px solid @asFontEditor-actions-bgColor;
+    background-color: @asFontEditor-actions-borderColor;
+    cursor: pointer;
+}
+
+.asFontEditor-remove {
+    display: none;
+    position: absolute;
+    top: -11px;
+    right: -11px;
+    width: 16px;
+    height: 16px;
+    line-height: 18px;
+    color: @asFontEditor-remove-color;
+    font-family: 'asFont';
+    font-size: 16px;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-align: center;
+    text-decoration: none;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    background-color: @asFontEditor-remove-bgColor;
+    border: 2px solid @asFontEditor-remove-borderColor;
+    .border-radius(50px);
+    &:before {
+        margin-top: 0;
+        content: "\e627";
+    }
+}
+
+
+
+
+//state 
+.asFontEditor_hasFont {
+    border-style: solid;
+}
+
+.asFontEditor_hide {
+    display: none;
+}
+.asFontEditor_show {
+    display: block;
+}
+
+//=========================
+.asFontEditor-extend {
+    position: relative;
+    width: 310px;
+    padding: 25px 20px;
+    background-color: @asFontEditor-extend-bgColor;
+    
+    .box-sizing(border-box);
+}
+
+.asFontEditor-close {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    color: @asFontEditor-close-color;
+    font-family: 'asFont';
+    font-size: 14px;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-align: center;
+    text-decoration: none;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-decoration: none;
+    background-color: @asFontEditor-close-bgColor;
+    border: 2px solid @asFontEditor-close-borderColor;
+    .border-radius(50px);
+    &:before {
+        margin-top: 0;
+        content: "\e626";
+    }
+}
+
+.asFontEditor-fontFamily,
+.asFontEditor-fontSize,
+.asFontEditor-lineHeight,
+.asFontEditor-fontWeight {
+    padding: 5px 0;
+    margin-bottom: 20px;
+    // overflow: hidden;
+}
+//===============
+.asFontEditor-fontFamily:before,
+.asFontEditor-fontFamily:after,
+.asFontEditor-fontSize:before,
+.asFontEditor-fontSize:after,
+.asFontEditor-lineHeight:before,
+.asFontEditor-lineHeight:after,
+.asFontEditor-fontWeight:before,
+.asFontEditor-fontWeight:after {
+    display: table;
+    content: "";
+}
+.asFontEditor-fontFamily:after,
+.asFontEditor-fontSize:after,
+.asFontEditor-lineHeight:after,
+.asFontEditor-fontWeight:after {
+    clear: both;
+}
+
+.asFontEditor-fontFamily,
+.asFontEditor-fontSize,
+.asFontEditor-lineHeight,
+.asFontEditor-fontWeight {
+    *zoom: 1;
+}
+//=======================
+
+.asFontEditor-fontFamily-title,
+.asFontEditor-fontSize-title,
+.asFontEditor-lineHeight-title,
+.asFontEditor-fontWeight-title {
+    float: left;
+    margin-top: 5px;
+    color: @asFontEditor-extend-title-color;
+    font-size: 12px;
+}
+.asFontEditor-fontSize-title,
+.asFontEditor-lineHeight-title {
+    margin-top: 0;
+}
+
+.asFontEditor-fontFamily-content,
+.asFontEditor-fontSize-content,
+.asFontEditor-lineHeight-content,
+.asFontEditor-fontWeight-content {
+    float: right;
+    width: 190px;
+    .asDropdown {
+        height: 28px;
+        line-height: 28px;
+        i {
+            top: 7px;
+            right: 6px;
+            font-size: 14px;
+            font-family: 'asFont';
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+
+            /* Better Font Rendering =========== */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            &:before {
+                content: "\e607";
+            }
+        }
+    }
+    .asRange {
+        width: 130px;
+    }
+    ul {
+        margin: 0;
+        list-style: none;
+    }
+}
+//===
+.asFontEditor-fontFamily-content:before,
+.asFontEditor-fontFamily-content:after,
+.asFontEditor-fontSize-content:before,
+.asFontEditor-fontSize-content:after,
+.asFontEditor-lineHeight-content:before,
+.asFontEditor-lineHeight-content:after,
+.asFontEditor-fontWeight-content:before,
+.asFontEditor-fontWeight-content:after {
+    display: table;
+    content: "";
+}
+.asFontEditor-fontFamily-content:after,
+.asFontEditor-fontSize-content:after,
+.asFontEditor-lineHeight-content:after,
+.asFontEditor-fontWeight-content:after {
+    clear: both;
+}
+
+.asFontEditor-fontFamily-content,
+.asFontEditor-fontSize-content,
+.asFontEditor-lineHeight-content,
+.asFontEditor-fontWeight-content {
+    *zoom: 1;
+}
+//===
+
+.asFontEditor-fontSize-value,
+.asFontEditor-lineHeight-value {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    width: 38px;
+    height: 22px;
+    padding: 0 5px;
+    color: @asFontEditor-extend-value-color;
+    font-size: 12px;
+    line-height: 22px;
+    background-color: @asFontEditor-extend-value-bgColor;
+    border: 2px solid @asFontEditor-extend-value-borderColor;
+
+    text-align: center;
+}
+
+.asFontEditor-decorations {
+    display: block;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    overflow: hidden;
+    li {
+        float: left;
+        display: block;
+        width: 15px;
+        height: 15px;
+        margin-left: 16px;
+        margin-bottom: 0;
+        // background-color: #ececec;
+        cursor: pointer;
+        color: @asFontEditor-decorations-li-color;
+
+        font-family: 'asFont';
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        &:first-child {
+            margin-left: 0;
+        }
+        &:hover {
+            color: @asFontEditor-decorations-li_hover-color;
+        }
+    }
+        
+    .text-left:before {
+        content: "\e608";
+    }
+    .text-center:before {
+        content: "\e609";
+    }
+    .text-right:before {
+        content: "\e60a";
+    }
+    .text-italy:before {
+        content: "\e60b";
+    }
+    .text-uppercase:before {
+        content: "\e60c";
+    }
+    .text-lowercase:before {
+        content: "\e60d";
+    }
+    .text-capitalize:before {
+        content: "\e60f";
+    }
+    .text-underline:before {
+        content: "\e60e";
+    }
+    .text-linethrough:before {
+        content: "\e610";
+    }
+}
