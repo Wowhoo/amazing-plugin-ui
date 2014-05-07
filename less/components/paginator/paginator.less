@@ -71,6 +71,8 @@
 			/* Better Font Rendering =========== */
 			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
+
+			cursor: pointer;
 			&:before {
 				position: absolute;
 				left: -20px;
@@ -80,6 +82,16 @@
 			}
 			&:active {
 				background-color: @paginator-arrow_active-bgColor;
+			}
+		}
+
+		&.asPaginator_disable {
+			a {
+				background-color: @paginator-arrow_disable-bgColor;
+				cursor: default;
+				&:hover {
+					background-color: @paginator-arrow_disable_hover-bgColor;
+				}
 			}
 		}
 	}

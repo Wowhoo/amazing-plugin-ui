@@ -587,7 +587,7 @@
                 return '<div class="namespace-attachment">' +
                     '<span class="namespace-attachment-title">Attach</span>' +
                     '<div class="namespace-attachment-content">' +
-                    '<div class="otherNamespace namespace-dropdown-trigger"><i class="as-caret-down"></i></div>' +
+                    '<div class="otherNamespace namespace-dropdown-trigger"><i class="asIcon-caret-down"></i></div>' +
                     '<ul>' +
                     '<li class="attachment_scroll">scroll</li>' +
                     '<li class="attachment_fixed">fixed</li>' +
