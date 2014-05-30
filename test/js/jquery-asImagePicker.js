@@ -8,264 +8,272 @@
 
 
 (function($, document, window, undefined) {
-	"use strict";
+    "use strict";
 
-	var pluginName = 'asImagePicker';
+    var pluginName = 'asImagePicker';
 
-	// main constructor
-	var Plugin = $[pluginName] = function(element, options) {
-		this.element = element;
-		this.$element = $(element);
+    // main constructor
+    var Plugin = $[pluginName] = function(element, options) {
+        this.element = element;
+        this.$element = $(element);
 
-		this.options = $.extend({}, Plugin.defaults, options, this.$element.data());
+        if (this.$element.attr('name')) {
+            this.name = this.$element.attr('name');
+        } else {
+            this.name = options.name;
+        }
 
-		this._plugin = pluginName;
-		this.namespace = this.options.namespace;
+        this.options = $.extend({}, Plugin.defaults, options, this.$element.data());
 
-		this.classes = {
-			// status
-			skin: this.namespace + '_' + this.options.skin,
-			empty: this.namespace + '_empty',
-			present: this.namespace + '_present',
-			hover: this.namespace + '_hover',
-			disabled: this.namespace + '_disabled'
-		};
+        this._plugin = pluginName;
+        this.namespace = this.options.namespace;
 
-		// flag
-		this.disabled = false;
-		this.initialed = false;
+        this.classes = {
+            // status
+            skin: this.namespace + '_' + this.options.skin,
+            empty: this.namespace + '_empty',
+            present: this.namespace + '_present',
+            hover: this.namespace + '_hover',
+            disabled: this.namespace + '_disabled'
+        };
 
-		this._trigger('init');
-		this.init();
-	};
+        // flag
+        this.disabled = false;
+        this.initialed = false;
 
-	Plugin.prototype = {
-		constructor: Plugin,
+        this._trigger('init');
+        this.init();
+    };
 
-		init: function() {
-			// build dom
-			this._createHtml();
+    Plugin.prototype = {
+        constructor: Plugin,
 
-			if (this.options.skin) {
-				this.$wrap.addClass(this.classes.skin);
-			}
+        init: function() {
+            // build dom
+            this._createHtml();
 
-			// bind events
-			this._bindEvent();
+            if (this.options.skin) {
+                this.$wrap.addClass(this.classes.skin);
+            }
 
-			// set initialed value
-			this.value = this.options.parse(this.$element.val());
+            // bind events
+            this._bindEvent();
 
-			this.val(this.value, false);
+            // set initialed value
+            this.value = this.options.parse(this.$element.val());
 
-			if (this.options.disabled) {
-				this.disable();
-			}
+            this.val(this.value, false);
 
-			this.initialed = true;
-			this._trigger('ready');
-		},
+            if (this.options.disabled) {
+                this.disable();
+            }
 
-		_createHtml: function() {
-			this.$wrap = $(this.options.tpl());
-			this.$element.after(this.$wrap);
+            this.initialed = true;
+            this._trigger('ready');
+        },
 
-			this.$initial = this.$wrap.find('.' + this.namespace + '-initial');
-			this.$actions = this.$wrap.find('.' + this.namespace + '-actions');
-			this.$image = this.$wrap.find('.' + this.namespace + '-image');
-			this.$remove = this.$wrap.find('.' + this.namespace + '-remove');
-		},
+        _createHtml: function() {
+            this.$wrap = $(this.options.tpl());
+            this.$element.after(this.$wrap);
 
-		_bindEvent: function() {
-			var self = this;
+            this.$initial = this.$wrap.find('.' + this.namespace + '-initial');
+            this.$actions = this.$wrap.find('.' + this.namespace + '-actions');
+            this.$image = this.$wrap.find('.' + this.namespace + '-image');
+            this.$remove = this.$wrap.find('.' + this.namespace + '-remove');
+        },
 
-			self.$initial.on('click', function() {
-				if (self.disabled) {
-					return;
-				}
+        _bindEvent: function() {
+            var self = this;
 
-				self.options.onSelect.call(self);
-				return false;
-			});
+            self.$initial.on('click', function() {
+                if (self.disabled) {
+                    return;
+                }
 
-			self.$actions.on('click', function() {
-				if (self.disabled) {
-					return;
-				}
+                self.options.onSelect.call(self);
+                return false;
+            });
 
-				self.options.onSelect.call(self);
-				return false;
-			});
+            self.$actions.on('click', function() {
+                if (self.disabled) {
+                    return;
+                }
 
-			self.$wrap.on('mouseenter', function() {
-				if (self.disabled) {
-					return;
-				}
+                self.options.onSelect.call(self);
+                return false;
+            });
 
-				self.$wrap.addClass(self.classes.hover);
-			}).on('mouseleave', function() {
-				if (self.disabled) {
-					return;
-				}
+            self.$wrap.on('mouseenter', function() {
+                if (self.disabled) {
+                    return;
+                }
 
-				self.$wrap.removeClass(self.classes.hover);
-			});
+                self.$wrap.addClass(self.classes.hover);
+            }).on('mouseleave', function() {
+                if (self.disabled) {
+                    return;
+                }
 
-			self.$remove.on("click", function() {
-				if (self.disabled) {
-					return;
-				}
+                self.$wrap.removeClass(self.classes.hover);
+            });
 
-				self.clear();
-				return false;
-			});
-		},
+            self.$remove.on("click", function() {
+                if (self.disabled) {
+                    return;
+                }
 
-		_setState: function(state) {
-			switch (state) {
-				case 'present':
-					this.$wrap.removeClass(this.classes.empty).addClass(this.classes.present);
-					break;
-				case 'empty':
-					this.$wrap.removeClass(this.classes.present).addClass(this.classes.empty);
-					break;
-			}
-		},
+                self.clear();
+                return false;
+            });
+        },
 
-		_trigger: function(eventType) {
-			// event
-			this.$element.trigger(pluginName + '::' + eventType, this);
+        _setState: function(state) {
+            switch (state) {
+                case 'present':
+                    this.$wrap.removeClass(this.classes.empty).addClass(this.classes.present);
+                    break;
+                case 'empty':
+                    this.$wrap.removeClass(this.classes.present).addClass(this.classes.empty);
+                    break;
+            }
+        },
 
-			// callback
-			eventType = eventType.replace(/\b\w+\b/g, function(word) {
-				return word.substring(0, 1).toUpperCase() + word.substring(1);
-			});
-			var onFunction = 'on' + eventType;
-			var method_arguments = arguments.length > 1 ? Array.prototype.slice.call(arguments, 1) : undefined;
-			if (typeof this.options[onFunction] === 'function') {
-				this.options[onFunction].apply(this, method_arguments);
-			}
-		},
+        _trigger: function(eventType) {
+            // event
+            this.$element.trigger('asImagePicker::' + eventType, this);
+            this.$element.trigger(eventType + '.asImagePicker', this);
 
-		/*
+            // callback
+            eventType = eventType.replace(/\b\w+\b/g, function(word) {
+                return word.substring(0, 1).toUpperCase() + word.substring(1);
+            });
+            var onFunction = 'on' + eventType;
+            var method_arguments = arguments.length > 1 ? Array.prototype.slice.call(arguments, 1) : undefined;
+            if (typeof this.options[onFunction] === 'function') {
+                this.options[onFunction].apply(this, method_arguments);
+            }
+        },
+
+        /*
             Public Method
          */
-		val: function(value, update) {
-			if (typeof value === 'undefined') {
-				return this.value;
-			}
+        val: function(value, update) {
+            if (typeof value === 'undefined') {
+                return this.value;
+            }
 
-			if (value) {
-				this.set(value, update);
-			} else {
-				this.clear(update);
-			}
-		},
+            if (value) {
+                this.set(value, update);
+            } else {
+                this.clear(update);
+            }
+        },
 
-		set: function(value, update) {
-			this.value = value;
+        set: function(value, update) {
+            this.value = value;
 
-			this.image = this.options.getImage.call(this, value);
-			this.$image.attr("src", this.image);
+            this.image = this.options.getImage.call(this, value);
+            this.$image.attr("src", this.image);
 
-			this._setState('present');
+            this._setState('present');
 
-			if (update !== false) {
-				this.options.onChange.call(this, value);
-				this.$element.val(this.options.process.call(this, value));
-			}
-		},
+            if (update !== false) {
+                this.options.onChange.call(this, value);
+                this.$element.val(this.options.process.call(this, value));
+            }
+        },
 
-		clear: function(update) {
-			this.value = null;
+        clear: function(update) {
+            this.value = null;
 
-			this.image = null;
-			this.$image.attr("src", null);
+            this.image = null;
+            this.$image.attr("src", null);
 
-			this._setState('empty');
+            this._setState('empty');
 
-			if (update !== false) {
-				this.options.onChange.call(this, this.value);
-				this.$element.val(this.options.process.call(this, this.value));
-			}
-		},
+            if (update !== false) {
+                this.options.onChange.call(this, this.value);
+                this.$element.val(this.options.process.call(this, this.value));
+            }
+        },
 
-		enable: function() {
-			this.disabled = false;
-			this.$wrap.removeClass(this.classes.disabled);
-		},
+        enable: function() {
+            this.disabled = false;
+            this.$wrap.removeClass(this.classes.disabled);
+        },
 
-		disable: function() {
-			this.disabled = true;
-			this.$wrap.addClass(this.classes.disabled);
-		},
+        disable: function() {
+            this.disabled = true;
+            this.$wrap.addClass(this.classes.disabled);
+        },
 
-		destory: function() {
-			this.$element.data(pluginName, null);
-			this.$wrap.remove();
-			this._trigger('destory');
-		}
-	};
+        destory: function() {
+            this.$element.data(pluginName, null);
+            this.$wrap.remove();
+            this._trigger('destory');
+        }
+    };
 
-	Plugin.defaults = {
-		namespace: pluginName,
-		skin: null,
-		disabled: false,
-		tpl: function() {
-			return '<div class="' + this.namespace + '">' +
-				'<div class="' + this.namespace + '-initial"><i></i>Drag a image or click here to upload</div>' +
-				'<img class="' + this.namespace + '-image" src="">' +
-				'<div class="' + this.namespace + '-actions">Change</div>' +
-				'<a class="' + this.namespace + '-remove" href=""></a>' +
-				'</div>';
-		},
-		process: function(value) {
-			if (value) {
-				return JSON.stringify(value);
-			} else {
-				return '';
-			}
-		},
-		parse: function(value) {
-			if (value) {
-				return $.parseJSON(value);
-			} else {
-				return null;
-			}
-		},
-		getImage: function(value) {
-			return value.image;
-		},
-		onChange: function() {},
-		onSelect: function() {}
-	};
+    Plugin.defaults = {
+        namespace: pluginName,
+        skin: null,
+        disabled: false,
+        name: null,
+        tpl: function() {
+            return '<div class="' + this.namespace + '">' +
+                '<div class="' + this.namespace + '-initial"><i></i>Drag a image or click here to upload</div>' +
+                '<img class="' + this.namespace + '-image" src="">' +
+                '<div class="' + this.namespace + '-actions">Change</div>' +
+                '<a class="' + this.namespace + '-remove" href="">x</a>' +
+                '</div>';
+        },
+        process: function(value) {
+            if (value) {
+                return JSON.stringify(value);
+            } else {
+                return '';
+            }
+        },
+        parse: function(value) {
+            if (value) {
+                return $.parseJSON(value);
+            } else {
+                return null;
+            }
+        },
+        getImage: function(value) {
+            return value.image;
+        },
+        onChange: function() {},
+        onSelect: function() {}
+    };
 
-	$.fn[pluginName] = function(options) {
-		if (typeof options === 'string') {
-			var method = options;
-			var method_arguments = arguments.length > 1 ? Array.prototype.slice.call(arguments, 1) : undefined;
+    $.fn[pluginName] = function(options) {
+        if (typeof options === 'string') {
+            var method = options;
+            var method_arguments = arguments.length > 1 ? Array.prototype.slice.call(arguments, 1) : undefined;
 
-			if (/^\_/.test(method)) {
-				return false;
-			} else if ((method === 'val' && method_arguments === undefined)) {
-				var api = this.first().data(pluginName);
-				if (api && typeof api[method] === 'function') {
-					return api[method].apply(api, method_arguments);
-				}
-			} else {
-				return this.each(function() {
-					var api = $.data(this, pluginName);
-					if (api && typeof api[method] === 'function') {
-						api[method].apply(api, method_arguments);
-					}
-				});
-			}
-		} else {
-			return this.each(function() {
-				if (!$.data(this, pluginName)) {
-					$.data(this, pluginName, new Plugin(this, options));
-				}
-			});
-		}
-	};
+            if (/^\_/.test(method)) {
+                return false;
+            } else if ((method === 'val' && method_arguments === undefined)) {
+                var api = this.first().data(pluginName);
+                if (api && typeof api[method] === 'function') {
+                    return api[method].apply(api, method_arguments);
+                }
+            } else {
+                return this.each(function() {
+                    var api = $.data(this, pluginName);
+                    if (api && typeof api[method] === 'function') {
+                        api[method].apply(api, method_arguments);
+                    }
+                });
+            }
+        } else {
+            return this.each(function() {
+                if (!$.data(this, pluginName)) {
+                    $.data(this, pluginName, new Plugin(this, options));
+                }
+            });
+        }
+    };
 }(jQuery));

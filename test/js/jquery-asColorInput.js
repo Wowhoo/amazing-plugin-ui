@@ -1,4 +1,4 @@
-/*! asColorInput - v0.1.3 - 2014-04-14
+/*! asColorInput - v0.1.3 - 2014-05-13
 * https://github.com/amazingSurge/jquery-asColorInput
 * Copyright (c) 2014 amazingSurge; Licensed GPL */
 (function(window, document, $, Color, undefined) {
@@ -28,6 +28,12 @@
         this.opened = false;
         this.disabled = false;
         this.isFirstOpen = true;
+
+        if (this.$element.attr('name')) {
+            this.name = this.$element.attr('name');
+        } else {
+            this.name = options.name;
+        }
 
         // options
         var meta_data = [];
@@ -168,6 +174,7 @@
         _trigger: function(eventType) {
             // event
             this.$element.trigger('asColorInput::' + eventType, this);
+            this.$element.trigger(eventType + '.asColorInput', this);
 
             // callback
             eventType = eventType.replace(/\b\w+\b/g, function(word) {
@@ -397,6 +404,7 @@
         keyboard: false,
         onlyBtn: false,
         format: 'rgb',
+        name: null,
         components: {
             check: {
                 disabled: 'apply',
@@ -427,7 +435,15 @@
             this.$trigger_inner = api.$trigger.children('span');
 
             api.$trigger.insertAfter(api.$element);
-            api.$trigger.on('click', $.proxy(api.show, api));
+            api.$trigger.on('click', function() {
+                if (!api.opened) {
+                    api.show();
+                } else {
+                    api.close();
+                }
+                api.opened = !api.opened;
+                return false;
+            });
             this.update(api);
         },
         update: function(api) {

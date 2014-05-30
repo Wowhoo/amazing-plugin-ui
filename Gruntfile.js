@@ -154,7 +154,7 @@ module.exports = function(grunt) {
             expand: true,
             flatten: true,
             cwd: 'bower_components/jquery-asRange/dist',
-            src: 'jquery-asRange.min.js',
+            src: 'jquery-asRange.js',
             dest: 'test/js'
           }]
         },
@@ -181,7 +181,16 @@ module.exports = function(grunt) {
             expand: true,
             flatten: true,
             cwd: 'bower_components/jquery-asSpinner/dist',
-            src: 'jquery-asSpinner.js',
+            src: 'jquery-asSpinner.min.js',
+            dest: 'test/js'
+          }]
+        },
+        jquery_mousewheel: {
+          files: [{
+            expand: true,
+            flatten: true,
+            cwd: 'bower_components/jquery-mousewheel',
+            src: 'jquery.mousewheel.min.js',
             dest: 'test/js'
           }]
         },
@@ -307,15 +316,9 @@ module.exports = function(grunt) {
   });
 
   // These plugins provide necessary tasks.
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-csslint');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-compress');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-less');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-csscomb');
+  require('load-grunt-tasks')(grunt, {
+      pattern: ['grunt-*']
+  });
 
   // Default task.
   grunt.registerTask('default', ['clean', 'css']);

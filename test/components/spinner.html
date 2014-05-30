@@ -52,7 +52,7 @@
             <div class="column half">
                 <h4>RENDERED HTML</h4>
                 <div class="testbox">
-                    <input type="text" class="asSpinner" value="0" />
+                    <input type="text" class="asSpinner-input" value="0" />
                 </div>
             </div>
         </div>
@@ -63,11 +63,11 @@
 
     <script type="text/javascript" src="../js/highlighting/javascript.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
-    <script type="text/javascript" src="../js/jquery-asSpinner.js"></script>
+    <script src="../js/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-asSpinner.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('.asSpinner').asSpinner({
-                namespace: 'asSpinner',
+            $('.asSpinner-input').asSpinner({
                 skin: null,
                 min: '-10',
                 max: 100,
