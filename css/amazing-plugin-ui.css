@@ -260,25 +260,6 @@
   margin: 0;
   list-style: none;
 }
-.asBgPicker-position-title,
-.asBgPicker-repeat-title,
-.asBgPicker-attachment-title,
-.asBgPicker-size-title {
-  float: left;
-  margin-top: 5px;
-  font-size: 12px;
-  color: #6e7a8a;
-}
-.asBgPicker-position-content,
-.asBgPicker-repeat-content,
-.asBgPicker-attachment-content,
-.asBgPicker-size-content {
-  float: right;
-  width: 192px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
 .asBgPicker-repeat-content li,
 .asBgPicker-position-content li,
 .asBgPicker-size-content li,
