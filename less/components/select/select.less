@@ -1,112 +1,92 @@
 //==============================================
 //select
 //==============================================
-
-.asSelector-wrapper {
-	position: relative;
-	.inline-block();
-	width: @selector-wrapper-width;
-	line-height: 1;
-	cursor: pointer;
-	.user-select(none);
-}
-.asSelector-wrapper .asSelector-mask {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 0;
-}
-.asSelector_disabled {
-	cursor: default; 
-	-webkit-touch-callout: none; 
-	.user-select(none);
-}
-.asSelector-old {
-	position: relative; 
-	overflow: hidden; 
-}
-.asSelector-old select {
-	position: absolute; 
-	left: -100%;
-}
-
-.asSelector-trigger {
-	color: @selector-trigger-color;
-	font-size: 14px;
-	line-height: 32px;
-	border: 2px solid @selector-trigger-borderColor;
-	background-color: @selector-trigger-bgColor;
-	.clearfix();
-	&:hover {
-		border-color: @selector-trigger_hover-borderColor;
-	}	
-}
-
-.asSelector-label {
-	margin-right: 30px;
-	padding: 0 10px;
-	white-space: nowrap; 
-	overflow: hidden;
-}
-
-.asSelector-handler {
-	position: absolute;
-	top: 10px;
-	right: 8px;
-	color: #bbb;
-	font-size: 20px;
-	font-family: 'asFont';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	&:before {
-		content: "\e604";
-	}
-}
-
-.asSelector-dropdown {
-	position: absolute;
-	display: none;
-	overflow: auto; 
-	top: 100%; 
-	left: 0;
-	z-index: 1;
-	width: 100%;
-	padding: 3px 2px;
-	font-size: 12px;
-	background-color: @selector-dropdown-ul-bgColor;
-	border: 2px solid @selector-dropdown-ul-borderColor;
-	.box-sizing(border-box);
-	& >ul {
+.asSelector {
+	&-wrapper {
 		position: relative;
-		margin: 0;
+		.inline-block();
+		width: @selector-wrapper-width;
+		line-height: 1;
+		cursor: pointer;
+		.user-select(none);
 	}
-}
 
-.asSelector_open {
-	.asSelector-trigger {
-		color: @selector_open-trigger-color;
-		border: 2px solid @selector_open-trigger-borderColor;
-		&:hover {
-			border: 2px solid @selector_open-trigger_hover-borderColor;
+	&_disabled {
+		cursor: default;
+		-webkit-touch-callout: none;
+		.user-select(none);
+	}
+
+	&-old {
+		position: relative;
+		overflow: hidden;
+		select {
+			position: absolute;
+			left: -100%;
 		}
 	}
-	.asSelector-dropdown {
-		display: block;
-	}
-}
 
-.asSelector-dropdown {
-	.asSelector-item {
+	&-trigger {
+		color: @selector-trigger-color;
+		font-size: 14px;
+		line-height: 32px;
+		background-color: @selector-trigger-bgColor;
+		border: 2px solid @selector-trigger-borderColor;
+		.clearfix();
+		&:hover {
+			border-color: @selector-trigger_hover-borderColor;
+		}
+	}
+
+	&-label {
+		margin-right: 30px;
+		padding: 0 10px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+
+	&-handler {
+		position: absolute;
+		top: 10px;
+		right: 8px;
+		color: #bbb;
+		font-size: 20px;
+		font-family: 'asFont';
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1;
+
+		/* Better Font Rendering =========== */
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		&:before {
+			content: "\e604";
+		}
+	}
+
+	&-dropdown {
+		position: absolute;
+		display: none;
+		overflow: auto; 
+		top: 100%; 
+		left: 0;
+		z-index: 1;
+		width: 100%;
+		padding: 3px 2px;
+		font-size: 12px;
+		background-color: @selector-dropdown-ul-bgColor;
+		border: 2px solid @selector-dropdown-ul-borderColor;
+		.box-sizing(border-box);
+		& > ul {
+			position: relative;
+			margin: 0;
+		}
+	}
+
+	&-item {
 		position: relative;
 		display: block;
 		margin: 0;
@@ -120,17 +100,47 @@
 			background-color: @az-reactive-color;
 		}
 	}
-	.asSelector-group {
+
+	&-group {
 		margin: 0;
-		.asSelector-group-label {
-			padding: 6px 10px;
-			font-weight: bold;
-			text-transform: capitalize;
-			cursor: default;
-		}
-		.asSelector-item {
-			padding-left: 1.5em;
+	}
+
+	&-group-lable {
+		padding: 6px 10px;
+		font-weight: bold;
+		text-transform: capitalize;
+		cursor: default;
+	}
+
+	&-group &-item {
+		padding-left: 1.5em;
+	}
+
+	&_open &-trigger {
+		color: @selector_open-trigger-color;
+		border: 2px solid @selector_open-borderColor;
+		&:hover {
+			border: 2px solid @selector_open_hover-borderColor;
 		}
 	}
+
+	&_open &-handler {
+		&:before {
+			content: "\e605";
+		}
+	}
+
+	&_open &-dropdown {
+		display: block !important;
+		border: 2px solid @selector_open-borderColor;
+	}
+
+	&-mask {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+	}
 }
-//==============================================

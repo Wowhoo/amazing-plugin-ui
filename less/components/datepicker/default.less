@@ -1,11 +1,8 @@
-@calendar-padding:                                6px 35px 6px 10px;
-@calendar-color:                                  #bbb;
-@calendar-fontSize:                               14px;
-@calendar-bgColor:                                #fff;
-@calendar-borderColor:                            #e4e4e4;
-@calendar_hover-borderColor:                      #d9d9d9;
-@calendar_focus-color:                            #444;
-@calendar_focus-borderColor:                      @calendar_hover-borderColor;
+@calendar-input-color:                            #bbb;
+@calendar-input-borderColor:                      #e4e4e4;
+@calendar-input_hover-borderColor:                #d9d9d9;
+@calendar-input_focus-color:                      #444;
+@calendar-input_focus-borderColor:                @calendar-input_hover-borderColor;
 
 @calendar-icon-color:                             #bbb;
 
@@ -13,45 +10,34 @@
 
 @calendar-header-bgColor:                         @az-reactive-color;
 
+@calendar-arrow-color:                            #fff;
 @calendar-arrow-bgColor:                          @az-reactive-color;
-@calendar-arrow-before-color:                     #fff;
+@calendar-arrow-borderColor:                      #85c8ee;
 @calendar-arrow_hover-bgColor:                    darken(@az-reactive-color, 6%);
-@calendar-arrow_blocked_hover-bgColor:            @az-reactive-color;
-@calendar-prev-borderColor:                       #85c8ee;
-@calendar-next-borderColor:                       @calendar-prev-borderColor;
+@calendar-arrow_blocked-bgColor:                  @az-reactive-color;
 
 @calendar-caption-color:                          #fff;
 @calendar-caption_hover-bgColor:                  darken(@az-reactive-color, 6%);
-@calendar-caption_blocked-bgColor:                @az-reactive-color;
 
 @calendar-days-borderColor:                       @az-reactive-color;
 
 @calendar-head-color:                             #31373a;
 
 @calendar-body_hover-bgColor:                     #eee;
-@calendar-body_active-color:                      #fff;
-@calendar-body_active-bgColor:                    @az-reactive-color;
-@calendar-body_otherMonth-color:                  #acaeae;
-@calendar-body_otherMonth_active-color:           @calendar-body_otherMonth-color;
-@calendar-body_inRange-bgColor:                   #eee;
 @calendar-body_otherMonth_inRange_hover-bgColor:  #eee;
-@calendar-body_focus-color:                       darken(@az-reactive-color, 6%);
-@calendar-body_focus-borderColor:                 @az-reactive-color;
 
-@calendar-year-borderColor:                       @az-reactive-color;
-@calendar-year_hover-bgColor:                     #eee;
-@calendar-year_active-color:                      #fff;
-@calendar-year_active_hover-bgColor:              @az-reactive-color;
-@calendar-year_untouchable-color:                 #acaeae;
-@calendar-year_untouchable_active-color:          @calendar-year_untouchable-color;
-@calendar-year_inRange-bgColor:                   #eee;
-@calendar-year_focus-color:                       darken(@az-reactive-color, 6%);
+@calendar-months-years-borderColor:               @az-reactive-color;
+@calendar-months-years_hover-bgColor:             #eee;
 
+@calendar_otherMonth_untouchable-color:           #acaeae;
+@calendar_inRange-bgColor:                        #eee;
+@calendar_focus-color:                            darken(@az-reactive-color, 6%);
+@calendar_active-color:                           #fff;
+@calendar_active-bgColor:                         @az-reactive-color;
 
-@calendar-head-height:                            38px;
 @calendar-week-height:                            34px;
 @calendar-day-height:                             28px;
 @calendar-day-width:                              32px;
 
-@calendarMonthHeight:                             floor((@calendar-week-height + @calendar-day-height * 6) / 4);
-@calendarMonthWidth:                              (@calendar-day-width * 7 )/ 3;
+@calendar-months-years-height:                    floor((@calendar-week-height + @calendar-day-height * 6) / 4);
+@calendar-months-years-width:                     (@calendar-day-width * 7 )/ 3;

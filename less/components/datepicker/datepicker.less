@@ -1,295 +1,251 @@
 // ==============================================
 // datepicker
 // ==============================================
-input[type="text"].asCalendar {
-	padding: @calendar-padding;
-	color: @calendar-color;
-	font-size: @calendar-fontSize;
-	line-height: 1;
-	border: 2px solid @calendar-borderColor;
-	.border-radius(0);
-	&:hover {
-		border-color: @calendar_hover-borderColor;
-	}
-	&:focus {
-		color: @calendar_focus-color;
-		border-color: @calendar_focus-borderColor;
-		.box-shadow(none);
-	}
+.asCalendar {
+    input[type="text"]& {
+        padding: 6px 35px 6px 10px;
+        color: @calendar-input-color;
+        font-size: 14px;
+        line-height: 1;
+        border: 2px solid @calendar-input-borderColor;
+        .border-radius(0);
+        &:hover {
+            border-color: @calendar-input_hover-borderColor;
+        }
+        &:focus {
+            color: @calendar-input_focus-color;
+            border-color: @calendar-input_focus-borderColor;
+            .box-shadow(none);
+        }
+    }
+
+    &-wrap {
+        position: relative;
+        .inline-block();
+        line-height: 1;
+        .user-select(none);
+        span {
+            .box-sizing(border-box);
+        }
+    }
+
+    &-icon {
+        position: absolute;
+        top: 8px;
+        right: 9px;
+        color: @calendar-icon-color;
+        font-family: 'asFont';
+        speak: none;
+        font-size: 21px;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+
+        &:before {
+            content: "\e606";
+        }
+    }
+
+    &-content {
+        position: relative;
+        .inline-block();
+        font-size: 14px;
+        background-color: @calendar-content-bgColor;
+        vertical-align: middle;
+    }
+
+    &_days > &-days,
+    &_months > &-months,
+    &_years > &-years {
+        display: block !important;
+    }
+
+    &-header {
+        position: relative;
+        height: 38px;
+        line-height: 38px;
+        text-align: center;
+        background-color: @calendar-header-bgColor;
+    }
+
+    &-prev,
+    &-next {
+        position: absolute;
+        top: 0;
+        display: block;
+        width: 40px;
+        height: 100%;
+        color: transparent;
+        cursor: pointer;
+
+        font-family: 'asFont';
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+
+        /* Better Font Rendering ========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+
+        background-color: @calendar-arrow-bgColor;
+
+        &:before {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            color: @calendar-arrow-color;
+            font-size: 16px;
+        }
+        &:hover {
+            background-color: @calendar-arrow_hover-bgColor;
+        }
+    }
+
+    &-prev {
+        left: 0;
+        border-right: 1px solid @calendar-arrow-borderColor;
+        &:before {
+            content: "\e602";
+        }
+    }
+
+    &-next {
+        right: 0;
+        border-left: 1px solid @calendar-arrow-borderColor;
+        &:before {
+            content: "\e601";
+        }
+    }
+
+    &_blocked {
+        background-color: @calendar-arrow_blocked-bgColor !important;
+        cursor: auto;
+        &:before {
+            display: none;
+        }
+    }
+
+    &-caption {
+        display: block;
+        padding: 0 50px;
+        height: 100%;
+        color: @calendar-caption-color;
+        font-size: 18px;
+        text-align: center;
+        cursor: pointer;
+        &:hover {
+            background-color: @calendar-caption_hover-bgColor;
+        }
+    }
+
+    &-days {
+        display: none;
+        border: 2px solid @calendar-days-borderColor;
+        border-top: none;
+        span {
+            .inline-block();
+            width: @calendar-day-width;
+            font-size: 14px;
+            text-align: center;
+        }
+    }
+
+    &-head {
+        height: 34px;
+        line-height: 34px;
+        padding-right: 5px;
+        padding-left: 5px;
+        color: @calendar-head-color;
+        span {
+            font-size: 12px;
+            text-transform: uppercase;
+            cursor: default;
+        }
+    }
+
+    &-body {
+        padding: 0 5px 5px;
+        span {
+            height: @calendar-day-height;
+            line-height: @calendar-day-height;
+            cursor: pointer;
+            &:hover {
+                background-color: @calendar-body_hover-bgColor;
+            }
+        }
+    }
+
+    &-months,
+    &-years {
+        display: none;
+        padding: 2px 5px 5px;
+        border: 2px solid @calendar-months-years-borderColor;
+        border-top: none;
+        span {
+            .inline-block();
+            width: @calendar-months-years-width;
+            height: @calendar-months-years-height;
+            line-height: @calendar-months-years-height;
+            font-size: 13px;
+            text-align: center;
+            cursor: pointer;
+            &:hover {
+                background-color: @calendar-months-years_hover-bgColor;
+            }
+        }
+    }
+
+    span&_otherMonth,
+    span&_untouchable {
+        color: @calendar_otherMonth_untouchable-color;
+        background-color: inherit;
+        cursor: default;
+        &:hover {
+            color: @calendar_otherMonth_untouchable-color;
+            background-color: inherit;
+        }
+    }
+    span&_inRange {
+        background-color: @calendar_inRange-bgColor;
+        &:hover {
+            background-color: inherit;
+        }
+    }
+    span&_otherMonth&_inRange {
+        &:hover {
+            background-color: @calendar-body_otherMonth_inRange_hover-bgColor;
+        }
+    }
+    &_focus {
+        color: @calendar_focus-color !important;
+    }
+
+    &_active {
+        color: @calendar_active-color !important;
+        background-color: @calendar_active-bgColor !important;
+    }
+
+    &_hide {
+        display: none !important;
+    }
+    &_hide ~ &-icon {
+        display: none !important;
+    }
+
+    &_show {
+        display: block !important;
+    }
+
+    &_absolute {
+        position: absolute !important;
+    }
 }
-
-.asCalendar-wrap {
-	position: relative;
-	.inline-block();
-	line-height: 1;
-	.user-select(none);
-	span {
-		.box-sizing(border-box);
-	}
-	.asCalendar-icon {
-		position: absolute;
-		top: 8px;
-		right: 9px;
-		color: @calendar-icon-color;
-		font-family: 'asFont';
-		speak: none;
-		font-size: 21px;
-		font-style: normal;
-		font-weight: normal;
-		font-variant: normal;
-		text-transform: none;
-		line-height: 1;
-
-		/* Better Font Rendering =========== */
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-
-		&:before {
-			content: "\e606";
-		}
-	}
-}
-
-.asCalendar-content {
-	position: relative;
-	.inline-block();
-	font-size: 14px;
-	background-color: @calendar-content-bgColor;
-	vertical-align: middle;
-
-	&.asCalendar_days {
-		> .asCalendar-days {
-			display: block;
-		}
-	}
-	&.asCalendar_months {
-		.asCalendar-months {
-			display: block;
-		}
-	}
-	&.asCalendar_years {
-		.asCalendar-years {
-			display: block;
-		}
-	}
-}
-
-.asCalendar-header {
-	position: relative;
-
-	height: @calendar-head-height;
-	line-height: @calendar-head-height;
-	text-align: center;
-	background-color: @calendar-header-bgColor;
-}
-.asCalendar-prev,
-.asCalendar-next {
-	position: absolute;
-	top: 0;
-	display: block;
-	width: 40px;
-	height: 100%;
-	height: @calendar-head-height;
-	color: transparent;
-	cursor: pointer;
-
-	font-family: 'asFont';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-
-	background-color: @calendar-arrow-bgColor;
-
-	&:before {
-		position: absolute;
-		top: 12px;
-		left: 12px;
-		color: @calendar-arrow-before-color;
-		font-size: 16px;
-	}
-	&:hover {
-		background-color: @calendar-arrow_hover-bgColor;
-	}
-	&.asCalendar_blocked,
-	&.asCalendar_blocked:hover {
-		cursor: auto;
-		&:before {
-			display: none;
-		}
-	}
-	&.asCalendar_blocked:hover {
-		background-color: @calendar-arrow_blocked_hover-bgColor;
-	}
-}
-
-.asCalendar-prev {
-	left: 0;
-	border-right: 1px solid @calendar-prev-borderColor;
-	&:before {
-		content: "\e602";
-	}
-}
-
-.asCalendar-next {
-	right: 0;
-	border-left: 1px solid @calendar-next-borderColor;
-	&:before {
-		content: "\e601";
-	}
-}
-
-.asCalendar-caption {
-	display: block;
-	padding: 0 50px;
-	height: 100%;
-	color: @calendar-caption-color;
-	font-size: 18px;
-	text-align: center;
-	cursor: pointer;
-	&:hover {
-		background-color: @calendar-caption_hover-bgColor;
-	}
-	&.asCalendar_blocked,
-	&.asCalendar_blocked:hover {
-		background-color: @calendar-caption_blocked-bgColor;
-		cursor: auto;
-	}
-}
-
-.asCalendar-days {
-	border: 2px solid @calendar-days-borderColor;
-	border-top: none;
-	display: none;
-	span {
-		.inline-block();
-		width: @calendar-day-width;
-		font-size: 14px;
-		text-align: center;
-	}
-}
-
-.asCalendar-head {
-	color: @calendar-head-color;
-	line-height:  @calendar-week-height;
-	height: @calendar-week-height;
-	padding-left: 5px;
-	padding-right: 5px;
-	span {
-		font-size: 12px;
-		text-transform: uppercase;
-		cursor: default;
-		border: 1px solid transparent;
-	}
-}
-
-.asCalendar-body {
-	padding: 5px;
-	padding-top: 0;
-	span {
-		cursor: pointer;
-		height: @calendar-day-height;
-		line-height: @calendar-day-height;
-		border: 1px dashed transparent;
-		&:hover {
-			background-color: @calendar-body_hover-bgColor;
-		}
-		&.asCalendar_active {
-			color: @calendar-body_active-color !important;
-			background-color: @calendar-body_active-bgColor !important;
-		}
-		&.asCalendar_otherMonth,
-		&.asCalendar_untouchable {
-			color: @calendar-body_otherMonth-color;
-			background-color: inherit;
-			cursor: default;
-			&:hover,
-			&:active,
-			&.asCalendar_active {
-				color: @calendar-body_otherMonth_active-color;
-				background-color: inherit;
-			}
-			
-		}
-		&.asCalendar_inRange {
-			background-color: @calendar-body_inRange-bgColor;
-			&:hover {
-				background-color: inherit;
-			}
-		}
-		&.asCalendar_otherMonth.asCalendar_inRange {
-			&:hover {
-				background-color: @calendar-body_otherMonth_inRange_hover-bgColor;
-			}
-		}
-		&.asCalendar_focus {
-			color: @calendar-body_focus-color;
-			// border: 1px dashed @calendar-body_focus-borderColor;
-		}
-	}
-}
-
-.asCalendar-months,
-.asCalendar-years {
-	border: 2px solid @calendar-year-borderColor;
-	border-top: none;
-	padding: 2px 5px 5px;
-	display: none;
-	span {
-		width: @calendarMonthWidth;
-		height: @calendarMonthHeight;
-		line-height: @calendarMonthHeight;
-		text-align: center;
-		font-size: 13px;
-		.inline-block();
-		cursor: pointer;
-		&:hover {
-			background-color: @calendar-year_hover-bgColor;
-		}
-		&.asCalendar_active {
-			color: @calendar-year_active-color !important;
-			background-color: @calendar-year_active_hover-bgColor !important;
-		}
-		&.asCalendar_untouchable {
-			color: @calendar-year_untouchable-color;
-			cursor: default;
-			&:hover,
-			&:active,
-			&.asCalendar_active {
-				color: @calendar-year_untouchable_active-color;
-				background-color: inherit;
-			}	
-		}
-		&.asCalendar_inRange {
-			background-color: @calendar-year_inRange-bgColor;
-			&:hover {
-				background-color: inherit;
-			}
-		}
-		&.asCalendar_focus {
-			color: @calendar-year_focus-color;
-		}
-	}
-}
-
-.asCalendar_hide {
-	display: none;
-	& ~ .asCalendar-icon {
-		display: none;
-	}
-}
-
-.asCalendar_show {
-	display: block;
-}
-
-.asCalendar_absolute {
-	position: absolute;
-}
-

@@ -26,17 +26,18 @@
 			padding-left: 0;
 		}
 	}
-	.asTabs_active {
+	&_active {
 		color: @tabs-li_active-color;
 	}
-}
 
-.asTabs-panes {
-	padding: 15px 0;
-	& > * {
-		display: none;
+	&-panes {
+		padding: 15px 0;
+		& > * {
+			display: none;
+		}
 	}
-	.asTabs_active {
+
+	&-panes &_active {
 		display: block !important;
 		visibility: visible !important;
 	}
