@@ -1,0 +1,346 @@
+.asGalleryUpload {
+    position: relative;
+    display: inline-block;
+
+    &-display {
+        position: relative;
+        display: block;
+        width: 206px;
+        height: 206px;
+        padding: 2px;
+        text-align: center;
+        border: 2px dashed @asGalleryUpload-display-borderColor;
+    }
+
+    &-initial {
+        width: 100%;
+        height: 100%;
+        padding: 40px 15px;
+        color: @asGalleryUpload-initial-color;
+        font-size: 14px;
+        cursor: pointer;
+
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+
+        i {
+            display: block;
+            margin-bottom: 9px;
+            color: @asGalleryUpload-initial-icon;
+            font-size: 70px;
+            font-family: 'asFont';
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+
+            /* Better Font Rendering =========== */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+
+            &:before {
+                content: "\e624";
+            }
+        }
+    }
+
+    &-info {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    &-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &-count {
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        width: 20px;
+        height: 20px;
+        color: @asGalleryUpload-count-color;
+        line-height: 20px;
+        background-color: @asGalleryUpload-count-bgColor;
+        text-align: center;
+
+        -webkit-border-radius: 100%;
+                border-radius: 100%;
+    }
+
+    &-actions {
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        width: 100%;
+        height: 100%;
+        color: @asGalleryUpload-actions-color;
+        font-size: 16px;
+        line-height: 200px;
+        text-align: center;
+        background-color: @asGalleryUpload-actions-bgColor;
+        border: 2px solid @asGalleryUpload-actions-borderColor;
+        cursor: pointer;
+    }
+
+    &-unfold {
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        width: 25px;
+        height: 25px;
+        color: @asGalleryUpload-unfold-color;
+        font-size: 0;
+        font-family: 'asFont';
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        cursor: pointer;
+
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+
+        &:before,
+        &:after {
+            position: absolute;
+            font-size: 12px;
+        }
+
+        &:before {
+            top: 0;
+            left: 0;
+            content: "\e617";
+        }
+        &:after {
+            right: 0;
+            bottom: 0;
+            content: "\e61f";
+        }
+    }
+
+    // extend
+    &-extend {
+        width: 318px;
+        padding: 15px 0;
+        background-color: @asGalleryUpload-extend-bgColor;
+
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+    }
+
+    &-close {
+        position: absolute;
+        top: -9px;
+        right: -9px;
+        width: 15px;
+        height: 15px;
+        color: @asGalleryUpload-close-color;
+        font-size: 14px;
+        background-color: @asGalleryUpload-close-bgColor;
+        border: 2px solid @asGalleryUpload-close-borderColor;
+        text-decoration: none;
+        text-align: center;
+        font-family: 'asFont';
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        cursor: pointer;
+
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-border-radius: 100%;
+                border-radius: 100%;
+
+        &:before {
+            content: "\e626";
+        }
+    }
+
+    &-gallery {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        overflow: hidden;
+
+        li {
+            position: relative;
+            float: left;
+            width: 120px;
+            height: 120px;
+            margin: 15px;
+            padding: 2px;
+            background-color: @asGalleryUpload-gallery-item-bgColor;
+        }
+    }
+
+    &-item {
+        border: 2px solid @asGalleryUpload-gallery-item-borderColor;
+        >img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &-item-initial {
+        border: 2px dashed @asGalleryUpload-gallery-item-borderColor;
+    }
+
+    &-extend-initial {
+        width: 100%;
+        height: 100%;
+        padding: 30px 10px;
+        color: @asGalleryUpload-extend-initial-color;
+        cursor: pointer;
+        text-align: center;
+
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+
+        i {
+            display: block;
+            margin-bottom: 5px;
+            color: @asGalleryUpload-extend-initial-icon-color;
+            font-size: 40px;
+            font-family: 'asFont';
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+
+            /* Better Font Rendering =========== */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+
+            &:before {
+                content: "\e624";
+            }
+        }
+    }
+
+    &-extend-actions {
+        display: none;
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        width: 100%;
+        height: 100%;
+        color: @asGalleryUpload-extend-actions-color;
+        font-size: 16px;
+        line-height: 125px;
+        text-align: center;
+        background-color: @asGalleryUpload-extend-actions-bgColor;
+        border: 2px solid @asGalleryUpload-extend-actions-borderColor;
+        cursor: pointer;
+    }
+
+    &-extend-remove {
+        display: none;
+        position: absolute;
+        top: -11px;
+        right: -11px;
+        width: 15px;
+        height: 15px;
+        color: @asGalleryUpload-extend-remove-color;
+        font-size: 14px;
+        font-family: 'asFont';
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        text-decoration: none;
+        text-align: center;
+        line-height: 1;
+        background-color: @asGalleryUpload-extend-remove-bgColor;
+        border: 2px solid @asGalleryUpload-extend-remove-borderColor;
+
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-border-radius: 100%;
+           -moz-border-radius: 100%;
+                border-radius: 100%;
+
+        &:before {
+            content: "\e627";
+        }
+    }
+}
+
+.asGalleryUpload_present {
+    .asGalleryUpload-display {
+        display: block !important;
+        border-style: solid;
+    }
+
+    .asGalleryUpload-initial,
+    .asGalleryUpload-actions,
+    .asGalleryUpload-count,
+    .asGalleryUpload-unfold {
+        display: none !important;
+    }
+
+    .asGalleryUpload-image {
+        display: block !important;
+    }
+
+    .asGalleryUpload-extend {
+        display: none !important;
+    }
+}
+
+.asGalleryUpload_extend {
+    .asGalleryUpload-display {
+        display: none !important;
+    }
+
+    .asGalleryUpload-extend {
+        display: block !important;
+    }
+}
+
+.asGalleryUpload_empty {
+    .asGalleryUpload-initial {
+        display: block !important;
+    }
+
+    .asGalleryUpload-info {
+        display: none !important;
+    }
+}
+
+.asGalleryUpload_hasImages {
+    .asGalleryUpload-count {
+        display: block !important;
+    }
+}
+
+.asGalleryUpload_hover {
+    .asGalleryUpload-actions,
+    .asGalleryUpload-unfold,
+    .asGalleryUpload-extend-actions,
+    .asGalleryUpload-extend-remove {
+        display: block !important;
+    }
+
+}

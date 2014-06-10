@@ -140,6 +140,15 @@ module.exports = function(grunt) {
             dest: 'test/js'
           }]
         },
+        jquery_asGalleryUpload: {
+          files: [{
+            expand: true,
+            flatten: true,
+            cwd: 'bower_components/jquery-asGalleryUpload/dist',
+            src: 'jquery-asGalleryUpload.min.js',
+            dest: 'test/js'
+          }]
+        },
         jquery_asImagePicker: {
           files: [{
             expand: true,

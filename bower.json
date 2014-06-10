@@ -31,6 +31,7 @@
     "jquery-asFontEditor": "git@github.com:amazingSurge/jquery-asFontEditor.git",
     "jquery-asBgPicker": "git@github.com:amazingSurge/jquery-asBgPicker.git",
     "jquery-asImagePicker": "git@github.com:amazingSurge/jquery-asImagePicker.git",
-    "jquery-mousewheel": "git@github.com:brandonaaron/jquery-mousewheel.git#~3.1.11"
+    "jquery-mousewheel": "git@github.com:brandonaaron/jquery-mousewheel.git#~3.1.11",
+    "jquery-asGalleryUpload": "git@github.com:amazingSurge/jquery-asGalleryUpload.git"
   }
 }
