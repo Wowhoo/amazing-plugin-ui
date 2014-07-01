@@ -1,0 +1,294 @@
+@calendar-input-color:                            #bbb;
+@calendar-input-borderColor:                      #e4e4e4;
+@calendar-input_hover-borderColor:                #d9d9d9;
+@calendar-input_focus-color:                      #444;
+@calendar-input_focus-borderColor:                @calendar-input_hover-borderColor;
+
+@calendar-icon-color:                             #bbb;
+
+@calendar-content-bgColor:                        #fff;
+
+@calendar-header-bgColor:                         @az-reactive-color;
+
+@calendar-arrow-color:                            #fff;
+@calendar-arrow-bgColor:                          @az-reactive-color;
+@calendar-arrow-borderColor:                      #85c8ee;
+@calendar-arrow_hover-bgColor:                    darken(@az-reactive-color, 6%);
+@calendar-arrow_blocked-bgColor:                  @az-reactive-color;
+
+@calendar-caption-color:                          #fff;
+@calendar-caption_hover-bgColor:                  darken(@az-reactive-color, 6%);
+
+@calendar-days-borderColor:                       @az-reactive-color;
+
+@calendar-head-color:                             #31373a;
+
+@calendar-body_hover-bgColor:                     #eee;
+@calendar-body_otherMonth_inRange_hover-bgColor:  #eee;
+
+@calendar-months-years-borderColor:               @az-reactive-color;
+@calendar-months-years_hover-bgColor:             #eee;
+
+@calendar_otherMonth_untouchable-color:           #acaeae;
+@calendar_inRange-bgColor:                        #eee;
+@calendar_focus-color:                            darken(@az-reactive-color, 6%);
+@calendar_active-color:                           #fff;
+@calendar_active-bgColor:                         @az-reactive-color;
+
+@calendar-week-height:                            34px;
+@calendar-day-height:                             28px;
+@calendar-day-width:                              32px;
+
+@calendar-months-years-height:                    floor((@calendar-week-height + @calendar-day-height * 6) / 4);
+@calendar-months-years-width:                     (@calendar-day-width * 7 )/ 3;
+// ==============================================
+// datepicker
+// ==============================================
+.asCalendar {
+    input[type="text"]& {
+        padding: 6px 35px 6px 10px;
+        color: @calendar-input-color;
+        font-size: 14px;
+        line-height: 1;
+        border: 2px solid @calendar-input-borderColor;
+        .border-radius(0);
+        &:hover {
+            border-color: @calendar-input_hover-borderColor;
+        }
+        &:focus {
+            color: @calendar-input_focus-color;
+            border-color: @calendar-input_focus-borderColor;
+            .box-shadow(none);
+        }
+    }
+
+    &-wrap {
+        position: relative;
+        .inline-block();
+        line-height: 1;
+        .user-select(none);
+        span {
+            .box-sizing(border-box);
+        }
+    }
+
+    &-icon {
+        position: absolute;
+        top: 8px;
+        right: 9px;
+        color: @calendar-icon-color;
+        font-family: 'asFont';
+        speak: none;
+        font-size: 21px;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+
+        &:before {
+            content: "\e606";
+        }
+    }
+
+    &-content {
+        position: relative;
+        .inline-block();
+        font-size: 14px;
+        background-color: @calendar-content-bgColor;
+        vertical-align: middle;
+    }
+
+    &_days > &-days,
+    &_months > &-months,
+    &_years > &-years {
+        display: block !important;
+    }
+
+    &-header {
+        position: relative;
+        height: 38px;
+        line-height: 38px;
+        text-align: center;
+        background-color: @calendar-header-bgColor;
+    }
+
+    &-prev,
+    &-next {
+        position: absolute;
+        top: 0;
+        display: block;
+        width: 40px;
+        height: 100%;
+        color: transparent;
+        cursor: pointer;
+
+        font-family: 'asFont';
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+
+        /* Better Font Rendering ========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+
+        background-color: @calendar-arrow-bgColor;
+
+        &:before {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            color: @calendar-arrow-color;
+            font-size: 16px;
+        }
+        &:hover {
+            background-color: @calendar-arrow_hover-bgColor;
+        }
+    }
+
+    &-prev {
+        left: 0;
+        border-right: 1px solid @calendar-arrow-borderColor;
+        &:before {
+            content: "\e602";
+        }
+    }
+
+    &-next {
+        right: 0;
+        border-left: 1px solid @calendar-arrow-borderColor;
+        &:before {
+            content: "\e601";
+        }
+    }
+
+    &_blocked {
+        background-color: @calendar-arrow_blocked-bgColor !important;
+        cursor: auto;
+        &:before {
+            display: none;
+        }
+    }
+
+    &-caption {
+        display: block;
+        padding: 0 50px;
+        height: 100%;
+        color: @calendar-caption-color;
+        font-size: 18px;
+        text-align: center;
+        cursor: pointer;
+        &:hover {
+            background-color: @calendar-caption_hover-bgColor;
+        }
+    }
+
+    &-days {
+        display: none;
+        border: 2px solid @calendar-days-borderColor;
+        border-top: none;
+        span {
+            .inline-block();
+            width: @calendar-day-width;
+            font-size: 14px;
+            text-align: center;
+        }
+    }
+
+    &-head {
+        height: 34px;
+        line-height: 34px;
+        padding-right: 5px;
+        padding-left: 5px;
+        color: @calendar-head-color;
+        span {
+            font-size: 12px;
+            text-transform: uppercase;
+            cursor: default;
+        }
+    }
+
+    &-body {
+        padding: 0 5px 5px;
+        span {
+            height: @calendar-day-height;
+            line-height: @calendar-day-height;
+            cursor: pointer;
+            &:hover {
+                background-color: @calendar-body_hover-bgColor;
+            }
+        }
+    }
+
+    &-months,
+    &-years {
+        display: none;
+        padding: 2px 5px 5px;
+        border: 2px solid @calendar-months-years-borderColor;
+        border-top: none;
+        span {
+            .inline-block();
+            width: @calendar-months-years-width;
+            height: @calendar-months-years-height;
+            line-height: @calendar-months-years-height;
+            font-size: 13px;
+            text-align: center;
+            cursor: pointer;
+            &:hover {
+                background-color: @calendar-months-years_hover-bgColor;
+            }
+        }
+    }
+
+    span&_otherMonth,
+    span&_untouchable {
+        color: @calendar_otherMonth_untouchable-color;
+        background-color: inherit;
+        cursor: default;
+        &:hover {
+            color: @calendar_otherMonth_untouchable-color;
+            background-color: inherit;
+        }
+    }
+    span&_inRange {
+        background-color: @calendar_inRange-bgColor;
+        &:hover {
+            background-color: inherit;
+        }
+    }
+    span&_otherMonth&_inRange {
+        &:hover {
+            background-color: @calendar-body_otherMonth_inRange_hover-bgColor;
+        }
+    }
+    &_focus {
+        color: @calendar_focus-color !important;
+    }
+
+    &_active {
+        color: @calendar_active-color !important;
+        background-color: @calendar_active-bgColor !important;
+    }
+
+    &_hide {
+        display: none !important;
+    }
+    &_hide ~ &-icon {
+        display: none !important;
+    }
+
+    &_show {
+        display: block !important;
+    }
+
+    &_absolute {
+        position: absolute !important;
+    }
+}

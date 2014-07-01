@@ -1,3 +1,32 @@
+@switch-height:                               28px;
+@switch-width:                                74px;
+@switch-borderWidth:                          2px;
+
+@switch-innerHeight:                          @switch-height - (@switch-borderWidth * 2);
+@switch-handleWidth:                          @switch-innerHeight;
+
+@switch-innerWidth:                           @switch-width - (@switch-borderWidth * 2);
+@switch-boxWidth:                             (@switch-innerWidth - (@switch-handleWidth / 2)) * 2;
+@switch-onWidth:                              @switch-innerWidth - ( @switch-handleWidth / 2);
+@switch-offWidth:                             @switch-innerWidth - ( @switch-handleWidth / 2);
+
+@switch-fontSize:                             14px;
+@switch-onColor:                              #fff;
+@switch-offColor:                             #fff;
+
+@switch_on-bgColor:                           @az-reactive-color;
+@switch_on-borderColor:                       @az-reactive-color;
+@switch_on-handle-bgColor:                    #fff;
+
+@switch_off-bgColor:                          #b8bcbe;
+@switch_off-borderColor:                      #b8bcbe;
+@switch_off-handle-bgColor:                   #fff;
+
+@switch_disabled_off-bgColor:                  #f0f0f0;
+@switch_disabled_on-bgColor:                   #F0FBFF;
+@switch_disabled-borderColor:                  darken(@switch_disabled_off-bgColor, 3%);
+@switch_disabled-handle-bgColor:               #fff;
+@switch_disabled-textColor:                    #ccc;
 // ==============================================
 // Switch
 // ==============================================

@@ -1,0 +1,164 @@
+@selector-wrapper-width:                              184px;
+
+@selector-trigger-color:                              #bbb;
+@selector-trigger-bgColor:                            #fff;
+@selector-trigger-borderColor:                        #e4e4e4;
+@selector-trigger_hover-borderColor:                  #d9d9d9;
+
+@selector-dropdown-ul-bgColor:                        #fff;
+@selector-dropdown-ul-borderColor:                    #e4e4e4;
+
+@selector_open-trigger-color:                         #444;
+@selector_open-borderColor:                           @az-reactive-color;
+@selector_open_hover-borderColor:                     @selector_open-borderColor;
+
+@selector-dropdown-li-color:                          #777;
+@selector-dropdown-li-bgColor:                        #fff;
+@selector-dropdown-li_hover-bgColor:                  @selector-dropdown-li-bgColor;
+
+//==============================================
+//select
+//==============================================
+.asSelector {
+	&-wrapper {
+		position: relative;
+		.inline-block();
+		width: @selector-wrapper-width;
+		line-height: 1;
+		cursor: pointer;
+		.user-select(none);
+	}
+
+	&_disabled {
+		cursor: default;
+		-webkit-touch-callout: none;
+		.user-select(none);
+	}
+
+	&-old {
+		position: relative;
+		overflow: hidden;
+		select {
+			position: absolute;
+			left: -100%;
+		}
+	}
+
+	&-trigger {
+		color: @selector-trigger-color;
+		font-size: 14px;
+		line-height: 32px;
+		background-color: @selector-trigger-bgColor;
+		border: 2px solid @selector-trigger-borderColor;
+		.clearfix();
+		&:hover {
+			border-color: @selector-trigger_hover-borderColor;
+		}
+	}
+
+	&-label {
+		margin-right: 30px;
+		padding: 0 10px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+
+	&-handler {
+		position: absolute;
+		top: 10px;
+		right: 8px;
+		color: #bbb;
+		font-size: 20px;
+		font-family: 'asFont';
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1;
+
+		/* Better Font Rendering =========== */
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		&:before {
+			content: "\e604";
+		}
+	}
+
+	&-dropdown {
+		position: absolute;
+		display: none;
+		overflow: auto; 
+		top: 100%; 
+		left: 0;
+		z-index: 1;
+		width: 100%;
+		padding: 3px 2px;
+		font-size: 12px;
+		background-color: @selector-dropdown-ul-bgColor;
+		border: 2px solid @selector-dropdown-ul-borderColor;
+		.box-sizing(border-box);
+		& > ul {
+			position: relative;
+			margin: 0;
+		}
+	}
+
+	&-item {
+		position: relative;
+		display: block;
+		margin: 0;
+		padding: 8px 10px;
+		color: @selector-dropdown-li-color;
+		list-style: none;
+		background-color: @selector-dropdown-li-bgColor;
+		cursor: pointer;
+		&:hover {
+			color: @selector-dropdown-li_hover-bgColor;
+			background-color: @az-reactive-color;
+		}
+	}
+
+	&-group {
+		margin: 0;
+	}
+
+	&-group-lable {
+		padding: 6px 10px;
+		font-weight: bold;
+		text-transform: capitalize;
+		cursor: default;
+	}
+
+	&-group &-item {
+		padding-left: 1.5em;
+	}
+
+	&_open &-trigger {
+		color: @selector_open-trigger-color;
+		border: 2px solid @selector_open-borderColor;
+		&:hover {
+			border: 2px solid @selector_open_hover-borderColor;
+		}
+	}
+
+	&_open &-handler {
+		&:before {
+			content: "\e605";
+		}
+	}
+
+	&_open &-dropdown {
+		display: block !important;
+		border: 2px solid @selector_open-borderColor;
+	}
+
+	&-mask {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+	}
+}

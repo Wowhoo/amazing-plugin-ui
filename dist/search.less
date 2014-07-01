@@ -1,0 +1,102 @@
+@search-input-color:                           #bbb;
+@search-input-bgColor:                         #fff;
+@search-input-borderColor:                     #e4e4e4;
+@search-input_hover-borderColor:               #d9d9d9;
+@search-input_focus-color:                     #333;
+@search-input_focus-borderColor:               @az-reactive-color;
+@search-input_focus-button-borderColor:        @az-reactive-color;
+@search-input_focus-button-bgColor:            @az-reactive-color;
+
+@search-button-borderColor:                    #e4e4e4;
+@search-button-bgColor:                        #fff;
+@search-button_focus-borderColor:              @az-reactive-color;
+
+@search_hover-button-borderColor:              @az-reactive-color;
+@search_hover-button-bgColor:                  @az-reactive-color;
+//==============================================
+//Search
+//==============================================
+.asSearch {
+	position: relative;
+
+	>input.asInput[type="text"] {
+		margin: 0px;
+		width: 100%;
+		height: 36px;
+		line-height: 1.5;
+		padding: 3px 45px 3px 10px;
+		font-size: 14px;
+		color: @search-input-color;
+		background-color: @search-input-bgColor;
+		border: 2px solid @search-input-borderColor;
+
+		.box-sizing(border-box);
+		.border-radius(0);
+		&:hover {
+			border-color: @search-input_hover-borderColor;
+		}
+
+		&:focus {
+			color: @search-input_focus-color;
+			border-color: @search-input_focus-borderColor;
+			& + button {
+				border-color: @search-input_focus-button-borderColor;
+				background-color: @search-input_focus-button-bgColor;
+				color: transparent;
+				text-shadow: none;
+				&:before {
+					color: #fff;
+				}
+			}
+		}
+	}
+
+	>button {
+		position: absolute;
+		top: 0;
+		right: 0;
+		display: block;
+		margin: 0;
+		padding: 0;
+		width: 45px;
+		height: 36px;
+		line-height: 1.5;
+		padding: 3px 5px;
+		cursor: pointer;
+		border: 2px solid @search-button-borderColor;
+		border-left: 1px solid @search-button-borderColor;
+		background: @search-button-bgColor;
+
+		color: transparent;
+		text-shadow: none;
+
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+
+		.box-sizing(border-box);
+		&:before {
+			position: absolute;
+			top: 1px;
+			left: -23px;
+			color: #ddd;
+			font-size: 23px;
+		}
+
+		&:focus {
+			border-color: @search-button_focus-borderColor;
+		}
+	}
+
+	&:hover {
+		>button {
+			border-color: @search_hover-button-borderColor;
+			background-color: @search_hover-button-bgColor;
+			color: transparent;
+			text-shadow: none;
+			&:before {
+				color: #fff;
+			}
+		}
+	}
+}

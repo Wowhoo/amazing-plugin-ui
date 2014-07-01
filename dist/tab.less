@@ -1,0 +1,74 @@
+@tabs-borderBottomColor:                     #e9eaea;
+@tabs-li-color:                              #ccc;
+@tabs-li_active-color:                       #444;
+
+@tabs_mini-li_active-color:                  #444;
+@tabs_mini-li_active-borderColor:            #e9eaea;
+@tabs_mini-li_active-borderBottomColor:      #fff;
+// ==============================================
+// tab
+// ==============================================
+
+.asTabs {
+	margin: 10px 0;
+	padding: 0;
+	border-bottom: 1px solid @tabs-borderBottomColor;
+	list-style: none outside none;
+	.box-sizing(border-box);
+	.clearfix();
+
+	li {
+		float: left;		
+		display: block;
+		margin: 0;
+		padding: 10px 20px 13px 15px;
+		color: @tabs-li-color;	
+		font-size: 18px;
+		line-height: 1.5;
+		text-align: center;
+		text-decoration: none;
+		background-color: transparent;
+		cursor: pointer;
+		&:first-child {
+			padding-left: 0;
+		}
+	}
+	&_active {
+		color: @tabs-li_active-color;
+	}
+
+	&-panes {
+		padding: 15px 0;
+		& > * {
+			display: none;
+		}
+	}
+
+	&-panes &_active {
+		display: block !important;
+		visibility: visible !important;
+	}
+}
+
+.asTabs_mini {
+	&.asTabs {
+		li {
+			font-size: 14px;
+			padding: 10px 20px;
+			&:first-child {
+				padding-left: 20px;
+			}
+		}
+
+		.asTabs_active {
+			color: @tabs_mini-li_active-color;
+			border: 1px solid @tabs_mini-li_active-borderColor;
+			border-bottom-color: @tabs_mini-li_active-borderBottomColor;
+			margin-bottom: -1px;
+		}
+	}
+
+	&.asTabs-panes {
+		padding: 20px 0;
+	}
+}

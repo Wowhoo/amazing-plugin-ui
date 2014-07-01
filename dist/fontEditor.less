@@ -1,0 +1,310 @@
+@asFontEditor-title-color:                             #687175;
+
+@asFontEditor-trigger-borderColor:                     #e5e5e5;
+
+@asFontEditor-font-color:                              #9aa4a8;
+@asFontEditor-font-icon-color:                         #c7cfd2;
+
+@asFontEditor-actions-color:                           #fff;
+@asFontEditor-actions-bgColor:                         rgba(0,0,0,.8);
+@asFontEditor-actions-borderColor:                     rgba(0,0,0,.8);
+
+@asFontEditor-remove-color:                            #fff;
+@asFontEditor-remove-bgColor:                          #ff7975;
+@asFontEditor-remove-borderColor:                      #fff;
+
+@asFontEditor-extend-bgColor:                          #f4f6f7;
+
+@asFontEditor-close-color:                             #fff;
+@asFontEditor-close-bgColor:                           #ff7975;
+@asFontEditor-close-borderColor:                       #fff;
+
+@asFontEditor-extend-title-color:                      #6e7a8a;
+
+@asFontEditor-extend-value-color:                      #bdbdbd;
+@asFontEditor-extend-value-bgColor:                    #fff;
+@asFontEditor-extend-value-borderColor:                #dbddde;
+
+@asFontEditor-decorations-li-color:                    #bfc3c5;
+@asFontEditor-decorations-li_hover-color:              #5f6567;
+.asFontEditor {
+    display: inline-block;
+
+    &-trigger {
+        position: relative;
+        display: block;
+        line-height: 26px;
+        padding: 15px 20px;
+        border: 2px dashed @asFontEditor-trigger-borderColor;
+        // text-align: center;
+    }
+
+    &-font {
+        display: block;
+        width: 100%;
+        height: 100%;
+        color: @asFontEditor-font-color;
+        font-size: 14px;
+        span {
+            float: left;
+            margin-right: 8px;
+            font-size: 40px;
+            color: @asFontEditor-font-icon-color;
+        }
+    }
+
+    &-actions {
+        display: none;
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        width: 100%;
+        height: 100%;
+        color: @asFontEditor-actions-color;
+        font-size: 16px;
+        line-height: 56px;
+        text-align: center;
+        border: 2px solid @asFontEditor-actions-bgColor;
+        background-color: @asFontEditor-actions-borderColor;
+        cursor: pointer;
+    }
+
+    &-remove {
+        display: none;
+        position: absolute;
+        top: -11px;
+        right: -11px;
+        width: 16px;
+        height: 16px;
+        line-height: 18px;
+        color: @asFontEditor-remove-color;
+        font-family: 'asFont';
+        font-size: 16px;
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        text-align: center;
+        text-decoration: none;
+
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+
+        background-color: @asFontEditor-remove-bgColor;
+        border: 2px solid @asFontEditor-remove-borderColor;
+        .border-radius(50px);
+        &:before {
+            content: "\e627";
+        }
+    }
+
+
+
+
+    //state 
+    &_hasFont {
+        border-style: solid;
+    }
+
+    &_hide {
+        display: none;
+    }
+    &_show {
+        display: block;
+    }
+
+    //=========================
+    &-extend {
+        position: relative;
+        width: 310px;
+        padding: 25px 20px;
+        background-color: @asFontEditor-extend-bgColor;
+        
+        .box-sizing(border-box);
+    }
+
+    &-close {
+        position: absolute;
+        top: -9px;
+        right: -9px;
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        color: @asFontEditor-close-color;
+        font-family: 'asFont';
+        font-size: 0;
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        text-align: center;
+        text-decoration: none;
+
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-decoration: none;
+        background-color: @asFontEditor-close-bgColor;
+        border: 2px solid @asFontEditor-close-borderColor;
+        .border-radius(50px);
+        &:before {
+            font-size: 14px;
+            content: "\e626";
+        }
+    }
+
+    &-fontFamily,
+    &-fontSize,
+    &-lineHeight,
+    &-fontWeight {
+        padding: 5px 0;
+        margin-bottom: 20px;
+        .clearfix();
+
+        &-title {
+            float: left;
+            margin-top: 5px;
+            color: @asFontEditor-extend-title-color;
+            font-size: 12px;
+        }
+
+        &-content {
+            float: right;
+            width: 190px;
+            .clearfix();
+
+            ul {
+                margin: 0;
+                list-style: none;
+            }
+        }
+    }
+
+    //=======================
+    &-fontSize,
+    &-lineHeight {
+        &-title {
+            margin-top: 0;
+        }
+
+        &-value {
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            width: 38px;
+            height: 22px;
+            padding: 0 5px;
+            color: @asFontEditor-extend-value-color;
+            font-size: 12px;
+            line-height: 22px;
+            background-color: @asFontEditor-extend-value-bgColor;
+            border: 2px solid @asFontEditor-extend-value-borderColor;
+
+            text-align: center;
+        }
+    }
+
+    &-decorations {
+        display: block;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        overflow: hidden;
+        li {
+            float: left;
+            display: block;
+            width: 15px;
+            height: 15px;
+            margin-left: 16px;
+            margin-bottom: 0;
+            // background-color: #ececec;
+            cursor: pointer;
+            color: @asFontEditor-decorations-li-color;
+
+            font-family: 'asFont';
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+
+            /* Better Font Rendering =========== */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            &:first-child {
+                margin-left: 0;
+            }
+            &.asFontEditor_active,
+            &:hover {
+                color: @asFontEditor-decorations-li_hover-color;
+            }
+        }
+    }
+
+    .text-left:before {
+        content: "\e608";
+    }
+    .text-center:before {
+        content: "\e609";
+    }
+    .text-right:before {
+        content: "\e60a";
+    }
+    .text-italy:before {
+        content: "\e60b";
+    }
+    .text-uppercase:before {
+        content: "\e60c";
+    }
+    .text-lowercase:before {
+        content: "\e60d";
+    }
+    .text-capitalize:before {
+        content: "\e60f";
+    }
+    .text-underline:before {
+        content: "\e60e";
+    }
+    .text-linethrough:before {
+        content: "\e610";
+    }
+
+    .asDropdown {
+        height: 28px;
+        line-height: 28px;
+        i {
+            top: 7px;
+            right: 6px;
+            font-size: 14px;
+            font-family: 'asFont';
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+
+            /* Better Font Rendering =========== */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            &:before {
+                content: "\e607";
+            }
+        }
+    }
+
+    .asRange {
+        .inline-block();
+        width: 120px;
+        margin-right: 18px;
+        &-scale {
+            display: none
+        }
+    }
+
+}
+    

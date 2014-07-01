@@ -256,6 +256,35 @@ module.exports = function(grunt) {
           }]
         }
     },
+
+    // -- Concat Config -------------------------------------------------------
+    concat: {
+      dist: {
+        files: {
+          'dist/bgPicker.less': ['less/components/bgPicker/default.less', 'less/components/bgPicker/bgPicker.less'],
+          'dist/buttons.less': ['less/components/buttons/default.less', 'less/components/buttons/buttons.less'],
+          'dist/checkbox.less': ['less/components/checkbox/default.less', 'less/components/checkbox/checkbox.less'],
+          'dist/colorInput.less': ['less/components/colorInput/default.less', 'less/components/colorInput/colorInput.less'],
+          'dist/datepicker.less': ['less/components/datepicker/default.less', 'less/components/datepicker/datepicker.less'],
+          'dist/dropdown.less': ['less/components/dropdown/default.less', 'less/components/dropdown/dropdown.less'],
+          'dist/fontEditor.less': ['less/components/fontEditor/default.less', 'less/components/fontEditor/fontEditor.less'],
+          'dist/galleryPicker.less': ['less/components/galleryPicker/default.less', 'less/components/galleryPicker/galleryPicker.less'],
+          'dist/imagePicker.less': ['less/components/imagePicker/default.less', 'less/components/imagePicker/imagePicker.less'],
+          'dist/paginator.less': ['less/components/paginator/default.less', 'less/components/paginator/paginator.less'],
+          'dist/progress.less': ['less/components/progress/default.less', 'less/components/progress/progress.less'],
+          'dist/radio.less': ['less/components/radio/default.less', 'less/components/radio/radio.less'],
+          'dist/ranges.less': ['less/components/ranges/default.less', 'less/components/ranges/ranges.less'],
+          'dist/search.less': ['less/components/search/default.less', 'less/components/search/search.less'],
+          'dist/select.less': ['less/components/select/default.less', 'less/components/select/select.less'],
+          'dist/select2.less': ['less/components/select2/default.less', 'less/components/select2/select2.less'],
+          'dist/spinner.less': ['less/components/spinner/default.less', 'less/components/spinner/spinner.less'],
+          'dist/switch.less': ['less/components/switch/default.less', 'less/components/switch/switch.less'],
+          'dist/tab.less': ['less/components/tab/default.less', 'less/components/tab/tab.less'],
+          'dist/tooltip.less': ['less/components/tooltip/default.less', 'less/components/tooltip/tooltip.less'],
+          'dist/unitInput.less': ['less/components/unitInput/default.less', 'less/components/unitInput/unitInput.less']
+        },
+      },
+    },
     
     // -- Clean Config ---------------------------------------------------------
 
@@ -330,6 +359,6 @@ module.exports = function(grunt) {
   });
 
   // Default task.
-  grunt.registerTask('default', ['clean', 'css']);
+  grunt.registerTask('default', ['clean', 'css', 'concat']);
   grunt.registerTask('css', ['less','csscomb','cssmin']);
 };

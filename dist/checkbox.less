@@ -1,0 +1,84 @@
+@checkbox-color:                              #fff;
+@checkbox-bgColor:                            #ddd;
+@checkbox_hover-bgColor:                      @checkbox-bgColor;
+
+@checkbox_checked-bgColor:                    @az-reactive-color;
+@checkbox_checked_hover-bgColor:              @checkbox_checked-bgColor;
+
+@checkbox_disabled-bgColor:                   lighten(#ddd,6.8%);
+@checkbox_disabled_hover-bgColor:             @checkbox_disabled-bgColor;
+
+@checkbox_disabled_checked-bgColor:           #eee;
+@checkbox_disabled_checked_hover-bgColor:     @checkbox_disabled_checked-bgColor;
+// ==============================================
+// checkbox
+// ==============================================
+.asCheckbox {
+    position: relative;
+    .inline-block();
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    color: @checkbox-color;
+    vertical-align: middle;
+    background-color: @checkbox-bgColor;
+    cursor: pointer;
+
+    &&_hover {
+        font-size: 20px;
+    }
+
+    & + label {
+        .inline-block();
+        .user-select(none);
+    }
+
+    &_checkbox {
+        font-size: 0;
+        font-family: 'asFont';
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+
+        &:before {
+            content: "\e603";
+        }
+    }
+
+    &_checked {
+        font-size: 20px;
+        background-color: @checkbox_checked-bgColor;
+    }
+    &_checked&_hover {
+        font-size: 20px;
+        background-color: @checkbox_checked_hover-bgColor;
+    }
+
+    &_disabled {
+        font-size: 0;
+        background-color: @checkbox_disabled-bgColor;
+        cursor: default;
+    }
+    &_disabled&_hover {
+        font-size: 0;
+        background-color: @checkbox_disabled_hover-bgColor;
+    }
+
+    &_disabled&_checked {
+        font-size: 20px;
+        background-color: @checkbox_disabled_checked-bgColor;
+        cursor: default;
+    }
+    &_disabled&_checked&_hover {
+        font-size: 20px;
+        background-color: @checkbox_disabled_checked_hover-bgColor;
+    }
+}

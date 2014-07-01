@@ -1,0 +1,132 @@
+
+// input normal
+@spiner-input-color:                       #bbb;
+@spiner-input-bgColor:                     #fff;
+@spiner-input-borderColor:                 #e4e4e4;
+
+// input hover
+@spiner-input-hover-color:                 #444;
+@spiner-input-hover-borderColor:           #ccc;
+
+// input focus
+@spiner-input-focus-color:                 #444;
+@spiner-input-focus-borderColor:           @az-reactive-color;
+
+//arrow
+@spiner-arrow-color:                       #fff;
+@spiner-arrow-bgColor:                     #e4e4e4;
+
+@spiner-arrow-hover-color:                 #fff;
+@spiner-arrow-hover-bgColor:               #ccc;
+
+@spiner-arrow-focus-color:                 #fff;
+@spiner-arrow-focus-bgColor:               @az-reactive-color;
+
+@spiner-arrow-active-bgColor:              #6cc3ef;
+// ==============================================
+// spiner
+// ====================================================
+
+.asSpinner {
+    position: relative;
+    .inline-block();
+    .user-select(none);
+
+    > * {
+        vertical-align: middle;
+    }
+
+    &-control {
+        .inline-block();
+        width: 26px;
+        margin-left: -1px;
+    }
+    
+    input {
+        *float: left;
+        *display: inline;
+        height: 40px;
+        width: 158px;
+        padding-left: 10px;
+
+        padding: 10px\9;//for ie8 9
+        *height: auto;
+        *padding: 10px;
+        *font-size: 14px;
+        *line-height: 1;
+
+        color: @spiner-input-color;
+        background-color: @spiner-input-bgColor;
+        border: 2px solid @spiner-input-borderColor;
+        border-right: 0;
+        border-right: none;
+        .border-radius(0);
+    }
+
+    &-down,
+    &-up {
+        position: absolute;
+        display: block;
+        height: 20px;
+        width: 26px;
+        color: #fff;
+        font-family: 'asFont';
+        font-size: 20px;
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        text-align: center;
+        line-height: 1;
+
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    &-up {
+        top: 1px;
+        background-color: @spiner-arrow-bgColor;
+        &:before {
+            content: '\e605';
+        }
+    }
+
+    &-down {
+        background-color: @spiner-arrow-bgColor;
+        &:before {
+            content: '\e604';
+        }
+    }
+}
+
+.asSpinner:hover {
+    input {
+        color: @spiner-input-hover-color; 
+        border-color: @spiner-input-hover-borderColor;
+    }
+
+    .asSpinner-down,
+    .asSpinner-up {
+       background-color: @spiner-arrow-hover-bgColor;
+    }
+}
+
+.asSpinner_focus {
+    input {
+        color: @spiner-input-focus-color !important;
+        border-color: @spiner-input-focus-borderColor !important;
+        .box-shadow(none);
+    }
+
+    .asSpinner-down,
+    .asSpinner-up {
+       background-color: @spiner-arrow-focus-bgColor !important;
+    }
+}
+
+.asSpinner-down:active,
+.asSpinner-up:active {
+    background-color: @spiner-arrow-active-bgColor !important;
+}

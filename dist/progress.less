@@ -1,0 +1,21 @@
+@progress-bgColor:                                #eee;
+@progress-bar-color:                              #fff;
+@progress-bar-bgColor:                            @az-reactive-color;
+//===============================================
+//progress
+//==============================================
+.asProgress {
+	height: 14px;
+	margin-bottom: 20px;
+	overflow: hidden;
+	background-color: @progress-bgColor;
+
+	&-bar {
+		float: left;
+		height: 100%;
+		color: @progress-bar-color;
+		text-align: center;
+		background-color: @progress-bar-bgColor;
+		-moz-box-sizing: border-box;
+	}
+}

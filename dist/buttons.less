@@ -1,0 +1,247 @@
+@button-padding:                           12px 50px;
+@button-color:                             #fefefe;
+@button-fontSize:                          14px;
+@button-bgColor:                           #c4c6cc;
+@button_hover-color:                       @button-color;
+@button_hover-bgColor:                     #d2d4da;
+@button_active-color:                      @button-color;
+@button_active-bgColor:                    #8f9196;
+
+@button_primary-color:                     @button-color;
+@button_primary-bgColor:                   @az-reactive-color;
+@button_primary_hover-color:               @button-color;
+@button_primary_hover-bgColor:             hsl(hue(@az-reactive-color), 80%, 68%);
+@button_primary_active-color:              @button-color;
+@button_primary_active-bgColor:            darken(@az-reactive-color, 6%);
+
+@button_highlight-color:                   @button-color;
+@button_highlight-bgColor:                 #fca353;
+@button_highlight_hover-color:             @button-color;
+@button_highlight_hover-bgColor:           #ffbe6c;
+@button_highlight_active-color:            @button-color;
+@button_highlight_active-bgColor:          #ed9545;
+
+@button_action-color:                      @button-color;
+@button_action-bgColor:                    #74c56e;
+@button_action_hover-color:                @button-color;
+@button_action_hover-bgColor:              #90e289;
+@button_action_active-color:               @button-color;
+@button_action_active-bgColor:             #66b863;
+
+@button_caution-color:                     @button-color;
+@button_caution-bgColor:                   #f15c5c;
+@button_caution_hover-color:               @button-color;
+@button_caution_hover-bgColor:             #ff7975;
+@button_caution_active-color:              @button-color;
+@button_caution_active-bgColor:            #e24f51;
+
+@button_normal-color:                      @button-color;
+@button_normal-bgColor:                    #4d5357;
+@button_normal_hover-color:                @button-color;
+@button_normal_hover-bgColor:              #595f63;
+@button_normal_active-color:               @button-color;
+@button_normal_active-bgColor:             #363c40;
+
+@button-borderRadius:                      4px;
+
+@button_disabled-color:                    #aaa;
+@button_disabled-bgColor:                  #e4e4e4;
+
+@button_mini-padding:                      5px 9px;
+@button_mini-fontSize:                     10px;
+
+@button_small-padding:                     6px 11px;
+@button_small-fontSize:                    12px;
+
+@button_large-padding:                     10px 18px;
+@button_large-fontSize:                    18px;
+
+// ================================================
+// Buttons
+// ================================================
+.asButton {
+    .inline-block();
+    padding: @button-padding;
+    font-size: @button-fontSize;
+    color: @button-color;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1;
+    background-color: @button-bgColor;
+
+    vertical-align: middle;
+    cursor: pointer;
+
+    .user-select(none);
+
+    // Hover state
+    &:hover {
+        color: @button_hover-color;
+        text-decoration: none;
+        background-color: @button_hover-bgColor;
+    }
+
+    // Active state
+    &:active {
+        color: @button_active-color;
+        text-decoration: none;
+        background-color: @button_active-bgColor;
+    }
+
+    //remove focus dashed
+    outline: none;
+    &:focus {
+        outline: none;
+    }
+    &:active {
+        outline: none;
+    }
+
+    // button extend
+    &_primary {
+        color: @button_primary-color;
+        background-color: @button_primary-bgColor;
+        
+        &:hover {
+            color: @button_primary_hover-color;
+            background-color: @button_primary_hover-bgColor;
+        }
+
+        &:active {
+            color: @button_primary_active-color;
+            background-color: @button_primary_active-bgColor;
+        }
+    }
+
+    &_highlight {
+        color: @button_highlight-color;
+        background-color: @button_highlight-bgColor;
+        
+        &:hover {
+            color: @button_highlight_hover-color;
+            background-color: @button_highlight_hover-bgColor;
+        }
+
+        &:active {
+            color: @button_highlight_active-color;
+            background-color: @button_highlight_active-bgColor;
+        }
+    }
+
+    &_action {
+        color: @button_action-color;
+        background-color: @button_action-bgColor;
+        
+        &:hover {
+            color: @button_action_hover-color;
+            background-color: @button_action_hover-bgColor;
+        }
+
+        &:active {
+            color: @button_action_active-color;
+            background-color: @button_action_active-bgColor;
+        }
+    }
+
+    &_caution {
+        color: @button_caution-color;
+        background-color: @button_caution-bgColor;
+        
+        &:hover {
+            color: @button_caution_hover-color;
+            background-color: @button_caution_hover-bgColor;
+        }
+
+        &:active {
+            color: @button_caution_active-color;
+            background-color: @button_caution_active-bgColor;
+        }
+    }
+
+    &_normal {
+        color: @button_normal-color;
+        background-color: @button_normal-bgColor;
+        
+        &:hover {
+            color: @button_normal_hover-color;
+            background-color: @button_normal_hover-bgColor;
+        }
+
+        &:active {
+            color: @button_normal_active-color;
+            background-color: @button_normal_active-bgColor;
+        }
+    }
+
+    &_radius {
+        .border-radius(@button-borderRadius);
+    }
+    &_full {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    &_disabled {
+        cursor: default;
+        color: @button_disabled-color;
+        background-color: @button_disabled-bgColor;
+        &:hover {
+            color: @button_disabled-color;
+            background-color: @button_disabled-bgColor;
+        }
+
+        &:active {
+            color: @button_disabled-color;
+            background-color: @button_disabled-bgColor;
+        }
+    }
+
+    // button size
+    &_mini {
+        padding: @button_mini-padding;
+        font-size: @button_mini-fontSize;
+    }
+    &_small {
+        padding: @button_small-padding;
+        font-size: @button_small-fontSize;
+    }
+    &_large {
+        padding: @button_large-padding;
+        font-size: @button_large-fontSize;
+    }
+}
+
+
+//Button groups
+.asButtons {
+    .inline-block();
+    vertical-align: bottom;
+    .clearfix();
+    > .asButton, > input {
+        float: left;
+        margin-left: 0;
+        border-left: 1px solid rgba(255,255,255,0.5);
+
+        &:first-child {
+            border-left: none;
+        }
+    }
+}
+
+
+.asButton::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+    outline: 0;
+}
+
+button.asButton,
+input.asButton {
+    border: 0;
+    border: none;
+}
+
+button.asButton {
+    *overflow: visible;
+}
