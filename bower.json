@@ -32,7 +32,7 @@
     "jquery-asBgPicker": "git@github.com:amazingSurge/jquery-asBgPicker.git#master",
     "jquery-asImagePicker": "git@github.com:amazingSurge/jquery-asImagePicker.git#master",
     "jquery-mousewheel": "git@github.com:brandonaaron/jquery-mousewheel.git",
-    "jquery-asGalleryUpload": "git@github.com:amazingSurge/jquery-asGalleryUpload.git#master"
+    "jquery-asGalleryPicker": "git@github.com:amazingSurge/jquery-asGalleryPicker.git#master"
   },
   "resolutions": {
     "jquery-asDropdown": "master",
