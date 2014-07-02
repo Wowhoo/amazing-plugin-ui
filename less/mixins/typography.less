@@ -134,39 +134,6 @@
 // .font-size-em(14px, 18px);
 // -----------------------------------------------
 
-
-// .rem
-// -------
-// property: margin | padding | width | height
-// value: rem
-.rem(@property, @value, @default-font-size: @default-font-size) {
-    @length: length(@value);
-    @default-value: unit(@default-font-size);
-
-    .inseption(@property, @value) when (@length = 1) {
-        @px-value: unit(unit(extract(@value, 1))*@default-value,px);
-    .property-inseption(@property, @px-value)
-    }
-    .inseption(@property, @value) when (@length = 2) {
-        @px-value: unit(unit(extract(@value, 1))*@default-value,px) unit(unit(extract(@value, 2))*@default-value,px);
-    .property-inseption(@property, @px-value)
-    }
-    .inseption(@property, @value) when (@length = 3) {
-        @px-value: unit(unit(extract(@value, 1))*@default-value,px) unit(unit(extract(@value, 2))*@default-value,px) unit(unit(extract(@value, 3))*@default-value,px);
-    .property-inseption(@property, @px-value)
-    }
-    .inseption(@property, @value) when (@length = 4) {
-        @px-value: unit(unit(extract(@value, 1))*@default-value,px) unit(unit(extract(@value, 2))*@default-value,px) unit(unit(extract(@value, 3))*@default-value,px) unit(unit(extract(@value, 4))*@default-value,px);
-    .property-inseption(@property, @px-value)
-    }
-
-    .property-inseption(@property, @px-value) {
-        @output: ~'0; @{property}: @{px-value}; @{property}: @{value}';
-        -pl-property: @output;
-    }
-    .inseption(@property, @value);
-}
-
 // Font size
 // -----------------
 // value: px | em | %
@@ -255,11 +222,11 @@
 // force-wrap
 .wrap-words() {
   -ms-word-break: break-all;
-  word-break: break-all;
-  word-break: break-word;
+      word-break: break-all;
+      word-break: break-word;
   -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;
+     -moz-hyphens: auto;
+          hyphens: auto;
 }
 
 
@@ -276,14 +243,14 @@
 // ----------------
 // values: px | em
 .line-height(@size, @default-font-size: @default-font-size, @context-px-size: @default-font-size) {
-    .inception(@size) when (ispixel(@size)) {
+    .inseption(@size) when (ispixel(@size)) {
         @px-size: unit(@size);
         @default-size: unit(@default-font-size);
         @rem-size: (@px-size / @default-size);
         line-height: ~"@{px-size}px";
         line-height: ~"@{rem-size}rem";
     }
-    .inception(@size) when (isem(@size)) {
+    .inseption(@size) when (isem(@size)) {
         @em-size: unit(@size);
         @context-size: unit(@context-px-size);
         @default-size: unit(@default-font-size);
@@ -291,7 +258,7 @@
         line-height: ~"@{em-size}em";
         line-height: ~"@{rem-size}rem";
     }
-    .inception(@size);
+    .inseption(@size);
 }
 
 // .line-height-em
@@ -325,30 +292,47 @@
 
 // Rhythm 
 // ------
+.rhythm-property(@property, @lines, @default-font-size: @default-font-size) {
+	.inception(@rhythm-space) when (isunit(@rhythm-space, rem)) {
+		@rem-value: @rhythm-space * @lines;
+		.rem(@property, @rem-value);
+	}
+
+	.inception(@rhythm-space) when (ispixel(@rhythm-space)) {
+		@px-value: @rhythm-space * @lines;
+		.px-to-rem(@property, @rem-value);
+	}
+
+	.inception(@rhythm-space) when (isem(@rhythm-space)) {
+		@{property}: @rhythm-space * @lines;
+	}
+
+	.inception(@rhythm-space);
+}
 .rhythm-margin(@lines: 1) {
-    margin-top: (@rhythm-space * @lines);
-    margin-bottom: (@rhythm-space * @lines);
+    .rhythm-property(margin-top, @lines);
+    .rhythm-property(margin-bottom, @lines);
 }
 
 .rhythm-margin-top(@lines: 1) {
-    margin-top: (@rhythm-space * @lines);
+    .rhythm-property(margin-top, @lines);
 }
 
 .rhythm-margin-bottom(@lines: 1) {
-    margin-bottom: (@rhythm-space * @lines);
+    .rhythm-property(margin-bottom, @lines);
 }
 
 .rhythm-padding(@lines: 1) {
-    padding-top: (@rhythm-space * @lines);
-    padding-bottom: (@rhythm-space * @lines);
+    .rhythm-property(padding-top, @lines);
+    .rhythm-property(padding-bottom, @lines);
 }
 
 .rhythm-padding-top(@lines: 1) {
-    padding-top: (@rhythm-space * @lines);
+    .rhythm-property(padding-top, @lines);
 }
 
 .rhythm-padding-bottom(@lines: 1) {
-    padding-bottom: (@rhythm-space * @lines);
+    .rhythm-property(padding-bottom, @lines);
 }
 
 

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/wp-admin.css">
+    <link rel="stylesheet" href="../css/highlighting//github.css">
+    <link rel="stylesheet" type="text/css" href="../css/adaptGrid.css">
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../../css/amazing-plugin-ui-min.css">
+    <style>
+        body {
+            padding: 40px;
+            font-size: 16px;
+        }
+        .demo {
+            list-style: none;
+        }
+        .demo li {
+            margin-bottom: 20px;
+        }
+        .a-asGalleryUpload {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h2>IconPicker</h2>
+        <section>
+            <h3>Default</h3>
+            <div class="row">
+                <div class="column half">
+                    <h4>HTML</h4>
+                    <pre><code data-language="html">&lt;select&nbsp;id=&quot;default&quot;&nbsp;name=&quot;default&quot;&nbsp;class=&quot;default&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-user&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-search&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-caret-right&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-star&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-times&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-refresh&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-rocket&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-eye&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-tag&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-bookmark&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-heart&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-adn&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-cloud-upload&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-phone-square&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-cog&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-wrench&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-volume-down&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-caret-down&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-caret-up&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-caret-left&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-thumbs-up&lt;/option&gt;
+&lt;/select&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.default').asIconPicker();
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</code></pre>
+                </div>
+                <div class="column half">
+                    <h4>RENDERED HTML</h4>
+                    <select id="default" name="default" class="default">
+                        <option>fa-user</option>
+                        <option>fa-search</option>
+                        <option>fa-caret-right</option>
+                        <option>fa-star</option>
+                        <option>fa-times</option>
+                        <option>fa-refresh</option>
+                        <option>fa-rocket</option>
+                        <option>fa-eye</option>
+                        <option>fa-tag</option>
+                        <option>fa-bookmark</option>
+                        <option>fa-heart</option>
+                        <option>fa-adn</option>
+                        <option>fa-cloud-upload</option>
+                        <option>fa-phone-square</option>
+                        <option>fa-cog</option>
+                        <option>fa-wrench</option>
+                        <option>fa-volume-down</option>
+                        <option>fa-caret-down</option>
+                        <option>fa-caret-up</option>
+                        <option>fa-caret-left</option>
+                        <option>fa-thumbs-up</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+        <hr />
+        <section>
+            <h3>Group</h3>
+            <div class="row">
+                <div class="column half">
+                    <h4>HTML</h4>
+                    <pre><code data-language="html">&lt;select&nbsp;id=&quot;group&quot;&nbsp;name=&quot;group&quot;&nbsp;class=&quot;group&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;optgroup&nbsp;label=&quot;Weather&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;fa-caret-right&quot;&gt;Caret-right&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;fa-caret-down&quot;&gt;Caret-down&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;fa-caret-up&quot;&gt;Caret-up&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;fa-caret-left&quot;&gt;Caret-left&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;fa-eye&quot;&gt;Eye&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;fa-tag&quot;&gt;Tag&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;fa-cog&quot;&gt;Cog&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;fa-wrench&quot;&gt;Wrench&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;fa-volume-down&quot;&gt;Volume-down&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;fa-thumbs-up&quot;&gt;Thumbs-up&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/optgroup&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;optgroup&nbsp;label=&quot;Commerce&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;fa-user&quot;&gt;User&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;fa-search&quot;&gt;Search&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;fa-star&quot;&gt;Star&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;fa-times&quot;&gt;Times&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;fa-refresh&quot;&gt;Refresh&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;fa-rocket&quot;&gt;Rocket&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;fa-bookmark&quot;&gt;Bookmark&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;fa-heart&quot;&gt;Heart&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;fa-adn&quot;&gt;Adn&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;fa-cloud-upload&quot;&gt;Cloud-upload&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value=&quot;fa-phone-square&quot;&gt;Phone-square&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/optgroup&gt;
+&lt;/select&gt;
+&lt;/select&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.group').asIconPicker();
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</code></pre>
+                </div>
+                <div class="column half">
+                    <h4>RENDERED HTML</h4>
+                    <select id="group" name="group" class="group">
+                        <optgroup label="Weather">
+                            <option value="fa-caret-right">Caret-right</option>
+                            <option value="fa-caret-down">Caret-down</option>
+                            <option value="fa-caret-up">Caret-up</option>
+                            <option value="fa-caret-left">Caret-left</option>
+                            <option value="fa-eye">Eye</option>
+                            <option value="fa-tag">Tag</option>
+                            <option value="fa-cog">Cog</option>
+                            <option value="fa-wrench">Wrench</option>
+                            <option value="fa-volume-down">Volume-down</option>
+                            <option value="fa-thumbs-up">Thumbs-up</option>
+                        </optgroup>
+                        <optgroup label="Commerce">
+                            <option value="fa-user">User</option>
+                            <option value="fa-search">Search</option>
+                            <option value="fa-star">Star</option>
+                            <option value="fa-times">Times</option>
+                            <option value="fa-refresh">Refresh</option>
+                            <option value="fa-rocket">Rocket</option>
+                            <option value="fa-bookmark">Bookmark</option>
+                            <option value="fa-heart">Heart</option>
+                            <option value="fa-adn">Adn</option>
+                            <option value="fa-cloud-upload">Cloud-upload</option>
+                            <option value="fa-phone-square">Phone-square</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+        </section>
+        <hr />
+        <section>
+            <h3>Load from TEXT input field</h3>
+            <div class="row">
+                <div class="column half">
+                    <h4>HTML</h4>
+                    <pre><code data-language="html">&lt;input&nbsp;type=&quot;text&quot;&nbsp;name=&quot;input&quot;&nbsp;id=&quot;default_input&quot;&gt;&lt;/input&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('#default_input').asIconPicker(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;source:&nbsp;[{'value':&nbsp;'fa-caret-right',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'text':&nbsp;'Caret-right'},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'value':&nbsp;'fa-star',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'text':&nbsp;'Star'},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'value':&nbsp;'fa-heart',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'text':&nbsp;'Heart'},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'value':&nbsp;'fa-cloud-upload',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'text':&nbsp;'Cloud-upload'},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'value':&nbsp;'fa-phone-square',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'text':&nbsp;'Phone-square'},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'value':&nbsp;'fa-bookmark',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'text':&nbsp;'Bookmark'}]
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</code></pre>
+                </div>
+                <div class="column half">
+                    <h4>RENDERED HTML</h4>
+                    <input type="text" name="input" id="default_input"></input>
+                </div>
+            </div>
+        </section>
+        <hr />
+        <section>
+            <h3>Load from TEXT input field (Group)</h3>
+            <div class="row">
+                <div class="column half">
+                    <h4>HTML</h4>
+                    <pre><code data-language="html">&lt;input&nbsp;type=&quot;text&quot;&nbsp;name=&quot;input&quot;&nbsp;id=&quot;group_input&quot;&gt;&lt;/input&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('#group_input').asIconPicker(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;source:&nbsp;[{'label':&nbsp;&nbsp;&nbsp;'Weather',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'options':&nbsp;['fa-caret-right',&nbsp;'fa-star',&nbsp;'fa-heart',&nbsp;'fa-cloud-upload',&nbsp;'fa-phone-square',&nbsp;'fa-bookmark']},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'label':&nbsp;&nbsp;&nbsp;'Weather',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'options':&nbsp;['fa-user',&nbsp;'fa-search',&nbsp;'fa-rocket',&nbsp;'fa-times',&nbsp;'fa-refresh',&nbsp;'fa-adn']
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}]
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</code></pre>
+                </div>
+                <div class="column half">
+                    <h4>RENDERED HTML</h4>
+                    <input type="text" name="input" id="group_input"></input>
+                </div>
+            </div>
+        </section>
+        <hr />
+        <section>
+            <h3>Flat</h3>
+            <div class="row">
+                <div class="column half">
+                    <h4>HTML</h4>
+                    <pre><code data-language="html">&lt;select&nbsp;name=&quot;default&quot;&nbsp;class=&quot;flat&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-user&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-search&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-caret-right&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-star&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-times&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-refresh&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-rocket&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-eye&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-tag&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-bookmark&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-heart&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-adn&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-cloud-upload&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-phone-square&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-cog&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-wrench&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-volume-down&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-caret-down&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-caret-up&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-caret-left&lt;/option&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;fa-thumbs-up&lt;/option&gt;
+&lt;/select&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.flat').asIconPicker({flat:&nbsp;true});
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</code></pre>
+                </div>
+                <div class="column half">
+                    <h4>RENDERED HTML</h4>
+                    <select name="default" class="flat">
+                        <option>fa-user</option>
+                        <option>fa-search</option>
+                        <option>fa-caret-right</option>
+                        <option>fa-star</option>
+                        <option>fa-times</option>
+                        <option>fa-refresh</option>
+                        <option>fa-rocket</option>
+                        <option>fa-eye</option>
+                        <option>fa-tag</option>
+                        <option>fa-bookmark</option>
+                        <option>fa-heart</option>
+                        <option>fa-adn</option>
+                        <option>fa-cloud-upload</option>
+                        <option>fa-phone-square</option>
+                        <option>fa-cog</option>
+                        <option>fa-wrench</option>
+                        <option>fa-volume-down</option>
+                        <option>fa-caret-down</option>
+                        <option>fa-caret-up</option>
+                        <option>fa-caret-left</option>
+                        <option>fa-thumbs-up</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <script type="text/javascript" src="../js/highlighting/rainbow.min.js"></script>
+    <script type="text/javascript" src="../js/highlighting/html.js"></script>
+    <script type="text/javascript" src="../js/highlighting/javascript.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/jquery-asIconPicker.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-asTooltip.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-asScrollbar.min.js"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.default').asIconPicker();
+            $('.group').asIconPicker();
+            $('#default_input').asIconPicker({
+                source: {'fa-caret-right': 'Caret-right',
+                         'fa-star': 'Star',
+                         'fa-heart': 'Heart',
+                         'fa-cloud-upload': 'Cloud-upload',
+                         'fa-phone-square': 'Phone-square',
+                         'fa-bookmark': 'Bookmark'}
+            });
+            $('#group_input').asIconPicker({
+                source: [{'label':   'Weather',
+                          'options': ['fa-caret-right', 'fa-star', 'fa-heart', 'fa-cloud-upload', 'fa-phone-square', 'fa-bookmark']},
+                         {'label':   'Weather',
+                          'options': ['fa-user', 'fa-search', 'fa-rocket', 'fa-times', 'fa-refresh', 'fa-adn']
+                        }]
+            });
+            $('.flat').asIconPicker({flat: true});
+        });
+    </script>
+</body>
+</html>

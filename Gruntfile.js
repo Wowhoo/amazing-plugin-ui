@@ -35,6 +35,20 @@ module.exports = function(grunt) {
             }
           ]
         },
+        fontAwesome: {
+          files: [{
+              expand: true,
+              cwd: 'bower_components/fontAwesome/fonts/',
+              src:  '**',
+              dest: 'test/fonts/'
+            },
+            {
+              flatten: true,
+              src: 'bower_components/fontAwesome/css/font-awesome.css', 
+              dest: 'test/css/font-awesome.css'
+            }
+          ]
+        },
         normalize: {
           files: [{
             src: 'bower_components/normalize-css/normalize.css', 
@@ -64,6 +78,15 @@ module.exports = function(grunt) {
             cwd: 'bower_components/rainbow/themes',
             src: 'github.css',
             dest: 'test/css/highlighting/'
+          }]
+        },
+        sortable: {
+          files: [{
+            expand: true,
+            flatten: true,
+            cwd: 'bower_components/Sortable/',
+            src: 'Sortable.min.js',
+            dest: 'test/js'
           }]
         },
         mixins: {
@@ -140,12 +163,21 @@ module.exports = function(grunt) {
             dest: 'test/js'
           }]
         },
-        jquery_asGalleryUpload: {
+        jquery_asGalleryPicker: {
           files: [{
             expand: true,
             flatten: true,
-            cwd: 'bower_components/jquery-asGalleryUpload/dist',
-            src: 'jquery-asGalleryUpload.min.js',
+            cwd: 'bower_components/jquery-asGalleryPicker/dist',
+            src: 'jquery-asGalleryPicker.min.js',
+            dest: 'test/js'
+          }]
+        },
+        jquery_asIconPicker: {
+          files: [{
+            expand: true,
+            flatten: true,
+            cwd: 'bower_components/jquery-asIconPicker/dist',
+            src: 'jquery-asIconPicker.min.js',
             dest: 'test/js'
           }]
         },
@@ -155,6 +187,15 @@ module.exports = function(grunt) {
             flatten: true,
             cwd: 'bower_components/jquery-asImagePicker/src',
             src: 'jquery-asImagePicker.js',
+            dest: 'test/js'
+          }]
+        },
+        jquery_asItemList: {
+          files: [{
+            expand: true,
+            flatten: true,
+            cwd: 'bower_components/jquery-asItemList/dist',
+            src: 'jquery-asItemList.min.js',
             dest: 'test/js'
           }]
         },
@@ -191,6 +232,15 @@ module.exports = function(grunt) {
             flatten: true,
             cwd: 'bower_components/jquery-asSpinner/dist',
             src: 'jquery-asSpinner.min.js',
+            dest: 'test/js'
+          }]
+        },
+        jquery_asScrollbar: {
+          files: [{
+            expand: true,
+            flatten: true,
+            cwd: 'bower_components/jquery-asScrollbar/dist',
+            src: 'jquery-asScrollbar.min.js',
             dest: 'test/js'
           }]
         },

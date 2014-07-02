@@ -2,6 +2,7 @@
   // center-block
   // clearfix
   // hidden
+  // rem
   // margin
   // padding
   // resizable
@@ -98,6 +99,84 @@
 }
 
 
+// ===========
+// Rem
+// ===========
+// Rem related mixins
+// @link caniuse http://caniuse.com/rem
+//
+// Examples:
+// .rem(padding, 1rem);
+// .rem(padding, 1rem 0.5rem, 12px);
+// .px-to-rem(margin, 12px 12px);
+// .px-to-rem(padding-top, 12px);
+// -----------------------------------------------
+
+// Rem with ie compatibility
+// -------
+// property: margin | padding | width | height
+// value: rem
+.rem(@property, @value, @default-font-size: @default-font-size) {
+    @length: length(@value);
+    @default-value: unit(@default-font-size);
+
+    .inseption(@length) when (@length = 1) {
+        @px-value: unit(unit(extract(@value, 1))*@default-value,px);
+        .property-inseption(@property, @px-value)
+    }
+    .inseption(@length) when (@length = 2) {
+        @px-value: unit(unit(extract(@value, 1))*@default-value,px) unit(unit(extract(@value, 2))*@default-value,px);
+        .property-inseption(@property, @px-value)
+    }
+    .inseption(@length) when (@length = 3) {
+        @px-value: unit(unit(extract(@value, 1))*@default-value,px) unit(unit(extract(@value, 2))*@default-value,px) unit(unit(extract(@value, 3))*@default-value,px);
+        .property-inseption(@property, @px-value)
+    }
+    .inseption(@length) when (@length = 4) {
+        @px-value: unit(unit(extract(@value, 1))*@default-value,px) unit(unit(extract(@value, 2))*@default-value,px) unit(unit(extract(@value, 3))*@default-value,px) unit(unit(extract(@value, 4))*@default-value,px);
+        .property-inseption(@property, @px-value)
+    }
+
+    .property-inseption(@property, @px-value) {
+        @{property}: @px-value;
+        @{property}: @value;
+    }
+    .inseption(@length);
+}
+
+// Px to Rem
+// -------
+// property: margin | padding | width | height
+// value: px
+.px-to-rem(@property, @value, @default-font-size: @default-font-size) {
+    @length: length(@value);
+    @default-value: unit(@default-font-size);
+
+    .inseption(@length) when (@length = 1) {
+        @rem-value: unit(unit(extract(@value, 1))/@default-value,rem);
+        .property-inseption(@property, @rem-value);
+    }
+    .inseption(@length) when (@length = 2) {
+        @rem-value: unit(unit(extract(@value, 1))/@default-value,rem) unit(unit(extract(@value, 2))/@default-value,rem);
+        .property-inseption(@property, @rem-value);
+    }
+    .inseption(@length) when (@length = 3) {
+        @rem-value: unit(unit(extract(@value, 1))/@default-value,rem) unit(unit(extract(@value, 2))/@default-value,rem) unit(unit(extract(@value, 3))/@default-value,rem);
+        .property-inseption(@property, @rem-value);
+    }
+    .inseption(@length) when (@length = 4) {
+        @rem-value: unit(unit(extract(@value, 1))/@default-value,rem) unit(unit(extract(@value, 2))/@default-value,rem) unit(unit(extract(@value, 3))/@default-value,rem) unit(unit(extract(@value, 4))/@default-value,rem);
+        .property-inseption(@property, @rem-value);
+    }
+
+    .property-inseption(@property, @rem-value) {
+        @{property}: @value;
+        @{property}: @rem-value;
+    }
+    .inseption(@length);
+}
+
+
 // ==========
 // Margin
 // ==========
@@ -139,19 +218,19 @@
  
     .inseption(@value) when (@length = 1) {
         @rem-value: unit(unit(extract(@value, 1))/@default-value,rem);
-    .margin-inseption(@rem-value)
+        .margin-inseption(@rem-value)
     }
     .inseption(@value) when (@length = 2) {
         @rem-value: unit(unit(extract(@value, 1))/@default-value,rem) unit(unit(extract(@value, 2))/@default-value,rem);
-    .margin-inseption(@rem-value)
+        .margin-inseption(@rem-value)
     }
     .inseption(@value) when (@length = 3) {
         @rem-value: unit(unit(extract(@value, 1))/@default-value,rem) unit(unit(extract(@value, 2))/@default-value,rem) unit(unit(extract(@value, 3))/@default-value,rem);
-    .margin-inseption(@rem-value)
+        .margin-inseption(@rem-value)
     }
     .inseption(@value) when (@length = 4) {
         @rem-value: unit(unit(extract(@value, 1))/@default-value,rem) unit(unit(extract(@value, 2))/@default-value,rem) unit(unit(extract(@value, 3))/@default-value,rem) unit(unit(extract(@value, 4))/@default-value,rem);
-    .margin-inseption(@rem-value)
+        .margin-inseption(@rem-value)
     }
     .margin-inseption(@value) {
          margin: @value;
@@ -190,19 +269,19 @@
  
     .inseption(@value) when (@length = 1) {
         @em-value: unit(unit(extract(@value, 1))/@default-value,em);
-    .margin-inseption(@em-value)
+        .margin-inseption(@em-value)
     }
     .inseption(@value) when (@length = 2) {
         @em-value: unit(unit(extract(@value, 1))/@default-value,em) unit(unit(extract(@value, 2))/@default-value,em);
-    .margin-inseption(@em-value)
+        .margin-inseption(@em-value)
     }
     .inseption(@value) when (@length = 3) {
         @em-value: unit(unit(extract(@value, 1))/@default-value,em) unit(unit(extract(@value, 2))/@default-value,em) unit(unit(extract(@value, 3))/@default-value,em);
-    .margin-inseption(@em-value)
+        .margin-inseption(@em-value)
     }
     .inseption(@value) when (@length = 4) {
         @em-value: unit(unit(extract(@value, 1))/@default-value,em) unit(unit(extract(@value, 2))/@default-value,em) unit(unit(extract(@value, 3))/@default-value,em) unit(unit(extract(@value, 4))/@default-value,em);
-    .margin-inseption(@em-value)
+        .margin-inseption(@em-value)
     }
  
     .margin-inseption(@value) {

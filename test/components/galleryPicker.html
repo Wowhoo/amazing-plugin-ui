@@ -25,7 +25,7 @@
         .demo li {
             margin-bottom: 20px;
         }
-        .a-asGalleryUpload {
+        .a-asGalleryPicker {
             display: block;
         }
     </style>
@@ -36,10 +36,10 @@
         <div class="row">
             <div class="column half">
                 <h4>HTML</h4>
-                <pre><code data-language="html">&lt;input&nbsp;type=&quot;text&quot;&nbsp;class=&quot;a-asGalleryUpload&quot;&nbsp;&nbsp;value='../../images/grass.jpg,../../images/minv.jpg,../../images/mh370.jpg,../../images/sun.jpg'&nbsp;/&gt;
+                <pre><code data-language="html">&lt;input&nbsp;type=&quot;text&quot;&nbsp;class=&quot;a-asGalleryPicker&quot;&nbsp;&nbsp;value='../../images/grass.jpg,../../images/minv.jpg,../../images/mh370.jpg,../../images/sun.jpg'&nbsp;/&gt;
 &lt;script&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.a-asGalleryUpload').asGalleryUpload(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.a-asGalleryPicker').asGalleryPicker(
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onAdd:&nbsp;function(){
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;value&nbsp;=&nbsp;[&quot;../../images/sun.jpg&quot;,&quot;../../images/minv.jpg&quot;,&quot;../../images/mh370.jpg&quot;];
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.add(value);
@@ -54,7 +54,7 @@
             <div class="column half">
                 <h4>RENDERED HTML</h4>
                 <form action="">
-                    <input type="text" class="a-asGalleryUpload"  value='../../images/grass.jpg,../../images/minv.jpg,../../images/mh370.jpg,../../images/sun.jpg' />
+                    <input type="text" class="a-asGalleryPicker"  value='../../images/grass.jpg,../../images/minv.jpg,../../images/mh370.jpg,../../images/sun.jpg' />
                 </form>
             </div>
         </div>
@@ -64,10 +64,10 @@
     <script type="text/javascript" src="../js/highlighting/html.js"></script>
     <script type="text/javascript" src="../js/highlighting/javascript.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
-    <script type="text/javascript" src="../js/jquery-asGalleryUpload.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-asGalleryPicker.min.js"></script>
     
     <script type="text/javascript">
-        $('.a-asGalleryUpload').asGalleryUpload({
+        $('.a-asGalleryPicker').asGalleryPicker({
             onAdd: function(){
                 var value = ["../../images/sun.jpg","../../images/minv.jpg","../../images/mh370.jpg"];
                 this.add(value);

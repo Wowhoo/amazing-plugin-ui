@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/wp-admin.css">
+    <link rel="stylesheet" href="../css/highlighting//github.css">
+    <link rel="stylesheet" type="text/css" href="../css/adaptGrid.css">
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../../css/amazing-plugin-ui-min.css">
+    <style>
+        body {
+            padding: 40px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h2>ItemList</h2>
+        <section>
+            <h3>Input</h3>
+            <div class="row">
+                <div class="column half">
+                    <h4>HTML</h4>
+                    <pre><code data-language="html">&lt;input&nbsp;type=&quot;text&quot;&nbsp;class=&quot;default&quot;&nbsp;value='[{&quot;icon&quot;:&nbsp;&quot;fa-user&quot;,&nbsp;&quot;title&quot;:&nbsp;&quot;User&quot;},&nbsp;{&quot;icon&quot;:&nbsp;&quot;fa-cloud-upload&quot;,&nbsp;&quot;title&quot;:&nbsp;&quot;Cloud-upload&quot;},&nbsp;{&quot;icon&quot;:&nbsp;&quot;fa-search&quot;,&nbsp;&quot;title&quot;:&nbsp;&quot;Search&quot;}]'&nbsp;name=&quot;default&quot;/&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.default').asItemList({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sortableID:&nbsp;'default-list',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;render:&nbsp;function(item)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;'&lt;i&nbsp;class=&quot;fa&nbsp;'&nbsp;+&nbsp;item.icon&nbsp;+&nbsp;'&quot;&gt;&lt;/i&gt;'&nbsp;+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'&lt;span&gt;'&nbsp;+&nbsp;item.title&nbsp;+&nbsp;'&lt;/span&gt;';
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onAdd:&nbsp;function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;value&nbsp;=&nbsp;'{&quot;icon&quot;:&nbsp;&quot;fa-heart&quot;,&nbsp;&quot;title&quot;:&nbsp;&quot;Heart&quot;}';
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('&lt;button&nbsp;id=&quot;api-addItem-click&quot;&gt;addItem&lt;/button&gt;').insertBefore($(&quot;.default&quot;).parent());
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('#api-addItem-click').val(value);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('#api-addItem-click').click(function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;value&nbsp;=&nbsp;$(this).val();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.default').asItemList('add',&nbsp;value);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('#api-addItem-click').remove();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onEdit:&nbsp;function(evt)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;edit&nbsp;=&nbsp;'{&quot;icon&quot;:&nbsp;&quot;fa-heart&quot;,&nbsp;&quot;title&quot;:&nbsp;&quot;Heart&quot;}',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;=&nbsp;$('.default').val(),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index&nbsp;=&nbsp;$(evt).data('index');
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;edit&nbsp;=&nbsp;$.parseJSON(edit);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;=&nbsp;$.parseJSON(value);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[index]&nbsp;=&nbsp;edit;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.default').val(JSON.stringify(value));
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.default').asItemList('update')
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.default').click(function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;html&nbsp;=&nbsp;'&lt;div&gt;The&nbsp;list&nbsp;is&nbsp;&quot;'&nbsp;+&nbsp;$('.default').asItemList('get')&nbsp;+&nbsp;'&quot;&lt;/div&gt;';
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(html).insertBefore($('#api-get-info'));
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;false;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</code></pre>
+                </div>
+                <div class="column half">
+                    <h4>RENDERED HTML</h4>
+                    <input type="text" class="default" value='[{"icon": "fa-user", "title": "User"}, {"icon": "fa-cloud-upload", "title": "Cloud-upload"}, {"icon": "fa-search", "title": "Search"}]' name="default"/>
+                    
+                    <button id="api-get-click">getIcon</button>
+                    <div class="example" id="api-get-info"></div>
+                </div>
+            </div>
+        </section>
+        <hr />
+        <section>
+            <h3>Textarea</h3>
+            <div class="row">
+                <div class="column half">
+                    <h4>HTML</h4>
+                    <pre><code data-language="html">&lt;textarea&nbsp;class=&quot;textarea&quot;&gt;[{&quot;icon&quot;:&nbsp;&quot;fa-user&quot;,&nbsp;&quot;title&quot;:&nbsp;&quot;User&quot;},&nbsp;{&quot;icon&quot;:&nbsp;&quot;fa-cloud-upload&quot;,&nbsp;&quot;title&quot;:&nbsp;&quot;Cloud-upload&quot;},&nbsp;{&quot;icon&quot;:&nbsp;&quot;fa-search&quot;,&nbsp;&quot;title&quot;:&nbsp;&quot;Search&quot;},&nbsp;{&quot;icon&quot;:&nbsp;&quot;fa-caret-down&quot;,&nbsp;&quot;title&quot;:&nbsp;&quot;caret-down&quot;},&nbsp;{&quot;icon&quot;:&nbsp;&quot;fa-caret-up&quot;,&nbsp;&quot;title&quot;:&nbsp;&quot;caret-up&quot;},&nbsp;{&quot;icon&quot;:&nbsp;&quot;fa-caret-right&quot;,&nbsp;&quot;title&quot;:&nbsp;&quot;caret-right&quot;},&nbsp;{&quot;icon&quot;:&nbsp;&quot;fa-caret-left&quot;,&nbsp;&quot;title&quot;:&nbsp;&quot;caret-left&quot;}]&lt;/textarea&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function(){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.textarea').asItemList({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sortableID:&nbsp;'textarea-list',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;render:&nbsp;function(item)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;'&lt;i&nbsp;class=&quot;fa&nbsp;'&nbsp;+&nbsp;item.icon&nbsp;+&nbsp;'&quot;&gt;&lt;/i&gt;'&nbsp;+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'&lt;span&gt;'&nbsp;+&nbsp;item.title&nbsp;+&nbsp;'&lt;/span&gt;';
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onAdd:&nbsp;function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;value&nbsp;=&nbsp;'{&quot;icon&quot;:&nbsp;&quot;fa-heart&quot;,&nbsp;&quot;title&quot;:&nbsp;&quot;Heart&quot;}';
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('&lt;button&nbsp;id=&quot;api-addItem2-click&quot;&gt;addItem2&lt;/button&gt;').insertBefore($(&quot;.textarea&quot;).parent());
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('#api-addItem2-click').val(value);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('#api-addItem2-click').click(function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;value&nbsp;=&nbsp;$(this).val();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.textarea').asItemList('add',&nbsp;value);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('#api-addItem2-click').remove();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onEdit:&nbsp;function(evt)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;edit&nbsp;=&nbsp;'{&quot;icon&quot;:&nbsp;&quot;fa-heart&quot;,&nbsp;&quot;title&quot;:&nbsp;&quot;Heart&quot;}',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;=&nbsp;$('.textarea').val(),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index&nbsp;=&nbsp;$(evt).data('index');
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;edit&nbsp;=&nbsp;$.parseJSON(edit);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;=&nbsp;$.parseJSON(value);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[index]&nbsp;=&nbsp;edit;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.textarea').val(JSON.stringify(value));
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.textarea').asItemList('update')
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.textarea').click(function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;html&nbsp;=&nbsp;'&lt;div&gt;The&nbsp;list&nbsp;is&nbsp;&quot;'&nbsp;+&nbsp;$('.textarea').asItemList('get')&nbsp;+&nbsp;'&quot;&lt;/div&gt;';
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(html).insertBefore($('#api-get-info'));
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;false;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</code></pre>
+                </div>
+                <div class="column half">
+                    <h4>RENDERED HTML</h4>
+                    <textarea class="textarea">[{"icon": "fa-user", "title": "User"}, {"icon": "fa-cloud-upload", "title": "Cloud-upload"}, {"icon": "fa-search", "title": "Search"}, {"icon": "fa-caret-down", "title": "caret-down"}, {"icon": "fa-caret-up", "title": "caret-up"}, {"icon": "fa-caret-right", "title": "caret-right"}, {"icon": "fa-caret-left", "title": "caret-left"}]</textarea>
+                    
+                    <button id="api-get2-click">getIcon</button>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <script type="text/javascript" src="../js/highlighting/rainbow.min.js"></script>
+    <script type="text/javascript" src="../js/highlighting/html.js"></script>
+    <script type="text/javascript" src="../js/highlighting/javascript.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/jquery-asItemList.min.js"></script>
+    <script type="text/javascript" src="../js/Sortable.min.js"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.default').asItemList({
+                sortableID: 'default-list',
+                render: function(item) {
+                    return '<i class="fa ' + item.icon + '"></i>' +
+                            '<span>' + item.title + '</span>';
+                },
+                onAdd: function() {
+                    var value = '{"icon": "fa-heart", "title": "Heart"}';
+                    $('<button id="api-addItem-click">addItem</button>').insertBefore($(".default").parent());
+                    $('#api-addItem-click').val(value);
+                    
+                    $('#api-addItem-click').click(function() {
+                        var value = $(this).val();
+                        $('.default').asItemList('add', value);
+                        $('#api-addItem-click').remove();
+                    });
+                },
+                onEdit: function(evt) {
+                    var edit = '{"icon": "fa-heart", "title": "Heart"}',
+                        value = $('.default').val(),
+                        index = $(evt).data('index');
+
+                    edit = $.parseJSON(edit);
+                    value = $.parseJSON(value);
+                    value[index] = edit;
+                    $('.default').val(JSON.stringify(value));
+                    $('.default').asItemList('update')
+                }
+            });
+            $('#api-get-click').click(function() {
+                var html = '<div>The list is "' + $('.default').asItemList('get') + '"</div>';
+                $(html).prependTo($('#api-get-info'));
+                return false;
+            });
+
+            $('.textarea').asItemList({
+                sortableID: 'textarea-list',
+                render: function(item) {
+                    return '<i class="fa ' + item.icon + '"></i>' +
+                            '<span>' + item.title + '</span>';
+                },
+                onAdd: function() {
+                    var value = '{"icon": "fa-heart", "title": "Heart"}';
+                    $('<button id="api-addItem2-click">addItem</button>').insertBefore($(".textarea").parent());
+                    $('#api-addItem2-click').val(value);
+                    
+                    $('#api-addItem2-click').click(function() {
+                        var value = $(this).val();
+                        $('.textarea').asItemList('add', value);
+                        $('#api-addItem2-click').remove();
+                    });
+                },
+                onEdit: function(evt) {
+                    var edit = '{"icon": "fa-heart", "title": "Heart"}',
+                        value = $('.textarea').val(),
+                        index = $(evt).data('index');
+
+                    edit = $.parseJSON(edit);
+                    value = $.parseJSON(value);
+                    value[index] = edit;
+                    $('.textarea').val(JSON.stringify(value));
+                    $('.textarea').asItemList('update')
+                }
+            });
+            $('#api-get2-click').click(function() {
+                var html = '<div>The list is "' + $('.textarea').asItemList('get') + '"</div>';
+                $(html).prependTo($('#api-get2-info'));
+                return false;
+            });
+        });
+    </script>
+</body>
+</html>
