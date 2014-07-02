@@ -1,4 +1,4 @@
-/*! asRange - v0.2.2 - 2014-05-28
+/*! asRange - v0.2.3 - 2014-05-29
 * https://github.com/amazingSurge/jquery-asRange
 * Copyright (c) 2014 amazingSurge; Licensed GPL */
 (function($) {
@@ -34,18 +34,7 @@
 
     // main constructor
     var Plugin = $[pluginName] = function(element, options) {
-        var metas = {},
-            direction = {
-                v: {
-                    page: 'pageY',
-                    position: 'top'
-                },
-                h: {
-                    page: 'pageX',
-                    position: 'left'
-                }
-            };
-
+        var metas = {};
         this.element = element;
         this.$element = $(element);
 
@@ -55,6 +44,7 @@
             if (typeof value === 'string') {
                 metas.value = value.split(',');
             }
+            
             var self = this;
             $.each(['min', 'max', 'step'], function(index, key) {
                 var val = parseFloat(self.$element.attr(key));
@@ -81,11 +71,13 @@
         if (this.value === null) {
             this.value = this.options.min;
         }
+
         if (!this.options.range) {
             if ($.isArray(this.value)) {
                 this.value = this.value[0];
             }
         } else {
+            
             if (!$.isArray(this.value)) {
                 this.value = [this.value, this.value];
             } else if (this.value.length === 1) {
@@ -102,9 +94,19 @@
         this.initialized = false;
         this.updating = false;
         this.disabled = false;
-        this.page = direction[this.options.direction].page;
-        this.position = direction[this.options.direction].position;
 
+        if(this.options.direction === 'v') {
+            this.direction = {
+                axis: 'pageY',
+                position: 'top'
+            };
+        } else {
+            this.direction = {
+                axis: 'pageX',
+                position: 'left'
+            };
+        }
+        
         this.$wrap.addClass(this.namespace);
 
         if (this.options.skin) {
@@ -169,6 +171,9 @@
         bindEvents: function() {
             var self = this;
             this.$wrap.on('touchstart.asRange mousedown.asRange', function(event) {
+                if (self.disabled === true) {
+                    return;
+                }
                 event = getEventObject(event);
                 var rightclick = (event.which) ? (event.which === 3) : (event.button === 2);
                 if (rightclick && !Touch) {
@@ -176,7 +181,7 @@
                 }
 
                 var offset = self.$wrap.offset(),
-                    start = event[self.page] - offset[self.position],
+                    start = event[self.direction.axis] - offset[self.direction.position],
                     p = self.getAdjacentPointer.call(self, start);
 
                 p.mousedown.call(p, event);
@@ -204,10 +209,15 @@
                 });
             });
         },
+        getValueFromPosition: function(px){
+            if(px > 0){
+                return this.min + (px / this.getLength()) * this.interval;
+            } else {
+                return 0;
+            }
+        },
         getAdjacentPointer: function(start) {
-            var value = start / this.getLength();
-
-
+            var value = this.getValueFromPosition(start);
             if (this.options.range) {
                 var p1 = this.p1.value,
                     p2 = this.p2.value,
@@ -230,7 +240,7 @@
             }
         },
         getLength: function() {
-            if (this.direction === 'v') {
+            if (this.options.direction === 'v') {
                 return this.$wrap.height();
             } else {
                 return this.$wrap.width();
@@ -271,15 +281,9 @@
             var self = this,
                 value = [],
                 step = self.step;
-            var length = step.toString().split('.')[1] ? step.toString().split('.')[1].length : 0;
 
             $.each(this.pointer, function(i, p) {
-                var pointerValue = p.get() * self.interval + self.min;
-                pointerValue = Math.round(pointerValue / self.step) * self.step;
-                if (length > 0) {
-                    pointerValue = parseFloat(pointerValue.toFixed(length));
-                }
-                value[i] = pointerValue;
+                value[i] = p.get();
             });
 
             if (self.options.range) {
@@ -298,10 +302,10 @@
                     return;
                 }
                 $.each(this.pointer, function(i, p) {
-                    p.set('actual', value[i]);
+                    p.set(value[i]);
                 });
             } else {
-                this.p1.set('actual', value);
+                this.p1.set(value);
             }
 
             this.value = value;
@@ -359,22 +363,18 @@
     Pointer.prototype = {
         constructor: Pointer,
         mousedown: function(event) {
-            var page, position, offset = this.parent.$wrap.offset();
-
-            if (this.parent.enabled === false) {
-                return;
-            }
+            var axis =this.parent.direction.axis,
+                position = this.parent.direction.position, 
+                offset = this.parent.$wrap.offset();
 
             this.$element.trigger('asRange::pointer::start', this);
 
-            page = this.parent.page;
-            position = this.parent.position;
-
             this.data = {};
-            this.data.start = event[page];
-            this.data[position] = event[page] - offset[position];
+            this.data.start = event[axis];
+            this.data.position = event[axis] - offset[position];
 
-            this.set('px', this.data[position]);
+            var value = this.parent.getValueFromPosition(this.data.position);
+            this.set(value);
 
             $.each(this.parent.pointer, function(i, p) {
                 p.deactive();
@@ -383,15 +383,15 @@
             this.active();
 
             this.mousemove = function(event) {
-                var origin = event,
-                    eventObj = getEventObject(event),
-                    value = this.data[position] + (eventObj[page] || this.data.start) - this.data.start;
-                this.set('px', value);
-                origin.preventDefault();
+                var eventObj = getEventObject(event),
+                    value = this.parent.getValueFromPosition( this.data.position + (eventObj[axis] || this.data.start) - this.data.start );
+                this.set(value);
+                
+                event.preventDefault();
                 return false;
             };
             this.mouseup = function() {
-                $(document).off('touchmove.asRange mousemove.asRange touchend.asRange mouseup.asRange');
+                $(document).off('.asRange mousemove.asRange touchend.asRange mouseup.asRange');
                 this.$element.trigger('asRange::pointer::end', this);
                 return false;
             };
@@ -406,69 +406,68 @@
         deactive: function() {
             this.$element.removeClass(this.classes.active);
         },
-        set: function(from, value) {
-            if (from === 'px') {
-                value = value / this.parent.getLength();
-            }
-            if (from === 'actual') {
-                value = (value - this.parent.min) / this.parent.interval;
-            }
-            if (from === 'percent') {
-                value = value;
-            }
-            this._set(value);
-        },
-        _set: function(value) {
+        set: function(value) {
             if (this.value === value) {
                 return;
             }
 
-            value = Math.round(value * 1000) / 1000;
-            if (this.parent.step > 0) {
+            if (this.parent.step) {
                 value = this.matchStep(value);
             }
             if (this.options.limit === true) {
                 value = this.matchLimit(value);
             } else {
-                if (value <= 0) {
-                    value = 0;
+                if (value <= this.parent.min) {
+                    value = this.parent.min;
                 }
-                if (value >= 1) {
-                    value = 1;
+                if (value >= this.parent.max) {
+                    value = this.parent.max;
                 }
             }
-            value = Math.round(value * 1000) / 1000;
             this.value = value;
 
-            var position = {};
-            position[this.parent.position] = value * 100 + '%';
-            this.$element.css(position);
+            this.updatePosition();
             this.$element.focus();
 
             this.$element.trigger('asRange::pointer::change', this);
+        },
+        updatePosition: function(){
+            var position = {};
+
+            position[this.parent.direction.position] = this.getPercent() + '%';
+            this.$element.css(position);
+        },
+        getPercent: function(){
+            return ((this.value - this.parent.min) / this.parent.interval) * 100;
         },
         get: function() {
             return this.value;
         },
         matchStep: function(value) {
-            var step = this.parent.step;
-            value = value * this.parent.interval + this.parent.min;
+            var step = this.parent.step,
+                decimal = step.toString().split('.')[1];
+
             value = Math.round(value / step) * step;
-            return (value - this.parent.min) / this.parent.interval;
+
+            if(decimal){
+                value = value.toFixed(decimal.length);
+            }
+            
+            return parseFloat(value);
         },
         matchLimit: function(value) {
             var left, right, pointer = this.parent.pointer;
 
             if (this.uid === 1) {
-                left = 0;
+                left = this.parent.min;
             } else {
                 left = pointer[this.uid - 2].value;
             }
 
-            if (pointer[this.uid]) {
+            if (pointer[this.uid] && pointer[this.uid].value !== null) {
                 right = pointer[this.uid].value;
             } else {
-                right = 1;
+                right = this.parent.max;
             }
 
             if (value <= left) {
@@ -594,36 +593,23 @@
             this.$arrow.addClass(instance.namespace + '-selected');
 
             if (instance.options.range === false) {
-                instance.pointer[0].$element.on('asRange::pointer::change', function(e, pointer) {
-                    var left = 0,
-                        right = pointer.get();
-
+                instance.p1.$element.on('asRange::pointer::change', function(e, pointer) {
                     self.$arrow.css({
                         left: 0,
-                        width: (right - left) * 100 + '%'
+                        width: pointer.getPercent() + '%'
                     });
                 });
             }
 
             if (instance.options.range === true) {
-                instance.pointer[0].$element.on('asRange::pointer::change', function(e, pointer) {
-                    var left = pointer.get(),
-                        right = instance.pointer[1].get();
-
+                var onUpdate = function(e, pointer){
                     self.$arrow.css({
-                        left: Math.min(left, right) * 100 + '%',
-                        width: Math.abs(right - left) * 100 + '%'
+                        left: instance.p1.getPercent() + '%',
+                        width: (instance.p2.getPercent() - instance.p1.getPercent()) + '%'
                     });
-                });
-                instance.pointer[1].$element.on('asRange::pointer::change', function(e, pointer) {
-                    var right = pointer.get(),
-                        left = instance.pointer[0].get();
-
-                    self.$arrow.css({
-                        left: Math.min(left, right) * 100 + '%',
-                        width: Math.abs(right - left) * 100 + '%'
-                    });
-                });
+                };
+                instance.p1.$element.on('asRange::pointer::change', onUpdate);
+                instance.p2.$element.on('asRange::pointer::change', onUpdate);
             }
         }
     });
@@ -739,18 +725,18 @@
             };
         if (instance.options.keyboard === true) {
             $.each(instance.pointer, function(i, p) {
-                if (instance.options.step > 0) {
-                    step = instance.options.step / instance.interval;
+                if (instance.options.step) {
+                    step = instance.options.step;
                 } else {
-                    step = 0.01;
+                    step = 1;
                 }
                 var left = function() {
                     var value = p.value;
-                    p.set('percent', value - step);
+                    p.set(value - step);
                 };
                 var right = function() {
                     var value = p.value;
-                    p.set('percent', value + step);
+                    p.set(value + step);
                 };
                 p.$element.attr('tabindex', '0').on('focus', function() {
                     keyboard.attach({

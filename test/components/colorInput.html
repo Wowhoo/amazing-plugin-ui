@@ -34,7 +34,7 @@
         <section>
             <h3>BasicStyle</h3>
             <div class="row">
-                <div class="column half">
+                <div class="column half-tablet">
                     <h4>HTML</h4>
                     <pre><code data-language="html">&lt;input&nbsp;class=&quot;asColorInput-input&quot;&nbsp;type=&quot;text&quot;&gt;
 &lt;script&gt;
@@ -43,7 +43,6 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asColorInput',
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color:&nbsp;'#f00',
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flat:&nbsp;false,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;skin:&nbsp;'basicStyle',
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;components:&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;palettes:&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;defines:&nbsp;[''],
@@ -55,7 +54,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;});
 &lt;/script&gt;</code></pre>
                 </div>
-                <div class="column half">
+                <div class="column half-tablet">
                     <h4>RENDERED HTML</h4>
                     <input class='asColorInput-basicStyle' type='text' />
                 </div>
@@ -65,7 +64,7 @@
         <section>
             <h3>FullStack</h3>
             <div class="row">
-                <div class="column half">
+                <div class="column half-tablet">
                     <h4>HTML</h4>
                     <pre><code data-language="html">&lt;input&nbsp;class=&quot;asColorInput-input&quot;&nbsp;type=&quot;text&quot;&gt;
 &lt;script&gt;
@@ -87,7 +86,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;});
 &lt;/script&gt;</code></pre>
                 </div>
-                <div class="column half">
+                <div class="column half-tablet">
                     <h4>RENDERED HTML</h4>
                     <input class='asColorInput-fullStack' type='text' />
                 </div>
@@ -104,12 +103,10 @@
     <script type="text/javascript" src="../js/jquery-asColorInput.js"></script>
     <script>
         $(document).ready(function() {
-            $.asColorInput.skins.basicStyle = 'saturation,hue,hex,preview,palettes,gradient';
             $(".asColorInput-basicStyle").asColorInput({
                 namespace: 'asColorInput',
                 color: '#f00',
                 flat: false,
-                skin: 'basicStyle',
                 components: {
                     palettes: {
                         defines: [''],
@@ -123,7 +120,6 @@
                 color: '#f00',
                 flat: false,
                 format: 'rgba',
-                skin: 'fullStack',
                 components: {
                     palettes: {
                         defines: [''],
