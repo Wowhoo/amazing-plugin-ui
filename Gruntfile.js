@@ -328,7 +328,7 @@ module.exports = function(grunt) {
           'dist/select.less': ['less/components/select/default.less', 'less/components/select/select.less'],
           'dist/select2.less': ['less/components/select2/default.less', 'less/components/select2/select2.less'],
           'dist/spinner.less': ['less/components/spinner/default.less', 'less/components/spinner/spinner.less'],
-          'dist/switch.less': ['less/components/switch/default.less', 'less/components/switch/switch.less'],
+          'dist/switcher.less': ['less/components/switcher/default.less', 'less/components/switcher/switch.less'],
           'dist/tab.less': ['less/components/tab/default.less', 'less/components/tab/tab.less'],
           'dist/tooltip.less': ['less/components/tooltip/default.less', 'less/components/tooltip/tooltip.less'],
           'dist/unitInput.less': ['less/components/unitInput/default.less', 'less/components/unitInput/unitInput.less'],
