@@ -1,0 +1,128 @@
+@range-bar-color:                        #eee;
+@range-pointer-size:                     16px;
+@range-pointer-bgColor:                  #fff;
+@range-pointer-borderColor:              #ddd;
+
+@range-bar-height:                       14px;
+@range-selected-color:                   @primary-color;
+
+@range-tip-bgColor:                      #555;
+@range-tip-borderColor:                  @range-tip-bgColor;
+@range-tip-arrow-color:                  @range-tip-bgColor;
+
+@range-lines-color:                      #ccc;
+@range-values-color:                     #ccc;
+//===============================================
+//range
+//==============================================
+
+.asRange {
+	position: relative;
+	cursor: pointer;
+
+	&-bar {
+		height: @range-bar-height;
+		background-color: @range-bar-color;
+	}
+
+	&-pointer {
+		position: absolute;
+		left: 60%;
+		top: -(@range-pointer-size - @range-bar-height + 4)/2;
+		width: @range-pointer-size;
+		height: @range-pointer-size;
+		margin-left: -(@range-pointer-size + 2)/2;
+		background-color: @range-pointer-bgColor;
+		border: 2px solid @range-pointer-borderColor;
+		z-index: 2;
+	}
+
+	&-tip {
+		position: absolute;
+		top: -30px;
+		margin: 0 auto;
+
+		left: 50%;
+        .translate(-50%, 0);
+
+		display: block;
+		
+		color: #fff;
+		font-size: 11px;
+		line-height: 1.5em;
+		padding: 2px 4px 1px;
+		text-align: center;
+
+		background-color: @range-tip-bgColor;
+		border: 1px solid @range-tip-borderColor;
+		border-radius: 2px;
+
+		&:before {
+			position: absolute;
+			bottom: -3px;
+			left: 50%;
+			content: '';
+			display: inline-block;
+			width: 6px;
+			height: 6px;
+			margin-left: -3px;
+			background-color: @range-tip-arrow-color;
+			.rotate (-45deg);
+		}
+	}
+
+	&-selected {
+		position: absolute;
+		top: 0;
+		width: 60%;
+		height: @range-bar-height;
+		background-color: @range-selected-color;
+		overflow: hidden;
+	}
+
+	&-scale {
+		height: 30px;
+		&-lines,
+		&-values {
+			position: relative;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			vertical-align: middle;
+
+			li {
+				position: absolute;
+				top: 0;
+				float: left;
+			}
+		}
+		&-lines {
+			top: 6px;
+			li {
+				position: absolute;
+				top: 0;
+				height: 4px;
+				width: 1px;
+				background-color: @range-lines-color;
+			}
+		}
+		&-inlineGrid {
+			height: 10px !important;
+		}
+
+		&-values {
+			top: 13px;
+			margin-left: 1px;
+
+			span {
+				*position: relative;//for ie7 margin -value  bug
+				*display: inline;
+				*zoom: 1;
+
+				font-size: 14px;
+				color: @range-values-color;
+				margin-left: -50%;
+			}
+		}
+	}
+}

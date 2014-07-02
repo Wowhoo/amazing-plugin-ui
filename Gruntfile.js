@@ -323,7 +323,7 @@ module.exports = function(grunt) {
           'dist/paginator.less': ['less/components/paginator/default.less', 'less/components/paginator/paginator.less'],
           'dist/progress.less': ['less/components/progress/default.less', 'less/components/progress/progress.less'],
           'dist/radio.less': ['less/components/radio/default.less', 'less/components/radio/radio.less'],
-          'dist/ranges.less': ['less/components/ranges/default.less', 'less/components/ranges/ranges.less'],
+          'dist/range.less': ['less/components/range/default.less', 'less/components/range/range.less'],
           'dist/search.less': ['less/components/search/default.less', 'less/components/search/search.less'],
           'dist/select.less': ['less/components/select/default.less', 'less/components/select/select.less'],
           'dist/select2.less': ['less/components/select2/default.less', 'less/components/select2/select2.less'],
