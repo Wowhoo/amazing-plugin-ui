@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/wp-admin.css">
+    <link rel="stylesheet" href="../css/highlighting/github.css">
+    <link rel="stylesheet" type="text/css" href="../css/adaptGrid.css">
+    <link rel="stylesheet" type="text/css" href="../../css/amazing-plugin-ui-min.css">
+    <style>
+        body {
+            padding: 40px;
+            font-size: 16px;
+        }
+        .demo {
+            list-style: none;
+        }
+        .demo >li {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h2>Switch</h2>
+        <section>
+            <h3>Default</h3>
+            <div class="row">
+                <div class="column half-tablet">
+                    <h4>HTML</h4>
+                    <pre><code data-language="html">&lt;input&nbsp;class=&quot;switch1&quot;&nbsp;type=&quot;checkbox&quot;&nbsp;checked=&quot;checked&quot;&nbsp;/&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.asSwitch').asSwitcher({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asSwitch'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</code></pre>
+                </div>
+                <div class="column half-tablet">
+                    <h4>RENDERED HTML</h4>
+                    <input class="switch1" type="checkbox" checked="checked" />
+                </div>
+            </div>
+        </section>
+        <hr />
+        <section>
+            <h3>Only drag</h3>
+            <div class="row">
+                <div class="column half-tablet">
+                    <h4>HTML</h4>
+                    <pre><code data-language="html">&lt;input&nbsp;class=&quot;switch2&quot;&nbsp;type=&quot;checkbox&quot;&nbsp;checked=&quot;checked&quot;&nbsp;/&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.asSwitch').asSwitcher({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asSwitch',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dragable:&nbsp;true,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clickable:&nbsp;false
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</code></pre>
+                </div>
+                <div class="column half-tablet">
+                    <h4>RENDERED HTML</h4>
+                    <input class="switch2" type="checkbox" checked="checked" />
+                </div>
+            </div>
+        </section>
+        <hr />
+        <section>
+            <h3>Only clickable</h3>
+            <div class="row">
+                <div class="column half-tablet">
+                    <h4>HTML</h4>
+                    <pre><code data-language="html">&lt;input&nbsp;class=&quot;switch3&quot;&nbsp;type=&quot;checkbox&quot;&nbsp;checked=&quot;checked&quot;&nbsp;/&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.asSwitch').asSwitcher({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asSwitch',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dragable:&nbsp;false,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clickable:&nbsp;true
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</code></pre>
+                </div>
+                <div class="column half-tablet">
+                    <h4>RENDERED HTML</h4>
+                    <input class="switch3" type="checkbox" checked="checked" />
+                </div>
+            </div>
+        </section>
+    </section>
+    
+    <script type="text/javascript" src="../js/highlighting/rainbow.min.js"></script>
+    <script type="text/javascript" src="../js/highlighting/html.js"></script>
+    <script type="text/javascript" src="../js/highlighting/javascript.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+
+    <script type="text/javascript" src="../js/jquery-asSwitcher.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.switch1').asSwitcher();
+            $('.switch2').asSwitcher({
+                dragable: true,
+                clickable: false
+            });
+            $('.switch3').asSwitcher({
+                dragable: false,
+                clickable: true
+            });
+        });
+    </script>
+</body>
+</html>

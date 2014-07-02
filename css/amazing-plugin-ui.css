@@ -2973,7 +2973,7 @@ span.asCalendar_otherMonth.asCalendar_inRange:hover {
 .asSearch:hover > button:before {
   color: #fff;
   }
-.asSelector-wrapper {
+.asSelect-wrapper {
   position: relative;
   display: inline-block;
   width: 184px;
@@ -2987,7 +2987,7 @@ span.asCalendar_otherMonth.asCalendar_inRange:hover {
   *display: inline;
   *zoom: 1;
   }
-.asSelector_disabled {
+.asSelect_disabled {
   cursor: default;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -2996,15 +2996,15 @@ span.asCalendar_otherMonth.asCalendar_inRange:hover {
 
   -webkit-touch-callout: none;
   }
-.asSelector-old {
+.asSelect-old {
   position: relative;
   overflow: hidden;
   }
-.asSelector-old select {
+.asSelect-old select {
   position: absolute;
   left: -100%;
   }
-.asSelector-trigger {
+.asSelect-trigger {
   font-size: 14px;
   line-height: 32px;
   color: #bbb;
@@ -3013,24 +3013,24 @@ span.asCalendar_otherMonth.asCalendar_inRange:hover {
 
   *zoom: 1;
   }
-.asSelector-trigger:before,
-.asSelector-trigger:after {
+.asSelect-trigger:before,
+.asSelect-trigger:after {
   display: table;
   content: " ";
   }
-.asSelector-trigger:after {
+.asSelect-trigger:after {
   clear: both;
   }
-.asSelector-trigger:hover {
+.asSelect-trigger:hover {
   border-color: #d9d9d9;
   }
-.asSelector-label {
+.asSelect-label {
   padding: 0 10px;
   margin-right: 30px;
   overflow: hidden;
   white-space: nowrap;
   }
-.asSelector-handler {
+.asSelect-handler {
   position: absolute;
   top: 10px;
   right: 8px;
@@ -3048,10 +3048,10 @@ span.asCalendar_otherMonth.asCalendar_inRange:hover {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   }
-.asSelector-handler:before {
+.asSelect-handler:before {
   content: "\e604";
   }
-.asSelector-dropdown {
+.asSelect-dropdown {
   position: absolute;
   top: 100%;
   left: 0;
@@ -3067,11 +3067,11 @@ span.asCalendar_otherMonth.asCalendar_inRange:hover {
   background-color: #fff;
   border: 2px solid #e4e4e4;
   }
-.asSelector-dropdown > ul {
+.asSelect-dropdown > ul {
   position: relative;
   margin: 0;
   }
-.asSelector-item {
+.asSelect-item {
   position: relative;
   display: block;
   padding: 8px 10px;
@@ -3081,37 +3081,37 @@ span.asCalendar_otherMonth.asCalendar_inRange:hover {
   cursor: pointer;
   background-color: #fff;
   }
-.asSelector-item:hover {
+.asSelect-item:hover {
   color: #fff;
   background-color: #5cafda;
   }
-.asSelector-group {
+.asSelect-group {
   margin: 0;
   }
-.asSelector-group-lable {
+.asSelect-group-lable {
   padding: 6px 10px;
   font-weight: bold;
   text-transform: capitalize;
   cursor: default;
   }
-.asSelector-group .asSelector-item {
+.asSelect-group .asSelect-item {
   padding-left: 1.5em;
   }
-.asSelector_open .asSelector-trigger {
+.asSelect_open .asSelect-trigger {
   color: #444;
   border: 2px solid #5cafda;
   }
-.asSelector_open .asSelector-trigger:hover {
+.asSelect_open .asSelect-trigger:hover {
   border: 2px solid #5cafda;
   }
-.asSelector_open .asSelector-handler:before {
+.asSelect_open .asSelect-handler:before {
   content: "\e605";
   }
-.asSelector_open .asSelector-dropdown {
+.asSelect_open .asSelect-dropdown {
   display: block !important;
   border: 2px solid #5cafda;
   }
-.asSelector-mask {
+.asSelect-mask {
   position: fixed;
   top: 0;
   left: 0;
@@ -3718,7 +3718,7 @@ html[dir="rtl"] .select2-search-choice-close {
 .asSpinner-up:active {
   background-color: #6cc3ef !important;
   }
-.asSwitch {
+.asSwitcher {
   position: relative;
   display: inline-block;
   width: 70px;
@@ -3731,21 +3731,21 @@ html[dir="rtl"] .select2-search-choice-close {
   *display: inline;
   *zoom: 1;
   }
-.asSwitch:hover {
+.asSwitcher:hover {
   cursor: pointer;
   }
-.asSwitch > input {
+.asSwitcher > input {
   display: none;
   }
-.asSwitch-inner {
+.asSwitcher-inner {
   overflow: hidden;
   }
-.asSwitch-inner-box {
+.asSwitcher-inner-box {
   width: 116px;
   height: 24px;
   }
-.asSwitch-on,
-.asSwitch-off {
+.asSwitcher-on,
+.asSwitcher-off {
   display: block;
   float: left;
   height: 24px;
@@ -3759,61 +3759,61 @@ html[dir="rtl"] .select2-search-choice-close {
           user-select: none;
   background-color: transparent;
   }
-.asSwitch-on {
+.asSwitcher-on {
   width: 58px;
   color: #fff;
   text-indent: -10px;
   }
-.asSwitch-off {
+.asSwitcher-off {
   width: 58px;
   color: #fff;
   text-indent: 10px;
   }
-.asSwitch-handle {
+.asSwitcher-handle {
   position: absolute;
   top: 0;
   width: 24px;
   height: 24px;
   background-color: #fff;
   }
-.asSwitch-handle:hover {
+.asSwitcher-handle:hover {
   cursor: pointer;
   cursor: -moz-grab;
   }
-.asSwitch_on {
+.asSwitcher_on {
   background-color: #5cafda;
   border-color: #5cafda;
   }
-.asSwitch_on .asSwitch-inner-box {
+.asSwitcher_on .asSwitcher-inner-box {
   margin-left: 0;
   }
-.asSwitch_on .asSwitch-handle {
+.asSwitcher_on .asSwitcher-handle {
   left: 0;
   background-color: #fff;
   }
-.asSwitch_off {
+.asSwitcher_off {
   background-color: #b8bcbe;
   border-color: #b8bcbe;
   }
-.asSwitch_off .asSwitch-inner-box {
+.asSwitcher_off .asSwitcher-inner-box {
   margin-left: -46px;
   }
-.asSwitch_off .asSwitch-handle {
+.asSwitcher_off .asSwitcher-handle {
   left: 0;
   background-color: #fff;
   }
-.asSwitch_disabled {
+.asSwitcher_disabled {
   background-color: #f0f0f0;
   border-color: #e8e8e8;
   }
-.asSwitch_disabled.asSwitch_on {
+.asSwitcher_disabled.asSwitcher_on {
   background-color: #f0fbff;
   }
-.asSwitch_disabled .asSwitch-on,
-.asSwitch_disabled .asSwitch-off {
+.asSwitcher_disabled .asSwitcher-on,
+.asSwitcher_disabled .asSwitcher-off {
   color: #ccc;
   }
-.asSwitch_disabled .asSwitch-handle {
+.asSwitcher_disabled .asSwitcher-handle {
   background-color: #fff;
   }
 .asTabs {

@@ -1,0 +1,106 @@
+// ==============================================
+// Switch
+// ==============================================
+
+.asSwitcher {
+	position: relative;
+	.inline-block();
+
+	height: @switcher-innerHeight;
+	width: @switcher-innerWidth;
+	border: @switcher-borderWidth solid;
+	transition: backgrounColor 200ms, borderColor 200ms;
+
+	background-color: @switcher_disabled_off-bgColor;
+	border-color: @switcher_disabled-borderColor;
+
+	&:hover {
+		cursor: pointer;
+	}
+	> input {
+		display: none;
+	}
+	&-inner {
+		overflow: hidden;
+	}
+	&-inner-box {
+		height: @switcher-innerHeight;
+		width: @switcher-boxWidth;
+	}
+	&-on, &-off {
+		display: block;
+		float: left;
+		height: @switcher-innerHeight;
+		line-height: @switcher-height - @switcher-borderWidth;
+		font-family: "BPreplay",sans-serif;
+		font-size: @switcher-fontSize;
+		background-color: transparent;
+		text-align: center;
+		.user-select(none);
+	}
+	&-on {
+		width: @switcher-onWidth;
+		text-indent: -10px;
+		color: @switcher-onColor;
+	}
+	&-off {
+		width: @switcher-offWidth;
+		text-indent: 10px;
+		color: @switcher-offColor;
+	}
+	&-handle {
+		position: absolute;
+		top: 0;
+		width: @switcher-handleWidth;
+		height: @switcher-innerHeight;
+		background-color: @switcher_disabled-handle-bgColor;
+
+		&:hover {
+			cursor: pointer;
+			cursor: -moz-grab;
+		}
+	}
+}
+
+.asSwitcher_on {
+	background-color: @switcher_on-bgColor;
+	border-color: @switcher_on-borderColor;
+
+	.asSwitcher-inner-box {
+		margin-left: 0;
+	}
+
+	.asSwitcher-handle {
+		left: @switcher-innerHeight - @switcher-handleWidth;
+		background-color: @switcher_on-handle-bgColor;
+	}
+}
+
+.asSwitcher_off {
+	background-color: @switcher_off-bgColor;
+	border-color: @switcher_off-borderColor;
+
+	.asSwitcher-inner-box {
+		margin-left: @switcher-handleWidth - @switcher-innerWidth;
+	}
+
+	.asSwitcher-handle {
+		left: 0;
+		background-color: @switcher_off-handle-bgColor;
+	}
+}
+
+.asSwitcher_disabled {
+	background-color: @switcher_disabled_off-bgColor;
+	border-color: @switcher_disabled-borderColor;
+
+	&.asSwitcher_on {
+		background-color: @switcher_disabled_on-bgColor;
+	}
+	.asSwitcher-on, .asSwitcher-off {
+		color: @switcher_disabled-textColor;
+	}
+	.asSwitcher-handle {
+		background-color: @switcher_disabled-handle-bgColor;
+	}
+}

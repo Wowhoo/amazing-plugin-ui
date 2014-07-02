@@ -1,0 +1,29 @@
+@switcher-height:                               28px;
+@switcher-width:                                74px;
+@switcher-borderWidth:                          2px;
+
+@switcher-innerHeight:                          @switcher-height - (@switcher-borderWidth * 2);
+@switcher-handleWidth:                          @switcher-innerHeight;
+
+@switcher-innerWidth:                           @switcher-width - (@switcher-borderWidth * 2);
+@switcher-boxWidth:                             (@switcher-innerWidth - (@switcher-handleWidth / 2)) * 2;
+@switcher-onWidth:                              @switcher-innerWidth - ( @switcher-handleWidth / 2);
+@switcher-offWidth:                             @switcher-innerWidth - ( @switcher-handleWidth / 2);
+
+@switcher-fontSize:                             14px;
+@switcher-onColor:                              #fff;
+@switcher-offColor:                             #fff;
+
+@switcher_on-bgColor:                           @primary-color;
+@switcher_on-borderColor:                       @primary-color;
+@switcher_on-handle-bgColor:                    #fff;
+
+@switcher_off-bgColor:                          #b8bcbe;
+@switcher_off-borderColor:                      #b8bcbe;
+@switcher_off-handle-bgColor:                   #fff;
+
+@switcher_disabled_off-bgColor:                  #f0f0f0;
+@switcher_disabled_on-bgColor:                   #F0FBFF;
+@switcher_disabled-borderColor:                  darken(@switcher_disabled_off-bgColor, 3%);
+@switcher_disabled-handle-bgColor:               #fff;
+@switcher_disabled-textColor:                    #ccc;

@@ -1,29 +1,29 @@
-@selector-wrapper-width:                              184px;
+@select-wrapper-width:                              184px;
 
-@selector-trigger-color:                              #bbb;
-@selector-trigger-bgColor:                            #fff;
-@selector-trigger-borderColor:                        #e4e4e4;
-@selector-trigger_hover-borderColor:                  #d9d9d9;
+@select-trigger-color:                              #bbb;
+@select-trigger-bgColor:                            #fff;
+@select-trigger-borderColor:                        #e4e4e4;
+@select-trigger_hover-borderColor:                  #d9d9d9;
 
-@selector-dropdown-ul-bgColor:                        #fff;
-@selector-dropdown-ul-borderColor:                    #e4e4e4;
+@select-dropdown-ul-bgColor:                        #fff;
+@select-dropdown-ul-borderColor:                    #e4e4e4;
 
-@selector_open-trigger-color:                         #444;
-@selector_open-borderColor:                           @primary-color;
-@selector_open_hover-borderColor:                     @selector_open-borderColor;
+@select_open-trigger-color:                         #444;
+@select_open-borderColor:                           @primary-color;
+@select_open_hover-borderColor:                     @select_open-borderColor;
 
-@selector-dropdown-li-color:                          #777;
-@selector-dropdown-li-bgColor:                        #fff;
-@selector-dropdown-li_hover-bgColor:                  @selector-dropdown-li-bgColor;
+@select-dropdown-li-color:                          #777;
+@select-dropdown-li-bgColor:                        #fff;
+@select-dropdown-li_hover-bgColor:                  @select-dropdown-li-bgColor;
 
 //==============================================
 //select
 //==============================================
-.asSelector {
+.asSelect {
 	&-wrapper {
 		position: relative;
 		.inline-block();
-		width: @selector-wrapper-width;
+		width: @select-wrapper-width;
 		line-height: 1;
 		cursor: pointer;
 		.user-select(none);
@@ -45,14 +45,14 @@
 	}
 
 	&-trigger {
-		color: @selector-trigger-color;
+		color: @select-trigger-color;
 		font-size: 14px;
 		line-height: 32px;
-		background-color: @selector-trigger-bgColor;
-		border: 2px solid @selector-trigger-borderColor;
+		background-color: @select-trigger-bgColor;
+		border: 2px solid @select-trigger-borderColor;
 		.clearfix();
 		&:hover {
-			border-color: @selector-trigger_hover-borderColor;
+			border-color: @select-trigger_hover-borderColor;
 		}
 	}
 
@@ -95,8 +95,8 @@
 		width: 100%;
 		padding: 3px 2px;
 		font-size: 12px;
-		background-color: @selector-dropdown-ul-bgColor;
-		border: 2px solid @selector-dropdown-ul-borderColor;
+		background-color: @select-dropdown-ul-bgColor;
+		border: 2px solid @select-dropdown-ul-borderColor;
 		.box-sizing(border-box);
 		& > ul {
 			position: relative;
@@ -109,12 +109,12 @@
 		display: block;
 		margin: 0;
 		padding: 8px 10px;
-		color: @selector-dropdown-li-color;
+		color: @select-dropdown-li-color;
 		list-style: none;
-		background-color: @selector-dropdown-li-bgColor;
+		background-color: @select-dropdown-li-bgColor;
 		cursor: pointer;
 		&:hover {
-			color: @selector-dropdown-li_hover-bgColor;
+			color: @select-dropdown-li_hover-bgColor;
 			background-color: @primary-color;
 		}
 	}
@@ -135,10 +135,10 @@
 	}
 
 	&_open &-trigger {
-		color: @selector_open-trigger-color;
-		border: 2px solid @selector_open-borderColor;
+		color: @select_open-trigger-color;
+		border: 2px solid @select_open-borderColor;
 		&:hover {
-			border: 2px solid @selector_open_hover-borderColor;
+			border: 2px solid @select_open_hover-borderColor;
 		}
 	}
 
@@ -150,7 +150,7 @@
 
 	&_open &-dropdown {
 		display: block !important;
-		border: 2px solid @selector_open-borderColor;
+		border: 2px solid @select_open-borderColor;
 	}
 
 	&-mask {
