@@ -36,13 +36,46 @@
             <div class="row">
                 <div class="column half-tablet">
                     <h4>HTML</h4>
-                    <pre><code data-language="html">&lt;input&nbsp;class=&quot;asColorInput-input&quot;&nbsp;type=&quot;text&quot;&gt;
+                    <pre><code data-language="html">&lt;input&nbsp;class=&quot;asColorInput-gradient&quot;&nbsp;type=&quot;text&quot;&gt;
 &lt;script&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;.asColorInput-input&quot;).asColorInput({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;.asColorInput-gradient&quot;).asColorInput({
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asColorInput',
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color:&nbsp;'#f00',
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flat:&nbsp;false,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mode:&nbsp;'gradient',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;components:&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;palettes:&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;defines:&nbsp;[''],
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;colors:&nbsp;['#fff',&nbsp;'#000',&nbsp;'#0600ff',&nbsp;'#ff0000',&nbsp;'#ff9300',&nbsp;'#f0ff00',&nbsp;'#ccc',&nbsp;'#d07070',&nbsp;'#5cafda',&nbsp;'#f77268',&nbsp;'#00ffe6',&nbsp;'#c0ff00'],
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max:&nbsp;12
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</code></pre>
+                </div>
+                <div class="column half-tablet">
+                    <h4>RENDERED HTML</h4>
+                    <input class='asColorInput-gradient' type='text' />
+                </div>
+            </div>
+        </section>
+        <hr />
+        <section>
+            <h3>FullStack</h3>
+            <div class="row">
+                <div class="column half-tablet">
+                    <h4>HTML</h4>
+                    <pre><code data-language="html">&lt;input&nbsp;class=&quot;asColorInput-basicStyle&quot;&nbsp;type=&quot;text&quot;&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;.asColorInput-basicStyle&quot;).asColorInput({
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asColorInput',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color:&nbsp;'#f00',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flat:&nbsp;false,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;format:&nbsp;'rgba',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mode:&nbsp;'basicStyle',
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;components:&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;palettes:&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;defines:&nbsp;[''],
@@ -60,38 +93,6 @@
                 </div>
             </div>
         </section>
-        <hr />
-        <section>
-            <h3>FullStack</h3>
-            <div class="row">
-                <div class="column half-tablet">
-                    <h4>HTML</h4>
-                    <pre><code data-language="html">&lt;input&nbsp;class=&quot;asColorInput-input&quot;&nbsp;type=&quot;text&quot;&gt;
-&lt;script&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(function()&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;.asColorInput-input&quot;).asColorInput({
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace:&nbsp;'asColorInput',
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color:&nbsp;'#f00',
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flat:&nbsp;false,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;format:&nbsp;'rgba',
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;skin:&nbsp;'fullStack',
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;components:&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;palettes:&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;defines:&nbsp;[''],
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;colors:&nbsp;['#fff',&nbsp;'#000',&nbsp;'#0600ff',&nbsp;'#ff0000',&nbsp;'#ff9300',&nbsp;'#f0ff00',&nbsp;'#ccc',&nbsp;'#d07070',&nbsp;'#5cafda',&nbsp;'#f77268',&nbsp;'#00ffe6',&nbsp;'#c0ff00'],
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max:&nbsp;12
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
-&nbsp;&nbsp;&nbsp;&nbsp;});
-&lt;/script&gt;</code></pre>
-                </div>
-                <div class="column half-tablet">
-                    <h4>RENDERED HTML</h4>
-                    <input class='asColorInput-fullStack' type='text' />
-                </div>
-            </div>
-        </section>
     </section>
 
 
@@ -103,10 +104,19 @@
     <script type="text/javascript" src="../js/jquery-asColorInput.js"></script>
     <script>
         $(document).ready(function() {
-            $(".asColorInput-basicStyle").asColorInput({
+            $.asColorInput.modes.basicStyle = {
+                saturation: true,
+                hue: true,
+                hex: true,
+                preview: true,
+                palettes: true,
+                buttons: true
+            };
+            $(".asColorInput-gradient").asColorInput({
                 namespace: 'asColorInput',
                 color: '#f00',
                 flat: false,
+                mode: 'gradient',
                 components: {
                     palettes: {
                         defines: [''],
@@ -115,11 +125,12 @@
                     }
                 }
             });
-            $(".asColorInput-fullStack").asColorInput({
+            $(".asColorInput-basicStyle").asColorInput({
                 namespace: 'asColorInput',
                 color: '#f00',
                 flat: false,
                 format: 'rgba',
+                mode: 'basicStyle',
                 components: {
                     palettes: {
                         defines: [''],

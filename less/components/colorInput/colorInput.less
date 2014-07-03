@@ -11,19 +11,27 @@
         border: @colorInput-wrap-borderWidth solid @colorInput-wrap-borderColor;
     }
 
+    &_hideInput {
+        display: none;
+    }
+
+    &_hideInput &-clear {
+        display: none;
+    }
+
     &-trigger {
         position: absolute;
         top: 0;
         right: 0;
         .size(36px);
-        background-color: transparent;
+        background-image: url('../images/transparent.png');
         border-left: 1px solid @colorInput-trigger-borderColor;
+        cursor: pointer;
 
         >span {
-            float: left;
+            position: relative;
             display: block;
             .size(32px);
-            margin: 2px;
             color: @colorInput-trigger-arrow-color;
             font-family: 'asFont';
             font-size: 12px;
@@ -33,6 +41,7 @@
             font-variant: normal;
             text-transform: none;
             line-height: 1;
+            border: 2px solid @colorInput-trigger-arrow-borderColor;
 
             /* Better Font Rendering =========== */
             -webkit-font-smoothing: antialiased;
@@ -71,26 +80,64 @@
         }
     }
 
-    // create
-    display: none;
-    z-index: 9999;
-    
-    width: 282px;
-    padding-top: 323px;
-    background-color: @colorInput-bgColor;
-    border: 2px solid @colorInput-borderColor;
+    &-dropdown {
+        display: none;
+        position: absolute;
+        z-index: 9999;
+        width: 282px;
+        padding-top: 323px;
+        margin: 5px 0;
+        background-color: @colorInput-dropdown-bgColor;
+        border: 2px solid @colorInput-dropdown-borderColor;
+        .user-select(none);
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    }
 
     // state
-    &_show {
+    &_open {
         display: block !important;
     }
 
+    &-clear {
+        display: none;
+        position: absolute;
+        top: 12px;
+        right: 33px;
+        color: transparent;
+        text-decoration: none;
+        font-family: 'asFont';
+        font-size: 14px;
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+
+        &:before {
+            color: @colorInput-clear-color;
+            content: '\e627';
+        }
+    }
+
+    &-wrap:hover &-clear {
+        display: inline-block;
+    }
+
     // content
-    & > * {
+    &-dropdown > * {
         position: absolute;
         border: 2px solid @colorInput-components-borderColor;
     }
-    & > &-gradient {
+    &-dropdown > &-gradient {
         position: relative;
     }
 
@@ -134,29 +181,24 @@
         background: url('../images/alpha.png') no-repeat center center;
     }
 
-    &-preview-previous {
-        float: left;
-        width: 50%;
-        height: 100%;
-        cursor: pointer;
-    }
-
+    &-preview-previous,
     &-preview-current {
-        float: left;
+        float: right;
         width: 50%;
         height: 100%;
         cursor: pointer;
+
+        > * {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
     }
 
     &-palettes {
+        display: block;
+        overflow: hidden;
         border: none;
-
-        ul {
-            display: block;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
 
         li {
             float: left;
@@ -170,6 +212,11 @@
             white-space: nowrap;
             overflow: hidden;
             cursor: pointer;
+
+            > * {
+                width: 100%;
+                height: 100%;
+            }
         }
     }
 
@@ -346,9 +393,31 @@
             }
         }
 
-        &_show {
+        &_enable {
             display: block !important;
         }
+    }
+
+    &-buttons {
+        border: none;
+
+        &-cancel {
+            display: inline-block;
+            margin: 0;
+            padding: 0 12px;
+            color: @colorInput-gradient-controll-color;
+            font-size: 14px;
+            line-height: 31px;
+            text-decoration: none;
+            &:hover {
+                color: @colorInput-gradient-controll_hover-color;
+                text-decoration: none;
+            }
+            &:active,
+            &:focus {
+                outline: none;
+            }
+        } 
     }
 
     &-mask {
@@ -359,18 +428,10 @@
         height: 100%;
         z-index: 9998;
     }
-
-    &&_flat {
-        position: relative;
-        top: 38px;
-        left: 0;
-        display: block;
-        z-index: auto;
-    }
 }
 
 
-.asColorInput_fullStack {
+[data-mode="gradient"] {
     .asColorInput {
         &-preview {
             top: 20px;
@@ -417,7 +478,7 @@
     }
 }
 
-.asColorInput_basicStyle {
+[data-mode="basicStyle"] {
     .asColorInput {
         &-preview {
             top: 20px;
@@ -447,14 +508,9 @@
             left: 15px;
             .size(96px, 31px);
         }
-        &-gradient-controll {
+        &-buttons {
             top: 273px;
-            left: 127px;
-        }
-        &-gradient {
-            &:after {
-                left: 158px;
-            }
+            right: 17px;
         }
     }
 }
